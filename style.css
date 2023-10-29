@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 body{
 	background-color: #111111;
 }
@@ -37,9 +36,5 @@ nav ul li a{
 a.navi, a:hover{
 	background: white;
 	transition: .5s ;
-=======
-body {
-    background-color: #111111;
-    opacity: 90%;
->>>>>>> Stashed changes
 }
+
