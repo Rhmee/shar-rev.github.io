@@ -1,0 +1,22 @@
+section{
+    padding: 7rem;
+    text-align: center;
+    color: white;
+}
+section article{
+    border: 2px solid white;
+    border-radius: 15px;
+    color: black;
+    background-color: white;
+    width: 175px;
+    height: 275px;
+    float: left;
+    margin: 30px;
+    justify-content: center;
+    box-shadow: 0 0 30px #FFD747;
+}
+section article a h3{
+    margin-top: 130px;
+    text-align: center;
+    color: black;
+}
