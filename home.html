@@ -11,92 +11,103 @@
     <meta name="theme-color" content="#000000">
     <meta name="google" content="notranslate">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a></li>
-            <li><a href="home.html">Нүүр</a></li>
-            <li><a href="movie.html">Кино</a></li>
-            <li><input type="text" class="search" placeholder="Хайх"></li>
-            <li><a href="quiz.html">Таавар</a></li>
-            <li><a href="user.html">Нэвтрэх</a></li>
-        </ul>
-    </nav>
-    <div>
-        <img src="./photos/Logo.png" alt="Slider Image">
-    </div>
+    <header>
+        <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="home.html">Нүүр</a></li>
+                <li><a href="movie.html">Кино</a></li>
+            </ul>
+            <ul id="rightnav">
+                <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
+                <li><a href="quiz.html">Таавар</a></li>
+                <li><a href="user.html">Нэвтрэх</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section>
-        <h2>Шинээр гарах</h2>
-        <p>Цааш үзэх</p>
-        <article>
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Movie 1">
-            <h4>37-р точка 1-р бүлэг</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Movie 2">
-            <h4>37-р точка 1-р бүлэг</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 3">
-            <h4>37-р точка 2020</h4></a>
-        </article>
+    <section class="section-new">
+        <h2>Шинээр гарах</h2>   
+        <p class="next">Цааш үзэх</p>
+        <div class="new-movies">
+            <article>
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Movie 1">
+                <h4>37-р точка 1-р бүлэг</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Movie 2">
+                <h4>37-р точка 2-р бүлэг</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 3">
+                <h4>37-р точка 2020</h4></a>
+            </article>
+        </div>
     </section>
     
-    <aside>
-        <h2>Шүүмж</h2>
-        <p>Цааш үзэх</p>
-        <Article>
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Review 1">
-            <h4>37-р точка 1-р бүлэг</h4></a>
-            <img src="./photos/posters/red_bur.jpg" alt="User 1">
-            <p>Red burger</p>
-            <p>10</p>
-            <p>Love it</p>
-        </Article>
-        <Article>
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Review 2">
-            <h4>37-р точка 2-р бүлэг</h4></a>
-            <img src="./photos/posters/red_bur.jpg" alt="User 2">
-            <p>Red burger</p>
-            <p>9</p>
-            <p>Good</p>
-        </Article>
+    <aside class="section-review">
+        <h2>Шүүмж</h2>   
+        <p class="next">Цааш үзэх</p>
+        <div class="review">
+            <article>
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Review 1"></a>
+                <h4>37-р точка 1-р бүлэг</h4>
+                <div>>
+                    <img class="profile" src="./photos/posters/red_bur.jpg" alt="User 1">
+                    <h3>Red burger</h3>
+                </div>
+                <h3>10⭐</h3>
+                <p>Love it</p>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Review 2"></a>
+                <h4>37-р точка 2-р бүлэг</h4>
+                <div>
+                    <img class="profile" src="./photos/posters/red_bur.jpg" alt="User 2">
+                    <h3>Red burger</h3>
+                </div>
+                <h3>9⭐</h3>
+                <p>Good</p>
+            </article>
+        </div>
     </aside>
-    
-    <section>
+
+    <section class="section-top">
         <h2>Онцлох кино</h2>
-        <p>Цааш үзэх</p>
-        <article>
-            <a href="info.html"><img src="./photos/posters/Mash_nuuts_2.jpg" alt="Movie 4">
-            <h4>Маш нууц 2 Байтаг Богд</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/minii_ah_ataman_poster_0.jpg" alt="Movie 5">
-            <h4>Миний ах атаман</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/negen_zunii_tsetseg_emotsi.jpg" alt="Movie 6">
-            <h4>Нэгэн зуны цэцэг</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/single4.jpg" alt="Movie 7">
-            <h4>Single Ladies 4</h4></a>
-        </article>
-        <article>
-            <a href="info.html"><img src="./photos/posters/suit.jpg" alt="Movie 8">
-            <h4>Сүйт бүсгүй</h4></a>
-        </article>
-        <article class="">
-            <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 9">
-            <h4>37-р точка 2020</h4></a>
-        </article>
+        <p class="next">Цааш үзэх</p>
+        <div class="top-movies">
+            <article>
+                <a href="info.html"><img src="./photos/posters/Mash_nuuts_2.jpg" alt="Movie 4">
+                <h4>Маш нууц 2 Байтаг Богд</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/minii_ah_ataman_poster_0.jpg" alt="Movie 5">
+                <h4>Миний ах атаман</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/negen_zunii_tsetseg_emotsi.jpg" alt="Movie 6">
+                <h4>Нэгэн зуны цэцэг</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/single4.jpg" alt="Movie 7">
+                <h4>Single Ladies 4</h4></a>
+            </article>
+            <article>
+                <a href="info.html"><img src="./photos/posters/suit.jpg" alt="Movie 8">
+                <h4>Сүйт бүсгүй</h4></a>
+            </article>
+            <article class="">
+                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 9">
+                <h4>37-р точка 2020</h4></a>
+            </article>
+        </div>
     </section>
-    
-    <section>
-        <h2>Мэдээ мэдээлэл</h2>
+
+    <h2>Мэдээ мэдээлэл</h2>
+    <section class="news">
         <article>
             <img src="./photos/posters/medee.jpg" alt="News 1">
             <h2>Гарчиг 1</h2>
