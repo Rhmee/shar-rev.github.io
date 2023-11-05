@@ -1,18 +1,48 @@
-.one_movies{
+/*Зурагт хэмжээг нь өгч тохируулж байна*/
+.one_movies a div img{
     position: relative;
+    border-radius: 15px;
     width: 175px;
     height: 275px;
-}
-.one_movies a img{
-    width: 100%;
-    height: 100%;
     object-fit: cover;
 }
+/*Hover хийх зурагт хэмжээг нь өгч тохируулж байна*/
+.imagee {
+    width: 175px; 
+    height: 275px;
+    overflow: hidden; 
+}
+/* Зургийн hover хийх үед шар хүрээ үүсгэх */
+.imagee:hover {
+    border-radius: 15px;
+    box-shadow: 0 0 20px #FFD747;
+}
+/*Зургийн hover хийх үед томруулна */
+.imagee:hover img {
+    transform: scale(1.1); /* Зургийг 1.1 удаа томруулах */
+}
+/*h4 доторх тохиргоог өгч байна*/
+.movies-content .one_movies a h4{
+    color: white;
+    text-align: center;
+}
+section{
+    margin: 0 auto;
+    padding: 5rem;
+}
+/*Нийт кинонуудыг мөр үүсгэж байна*/
 .movies-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 6rem));
+    gap: 3rem;
+    text-align: center;
+    justify-content: center;
 }
-.movies-content .one_movies:hover a img{
-    transform: scale(1.1);
-}
+
+
+
+
+
+
+
+
