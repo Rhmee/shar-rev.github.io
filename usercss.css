@@ -63,8 +63,8 @@ body {
   
   section.my-list article {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
   }
   
   section.my-list article h4 {
@@ -74,7 +74,18 @@ body {
   section.my-list article img {
     width: 100%;
     max-width: 200px;
+    border-radius: 10px;
   }
+
+  section.my-list article img:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #FFD747;
+  }
+  
+
+  
   
   /* Footer section */
   footer {
