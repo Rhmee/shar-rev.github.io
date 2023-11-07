@@ -58,6 +58,7 @@ section {
   border-radius: 15px;
   height: 30px;
 }
+
   
   /* Profile section */
   section {
@@ -107,6 +108,36 @@ section {
     border-radius: 15px;
     box-shadow: 0 0 20px #FFD747;
   }
+  
+/* Last Reviews */
+  .last-reviews {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .last-reviews h2 {
+    font-size: 18px;
+  }
+  
+  .last-reviews article {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .last-reviews article img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  
+  .last-reviews article h4 {
+    margin-top: 10px;
+  }
+  
   
 
   
