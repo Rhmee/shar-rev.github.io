@@ -18,6 +18,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    height: 10vh;
+
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    background: #FFD747;
   }
   
   nav ul {
@@ -31,7 +41,7 @@ body {
   }
   
   nav a {
-    color: white;
+    color: #111;
     text-decoration: none;
   }
   
@@ -83,6 +93,36 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 20px #FFD747;
   }
+  
+/* Last Reviews */
+  .last-reviews {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .last-reviews h2 {
+    font-size: 18px;
+  }
+  
+  .last-reviews article {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .last-reviews article img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  
+  .last-reviews article h4 {
+    margin-top: 10px;
+  }
+  
   
 
   
