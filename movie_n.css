@@ -1,6 +1,5 @@
 /*Зурагт хэмжээг нь өгч тохируулж байна*/
 .one_movies a div img{
-    position: relative;
     border-radius: 15px;
     width: 175px;
     height: 275px;
