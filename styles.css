@@ -86,8 +86,17 @@ article {
     border-radius: 10px;
 }
 
+.news {
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
 .news article {
-    align-items: start;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .section-new, .section-review {
@@ -95,3 +104,14 @@ article {
     flex-direction: column;
 }
 
+.news div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.news div time {
+    color: lightgray;
+    font: italic;
+    text-align: right;
+}
