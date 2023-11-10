@@ -31,7 +31,7 @@ h2 {
 }
 
 .section-new {
-    display: inline-table;
+    margin-right: 120px;
 }
 
 .section-new p {
@@ -91,5 +91,7 @@ article {
 }
 
 .section-new, .section-review {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
 }
+
