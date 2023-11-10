@@ -3,7 +3,6 @@ article img {
     width: 175px;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s;
 }
 
 article h4 {
@@ -15,11 +14,6 @@ article h4 {
 
 article a {
     text-decoration: none;
-}
-
-div.new-movies article a img:hover, div.top-movies article a img:hover {
-    transform: scale(1.08);
-    border: 3px solid yellow;
 }
 
 h2 {
@@ -38,10 +32,6 @@ h2 {
 
 .section-new {
     display: inline-table;
-}
-
-.section-new h2 {
-    display: inline;
 }
 
 .section-new p {
@@ -85,6 +75,7 @@ article {
     align-items: center;
     grid-template-columns: repeat(6, 1fr) ; 
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 
@@ -97,4 +88,8 @@ article {
 
 .news article {
     align-items: start;
+}
+
+.section-new, .section-review {
+    display: inline-block;
 }

@@ -1,12 +1,9 @@
 .section-review {
-    float:right;
-    justify-content: space-between;
-    display: inline-table;
+    display: flex;
 }
 
 .section-review p {
     color: #ffd474;
-    float: right;
     margin-top: 30px;
 }
 
@@ -25,7 +22,6 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid #ffd747;
 }
 
 .review article {
@@ -34,17 +30,8 @@
     grid-template-columns: auto auto;
 }
 
-.review article:last-child {
-    position: absolute;
-}
-
-.rev-info {
-    margin-left: 10px;
-    display: block;
-}
-
-.rev-star {
-    float: right;
-    margin:0;
+.rev {
+    display: inline-block;
+    text-align: justify;
 }
 
