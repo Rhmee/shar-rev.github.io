@@ -63,3 +63,8 @@ section {
     border-radius: 15px;
     height: 30px;
 }
+
+header li a:active {
+    background-color: black;
+    color: white; 
+}

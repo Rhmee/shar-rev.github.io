@@ -61,54 +61,6 @@ article {
     align-items: center;
 }
 
-.section-review {
-    display: flex;
-    float:right;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.section-review {
-    display: inline-table;
-}
-
-.section-review h2 {
-    display: inline;
-}
-
-.section-review p {
-    color: #ffd474;
-    float: right;
-    margin-top: 30px;
-}
-
-.section-review h2, p {
-    display: inline-block;
-}
-
-aside.section-review div.review article a img {
-    height: 175px;
-    width: 125px;
-    border-radius: 10px;
-    object-fit: cover;
-}  
-
-.profile {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #ffd747;
-}
-
-.review article {
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-.review article:last-child {
-    position: absolute;
-}
-
 .section-top{
     margin-top: 30px;
 }
