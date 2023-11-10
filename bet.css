@@ -3,6 +3,7 @@ body {
     background-color: rgba(17, 17, 17, 0.9);
     margin-left: 10%;
     margin-right: 10%;
+    color: white;
 }
 
 * {
@@ -63,3 +64,49 @@ section {
     border-radius: 15px;
     height: 30px;
 }
+
+footer {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: end;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #ccc;
+  }
+  
+  footer img {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+  }
+  
+  footer .copyright {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  
+  footer .social-media-icons {
+    float: left;
+  }
+  
+  footer .social-media-icons a {
+    margin-right: 20px;
+  }
+  
+  footer .phone-icon {
+    float: right;
+  }
+  
+  
