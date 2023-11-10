@@ -99,6 +99,8 @@ article {
     grid-template-columns: auto auto;
     width: 500px;
     justify-content: flex-start;
+    border: 2px solid lightgray;
+    border-radius: 10px;
 }
 
 .section-new, .section-review {
