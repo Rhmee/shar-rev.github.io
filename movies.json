@@ -1,6 +1,7 @@
 {
     "movies": [
       {
+        "poster": "",
         "ner": "",
         "genre": "",
         "release_date": "2010-07-16",
