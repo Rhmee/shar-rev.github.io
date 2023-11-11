@@ -1,4 +1,4 @@
-  section {
+  /* section {
     padding: 20px;
   }
   
@@ -26,10 +26,9 @@
     float: right;
     width: 33%;
   }
-  
+   */
   /* Footer */
-  
-  footer {
+  /* footer {
     background-color: #ccc;
     padding: 20px;
     text-align: center;
@@ -43,4 +42,65 @@
     width: 20px;
     height: 20px;
   }
-  
+   */
+
+.review {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.review div {
+  display: block;
+}
+
+.review img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.review article {
+  display: grid;
+  width: 600px;
+  grid-template-columns: auto auto;
+}
+
+.rate {
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+  display: inline-block;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.reviewing {
+  display: inline-block;  
+}
