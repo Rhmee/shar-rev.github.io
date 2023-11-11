@@ -1,13 +1,16 @@
 /*Section хэсгийг нийтэд нь тохируулж өгч байна*/
 section{
-    padding:8rem;
     text-align: center;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 section h2{
-    position: relative;
+    position: absolute;
+}
+section article{
+    padding-top: 3rem;
 }
 /*Section article хэсгийг тохируулж өгч байна. Карт үүсгэж түүнийхээ хэмжээг тохируулж байна*/
 section article a{
@@ -17,15 +20,32 @@ section article a{
     color: black;
     width: 175px;
     height: 275px;
-    float: left;
-    margin: 30px;
+    margin: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    position: relative;
 }
-
-section article a:hover {
+.medeelel{
+    position: absolute;
+    opacity: 0;
+    border-radius: 15px;
     background-color: #FFD747;
+    margin: 0;
+    padding: 0;
+    width: 175px;
+    height: 275px;
+    text-align: center;
+}
+.tailbar{
+    margin: 5%;
+    color: whitesmoke;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+}
+section article a:hover .medeelel{
+    opacity: 1;
 }
 
