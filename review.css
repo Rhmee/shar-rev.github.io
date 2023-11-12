@@ -35,3 +35,9 @@
     display: inline-flex;
     justify-content: space-between;
 }
+
+.rev-info{
+    margin-top: -50px;
+    text-align: start;
+    margin-left: 15px;
+}

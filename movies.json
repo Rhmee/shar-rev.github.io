@@ -1,7 +1,7 @@
 {
     "movies": [
       {
-        "poster": "",
+        "poster": ".photos/posters/bayn_bool.jpg",
         "ner": "Баян боол",
         "genre": "Инээдэм",
         "release_date": "2023-03-03",
@@ -13,7 +13,7 @@
         "jujigchid": ["О.Тэмүүжин", "Б.Батмэнд"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/byatshan_chutguriin_husel.png",
         "ner": "Бяцхан чөтгөрийн хүсэл",
         "genre": "Гэр бүл",
         "release_date": "2021-11-26",
@@ -25,7 +25,7 @@
         "jujigchid": ["О.Самданпүрэв", "н.Жамъяндорж /Жамка/", "Н.Ундрал"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/durlahad_2_second.jpg",
         "ner": "Дурлахад хоёр секунд",
         "genre": "Романтик",
         "release_date": "2022-06-12",
@@ -37,7 +37,7 @@
         "jujigchid": ["С.Номин эрдэнэ", "Ү.Ундрал"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/etgeed.jpg",
         "ner": "Этгээд",
         "genre": "Түгшүүрт",
         "release_date": "2022-02-04",
@@ -49,7 +49,7 @@
         "jujigchid": ["Г.Эрхэмбаяр", "Ч.Сэлэнгэ"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/gegee.jpg",
         "ner": "Гэгээ",
         "genre": "Драма",
         "release_date": "2023-07-25",
@@ -61,7 +61,7 @@
         "jujigchid": ["С.Номин эрдэнэ", "Ш.Даваасамба"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/gergii.jpg",
         "ner": "Гэргий",
         "genre": "Драма",
         "release_date": "2020-06-20",
@@ -72,7 +72,7 @@
         "producer": "",
         "jujigchid": ["Ц.Цэрэнболд /МУСТА/", "Н.Баярмаа /МУСТА/"]
       },{
-        "poster": "",
+        "poster": ".photos/posters/hermel_jujigchid.jpg",
         "ner": "Хэрмэл жүжигчид",
         "genre": "Инээдэм",
         "release_date": "2023-01-01",
@@ -83,7 +83,7 @@
         "producer": "",
         "jujigchid": ["С. Батзориг", "Г. Лхагвацэрэн", "У. Цогтбаяр", "Н. Баясаа", "Р. Сүхболд"]
       },{
-        "poster": "",
+        "poster": ".photos/posters/Mash_nuuts_2.jpg",
         "ner": "Маш Нууц-2: Байтаг Богд",
         "genre": "Түүхэн",
         "release_date": "2018-03-01",
@@ -95,7 +95,7 @@
         "jujigchid": ["Ж. Алтаншагай ", "Б. Барслхагва", "Э. Одбаяр ", "Б. Батсайхан ", "Э. Алдар ", "Г. Эрхэмбаяр "]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/minii_ah_ataman_poster_0.jpg",
         "ner": "Миний ах атаман",
         "genre": "Адал явдалт",
         "release_date": "2014-09-12",
@@ -107,7 +107,7 @@
         "jujigchid": ["Ж. Алтаншагай ", "М. Баярбат", "Ц. Төмөрхуяг"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/mongol.jpg",
         "ner": "Монгол",
         "genre": "Адал явдалт",
         "release_date": "2023-04-28",
@@ -118,7 +118,7 @@
         "producer": "",
         "jujigchid": ["Б. Амарсайхан", "Т. Солонго-Уянга", "Ч. Найдандорж"]
       },{
-        "poster": "",
+        "poster": ".photos/posters/noyon_emegtei.jpg",
         "ner": "Ноён эмэгтэй",
         "genre": "Драма",
         "release_date": "2022-08-26",
@@ -129,7 +129,7 @@
         "producer": "Г.Цоггэрэл",
         "jujigchid": ["У.Уранчимэг", "О.Дөлгөөн", "Ш.Доржсүрэн"]
       },{
-        "poster": "",
+        "poster": ".photos/posters/ogtloltsol.jpg",
         "ner": "Огтлолцол",
         "genre": "Түгшүүрт",
         "release_date": "2019-09-13",
@@ -141,7 +141,7 @@
         "jujigchid": ["Rokit Bay, Т.Билэгжаргал, Г.Тэнүүн, Ц.Цэрэнболд, Г.Эрдэнэбилэг, Д.Лхагва, Э.Энэрэл, Н.Мөнхмарал, Д.Батцэцэг, AM-C, Ч.Очгэрэл, Б.Батмаа"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/single4.jpg",
         "ner": "Single Ladies 4",
         "genre": "Инээдэм",
         "release_date": "2020-10-01",
@@ -153,7 +153,7 @@
         "jujigchid": ["Undarmaa GonchigTuya TukanaErdenezaan Puntsag"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/suit.jpg",
         "ner": "Сүйт бүсгүй",
         "genre": "Инээдэм",
         "release_date": "2010-07-16",
@@ -165,7 +165,7 @@
         "jujigchid": ["Г. Ундармаа", "П. Эрдэнэзаан", "А. Туяа", "О. Дөлгөөн", "Б. Батмаа"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/sureg.jpg",
         "ner": "Сүрэг",
         "genre": "Адал явдалт",
         "release_date": "2010-07-16",
@@ -177,7 +177,7 @@
         "jujigchid": ["П.Цэрэндагва", "Д.Мэндбаяр", "МУГЖ С.Болд-Эрдэнэ", "Т.Бархүү", "Ч.Болд", "Т.Энэрэл", "Д.Номин-Эрдэнэ"]
       },
       {
-        "poster": "",
+        "poster": ".photos/posters/zura-2.jpg",
         "ner": "Зура 2",
         "genre": "Адал явдалт",
         "release_date": "2010-07-16",
