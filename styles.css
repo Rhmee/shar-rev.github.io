@@ -99,8 +99,9 @@ article {
     grid-template-columns: auto auto;
     width: 500px;
     justify-content: flex-start;
-    border: 2px solid lightgray;
+    background-color:  #555555;
     border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .section-new, .section-review {
@@ -109,13 +110,14 @@ article {
 }
 
 .news div {
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     margin-top: 0;
 }
 
-.news div time {
+.news article div time {
     color: lightgray;
     font: italic;
-    text-align: right;
+    margin-left: auto;
 }

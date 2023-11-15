@@ -70,30 +70,28 @@ header li a:active {
     color: white; 
 }
 
+/* Style the footer */
+
 footer {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  footer a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    color: #ccc;
-  }
-  
-  footer img {
-    width: 20px;
-    height: 20px;
-    margin: 0 10px;
-  }
-  
-  footer .copyright {
-    font-size: 12px;
-    margin-top: 20px;
-  }
+  background-color: #000000;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+}
+
+/* Style the footer links */
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
   
   footer .social-media-icons {
     float: left;

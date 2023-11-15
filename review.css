@@ -19,6 +19,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    align-items: start;
+    
 }
 
 .review article {
@@ -27,11 +29,26 @@
     grid-template-columns: auto auto;
 }
 
-.rev {
-    display: inline-block;
-}
-
 .next {
     display: inline-flex;
     justify-content: space-between;
+}
+
+.rev-info{
+    margin-top: -10px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TT{
+    text-align: start;
+}
+
+.rev{
+    display: inline-block;
 }
