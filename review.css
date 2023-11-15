@@ -19,6 +19,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    align-items: start;
+    
 }
 
 .review article {
@@ -34,8 +36,8 @@
 
 .rev-info{
     margin-top: -10px;
-    text-align: start;
     margin-left: 15px;
+    text-align: center;
 }
 
 .RR{
@@ -45,4 +47,8 @@
 
 .TT{
     text-align: start;
+}
+
+.rev{
+    display: inline-block;
 }
