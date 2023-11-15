@@ -27,11 +27,6 @@
     grid-template-columns: auto auto;
 }
 
-.rev {
-    background-color: aliceblue;
-    
-}
-
 .next {
     display: inline-flex;
     justify-content: space-between;
@@ -41,4 +36,13 @@
     margin-top: -50px;
     text-align: start;
     margin-left: 15px;
+}
+
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TT{
+    text-align: start;
 }
