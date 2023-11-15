@@ -1,3 +1,42 @@
+/*Сонголтын хэсэг*/
+.filter {
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.filter ul {
+    list-style-type: none;
+}
+
+.filter ul li {
+    display: inline-flex;
+    width: 8rem;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+select {
+    background-color: #E6E6E6;
+    width: 100%;
+    text-align: center;
+}
+#genre{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#A_Z{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button {
+    background-color: #E6E6E6;
+    width: 100%;
+}
+
+/*Кино хэсэг*/
 /*Зурагт хэмжээг нь өгч тохируулж байна*/
 .one_movies a div img{
     border-radius: 15px;
@@ -14,20 +53,27 @@
 /* Зургийн hover хийх үед шар хүрээ үүсгэх */
 .imagee:hover {
     border-radius: 15px;
-    box-shadow: 0 0 20px #FFD747;
+    box-shadow: 0 0 20px #ffd474;
 }
 /*Зургийн hover хийх үед томруулна */
 .imagee:hover img {
     transform: scale(1.1); /* Зургийг 1.1 удаа томруулах */
 }
+.imagee:hover .unelgee {
+    opacity: 1;
+  }
 /*h4 доторх тохиргоог өгч байна*/
-.movies-content .one_movies a h4{
+.movies-content .one_movies a{
     color: white;
+    text-decoration: none;
     text-align: center;
 }
 section{
     margin: 0 auto;
-    padding: 5rem;
+    padding: 2rem;
+}
+.one_movies{
+    width: 175px; 
 }
 /*Нийт кинонуудыг мөр үүсгэж байна*/
 .movies-content{
@@ -38,44 +84,26 @@ section{
     justify-content: center;
 }
 
-.filter {
-    align-items: center;
-    text-align: center;
+/*Zurh*/
+a{
+    position: relative;
 }
-
-.filter ul {
-    list-style-type: none;
-}
-
-.filter ul li {
-    display: inline-flex;
-    width: 10%;
-    height: 50px;
-    background-color: #e6e6e6;
+.unelgee{
+    position: absolute; 
+    top: 225px;
+    background: rgba(0, 0, 0, 0.5); 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #f1f1f1; 
+    width: 175px;
+    opacity:0;
+    color: white;
+    font-size: 1rem;
     margin: 0;
-    padding: 0;
-}
-
-select {
-    width: 100%;
-}
-
-.filter ul:first-child {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.filter ul:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-button {
-    width: 100%;
-}
-
-
-
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
 
 
 

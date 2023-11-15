@@ -1,4 +1,18 @@
-  section {
+ #Poster_zurag{
+  height: 625px;
+  width: 450px;
+  border-radius: 15px;
+  padding: 0;
+ }
+/*.Bugd{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr ;
+  grid-gap: 1rem;
+}*/
+*{
+  box-sizing: border-box;
+}
+ section {
     padding: 20px;
   }
   
@@ -9,7 +23,7 @@
   
   section article {
     float: left;
-    width: 33%;
+    width: 40%;
     margin-bottom: 20px;
   }
   
@@ -24,11 +38,12 @@
   
   section aside {
     float: right;
-    width: 33%;
+    width: 20%;
+    padding: 1rem;
   }
-  
+
   /* Footer */
-  
+  /*
   footer {
     background-color: #ccc;
     padding: 20px;
@@ -42,5 +57,5 @@
   footer img {
     width: 20px;
     height: 20px;
-  }
+  }*/
   
