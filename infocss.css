@@ -1,5 +1,4 @@
-
- #Poster_zurag{
+#Poster_zurag{
   height: 625px;
   width: 450px;
   border-radius: 15px;
@@ -13,8 +12,16 @@
 *{
   box-sizing: border-box;
 }
-
- section {
+.heseg{
+  padding: 0.5rem;
+}
+.heseg h2{
+  margin-top: 0;
+}
+.heseg p{
+  text-align: justify;
+}
+section {
     padding: 20px;
   }
   
@@ -44,32 +51,7 @@
     padding: 1rem;
   }
 
-
-  /* Footer */
-  /*
-  footer {
-=======
-   */
-  /* Footer */
-  /* footer {
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer a {
-    margin: 0 10px;
-  }
-  
-  footer img {
-    width: 20px;
-    height: 20px;
-
-  }*/
-  
-   */
-
-.review {
+ .review {
   display: flex;
   grid-template-columns: repeat(2, 1fr);
 }
