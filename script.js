@@ -11,7 +11,7 @@ fetch('movies.json')  // Adjust the path based on your file structure
         return response.json();
     })
     .then(data => {
-        const movie = data.movies[movieId - 1]; // Adjusting for array index
+        const movie = data.movies[movieId]; // Adjusting for array index
         const movieDetailsElement = document.getElementById('movie-details');
         movieDetailsElement.innerHTML = `
             <li>${movie.ner}</li>
