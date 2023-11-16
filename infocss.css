@@ -1,5 +1,4 @@
-
- #Poster_zurag{
+#Poster_zurag{
   height: 625px;
   width: 450px;
   border-radius: 15px;
@@ -13,8 +12,16 @@
 *{
   box-sizing: border-box;
 }
-
- section {
+.heseg{
+  padding: 0.5rem;
+}
+.heseg h2{
+  margin-top: 0;
+}
+.heseg p{
+  text-align: justify;
+}
+section {
     padding: 20px;
   }
   
@@ -48,28 +55,6 @@
   /* Footer */
   /*
   footer {
-=======
-   */
-  /* Footer */
-  /* footer {
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer a {
-    margin: 0 10px;
-  }
-  
-  footer img {
-    width: 20px;
-    height: 20px;
-
-  }*/
-  
-   */
-
-/*.review {
   display: flex;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -99,7 +84,7 @@
   top:-9999px;
 }
 .rate:not(:checked) > label {
-  float:right;
+  float: right;
   width:1em;
   overflow:hidden;
   white-space:nowrap;
@@ -126,27 +111,15 @@
   color: #c59b08;
 }
 
-.reviewing {
+.review {
   display: inline-block;  
 }
-
 
 .prof{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   align-items: start;
-}
-
-.last-reviews .one_movies {
-  display: flex;
-  align-items: start;
-  gap: 16px;
-}
-
-.last-reviews .one_movies h4 {
-  align-items: center;
-  text-align: center;
 }
 
 .RR{
