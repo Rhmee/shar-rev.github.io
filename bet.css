@@ -66,43 +66,30 @@ section {
 }
 
 header li a:active {
-    background-color: black;
+    background-color: rgb(84, 75, 75);
     color: white; 
 }
 
-/* Style the footer */
-
 footer {
   background-color: #000000;
+  color: #fff;
   padding: 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-/* Style the footer links */
-
 footer a {
-  color: inherit;
   text-decoration: none;
+  color: #fff;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer img {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
 }
 
-  
-  footer .social-media-icons {
-    float: left;
-  }
-  
-  footer .social-media-icons a {
-    margin-right: 20px;
-  }
-  
-  footer .phone-icon {
-    float: right;
-  }
-  
-  
+
+
