@@ -13,10 +13,19 @@
   box-sizing: border-box;
 }
 .heseg{
+  position: relative;
   padding: 0.5rem;
 }
 .heseg h2{
   margin-top: 0;
+}
+.heseg .unelgee{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  margin: 0;
+  padding: 0.5rem;
 }
 .heseg p{
   text-align: justify;
@@ -32,7 +41,7 @@ section {
   
   section article {
     float: left;
-    width: 40%;
+    width: 37%;
     margin-bottom: 20px;
   }
   
@@ -47,7 +56,7 @@ section {
   
   section aside {
     float: right;
-    width: 20%;
+    width: 23%;
     padding: 1rem;
   }
 
