@@ -51,7 +51,32 @@ section {
     padding: 1rem;
   }
 
- .review {
+
+  /* Footer */
+  /*
+  footer {
+=======
+   */
+  /* Footer */
+  /* footer {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    margin: 0 10px;
+  }
+  
+  footer img {
+    width: 20px;
+    height: 20px;
+
+  }*/
+  
+   */
+
+.review {
   display: flex;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -70,7 +95,7 @@ section {
   display: grid;
   width: 600px;
   grid-template-columns: auto auto;
-}
+}*/
 
 .rate {
   height: 46px;
@@ -111,3 +136,32 @@ section {
 .reviewing {
   display: inline-block;  
 }
+
+
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.last-reviews .one_movies {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+}
+
+.last-reviews .one_movies h4 {
+  align-items: center;
+  text-align: center;
+}
+
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TT{
+    text-align: start;
+}
+
