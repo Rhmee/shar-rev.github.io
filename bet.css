@@ -6,6 +6,11 @@ body {
     color: white;
 }
 
+.no-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 * {
     font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Inter', sans-serif;
@@ -71,14 +76,18 @@ header li a:active {
     color: white; 
 }
 
+
 footer {
-  background-color: #000000;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer a {
@@ -91,6 +100,3 @@ footer img {
   height: auto;
   margin-right: 5px;
 }
-
-
-
