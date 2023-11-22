@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Movie Review site's Movie information page.">
+    <meta name="description" content="Movie Review site's MOvie information page.">
     <meta name="keywords" content="Poster, Information, trailer, photos, reviews, top reviews, Rating section">
     <meta name="author" content="BET">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="bet.css">
     <link rel="stylesheet" type="text/css" href="infocss.css">
+    <link rel="stylesheet" href="rating.css">
 
     <title>Info</title>
 </head>
@@ -30,13 +31,27 @@
             </ul>
         </nav>
     </header>
-    <section id="movie-details"> 
-        <article>
-            <img src="./photos/posters/mongol.jpg" alt="">
+    
+    <section class="bugd" id="movie-details"> 
+        <article class="heseg">
+            <img id="Poster_zurag" src="${poster}" alt="${ner} Poster">
         </article>
-        <article>
-            <ul>
-            </ul>
+        <article class="heseg">
+            <h2>${ners}</h2>
+            <p class="unelgee">
+                <span>127K <i class="fa fa-eye" aria-hidden="true"></i></span>
+                <span style="color: #ffd747;">&#124;</span>
+                <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                <span style="color: #ffd747;">&#124;</span>
+                <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+            </p>
+            <p>Tөрөл: <span>${genre}</span></p>
+            <p>Үргэжлэх хугацаа: <span>${urgeljleh_hugatsaa}</span></p>
+            <p>Насны ангилал: <span>${nasnii_angilal}</span></p>
+            <p>${tovch_aguulga}</p>
+            <p>Найруулагч: <span class="medeelel">${nairuulagch}</span></p>
+            <p>Продюсер <span>${producer}</span></p>
+            <p>Гол дүр: <span>${jujigchid.join(', ')}</span></p>
         </article>
         <aside style="background-color: rgb(236, 214, 71)" class="heseg">
             <input type="text" class="search" placeholder="Хайх">
@@ -114,37 +129,37 @@
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
+            <h3 class="TT">10⭐</h3>
             <p class="RR">reviewssssss</p>
         </article>
     </section>
