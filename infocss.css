@@ -4,6 +4,7 @@
   width: 450px;
   border-radius: 15px;
   padding: 0;
+  object-fit: cover;
  }
 /*.Bugd{
   display: grid;
