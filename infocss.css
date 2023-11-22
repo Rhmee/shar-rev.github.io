@@ -68,28 +68,6 @@
   /* Footer */
   /*
   footer {
-=======
-   */
-  /* Footer */
-  /* footer {
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer a {
-    margin: 0 10px;
-  }
-  
-  footer img {
-    width: 20px;
-    height: 20px;
-
-  }*/
-  
-   */
-
-.review {
   display: flex;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -108,8 +86,61 @@
   display: grid;
   width: 600px;
   grid-template-columns: auto auto;
+}*/
+
+.rate {
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+  display: inline-block;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
 }
 
-.reviewing {
+.review {
   display: inline-block;  
 }
+
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TT{
+    text-align: start;
+}
+

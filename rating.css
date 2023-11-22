@@ -3,6 +3,7 @@
 }
 
 .rating-container {
+	margin-left: 50px;
     width: 200px;
 	display: flex;
 	justify-content: center;
