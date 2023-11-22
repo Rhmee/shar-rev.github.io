@@ -1,23 +1,39 @@
-
- #Poster_zurag{
+#Poster_zurag{
   height: 625px;
-  width: 450px;
+  width: 100%;
   border-radius: 15px;
   padding: 0;
   object-fit: cover;
  }
-/*.Bugd{
+.bugd{
   display: grid;
   grid-template-columns: 2fr 2fr 1fr ;
-  grid-gap: 1rem;
-}*/
+  grid-gap: 0;
+}
 *{
   box-sizing: border-box;
 }
 
- section {
-    padding: 20px;
-  }
+.heseg{
+  position: relative;
+  padding: 0.5rem;
+}
+.heseg h2{
+  margin-top: 0;
+}
+.heseg .unelgee{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.heseg p{
+  text-align: justify;
+}
+
   
   section h2 {
     font-size: 30px;
@@ -26,7 +42,7 @@
   /*
   section article {
     float: left;
-    width: 40%;
+    width: 37%;
     margin-bottom: 20px;
   }
   */
@@ -42,6 +58,37 @@
 .zaa{
   display: flex;
 }
+  /*
+  section aside {
+    float: right;
+    width: 23%;
+    padding: 1rem;
+  }
+*/
+
+  /* Footer */
+  /*
+  footer {
+=======
+   */
+  /* Footer */
+  /* footer {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    margin: 0 10px;
+  }
+  
+  footer img {
+    width: 20px;
+    height: 20px;
+
+  }*/
+  
+   */
 
 .review {
   display: flex;
@@ -62,42 +109,6 @@
   display: grid;
   width: 600px;
   grid-template-columns: auto auto;
-}
-
-.rate {
-  height: 46px;
-  padding: 0 10px;
-}
-.rate:not(:checked) > input {
-  position:absolute;
-  top:-9999px;
-}
-.rate:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:30px;
-  color:#ccc;
-  display: inline-block;
-}
-.rate:not(:checked) > label:before {
-  content: '★ ';
-}
-.rate > input:checked ~ label {
-  color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
 }
 
 .reviewing {
