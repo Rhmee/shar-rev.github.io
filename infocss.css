@@ -54,9 +54,7 @@
     margin-top: 10px;
   }
 
-.zaa{
-  display: flex;
-}
+
   /*
   section aside {
     float: right;
@@ -125,7 +123,16 @@
 }
 
 .review {
-  display: inline-block;  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 16px; 
+}
+
+.review > article {
+  display: flex;
+  gap: 16px;
 }
 
 .prof{
@@ -133,6 +140,7 @@
   height: 120px;
   border-radius: 50%;
   align-items: start;
+  display: flex;
 }
 
 .RR{
@@ -142,5 +150,54 @@
 
 .TT{
     text-align: start;
+}
+
+.zaa {
+  display: flex;
+  gap: 16px;
+}
+
+.zaa > div {
+  margin-top: -24px;
+}
+
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.RRR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TTT{
+    text-align: start;
+}
+
+.proff{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.search{
+  align-items: start;
+  padding: 8px;   
+}
+
+.hesegbish > section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.hesegbish {
+  margin-left: 128px;
 }
 
