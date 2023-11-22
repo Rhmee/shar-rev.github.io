@@ -80,7 +80,7 @@
       },
       {
         "id": "7",
-        "poster": ".photos/posters/hermel_jujigchid.jpg",
+        "poster": "./photos/posters/hermel_jujigchid.jpg",
         "ner": "Хэрмэл жүжигчид",
         "genre": "Инээдэм",
         "release_date": "2023-01-01",
@@ -93,7 +93,7 @@
       },
       {
         "id": "8",
-        "poster": ".photos/posters/Mash_nuuts_2.jpg",
+        "poster": "./photos/posters/Mash_nuuts_2.jpg",
         "ner": "Маш Нууц-2: Байтаг Богд",
         "genre": "Түүхэн",
         "release_date": "2018-03-01",
@@ -106,7 +106,7 @@
       },
       {
         "id": "9",
-        "poster": ".photos/posters/minii_ah_ataman_poster_0.jpg",
+        "poster": "./photos/posters/minii_ah_ataman_poster_0.jpg",
         "ner": "Миний ах атаман",
         "genre": "Адал явдалт",
         "release_date": "2014-09-12",
@@ -119,7 +119,7 @@
       },
       {
         "id": "10",
-        "poster": ".photos/posters/mongol.jpg",
+        "poster": "./photos/posters/mongol.jpg",
         "ner": "Монгол",
         "genre": "Адал явдалт",
         "release_date": "2023-04-28",
@@ -132,7 +132,7 @@
       },
       {
         "id": "11",
-        "poster": ".photos/posters/noyon_emegtei.jpg",
+        "poster": "./photos/posters/noyon_emegtei.jpg",
         "ner": "Ноён эмэгтэй",
         "genre": "Драма",
         "release_date": "2022-08-26",
@@ -145,7 +145,7 @@
       },
       {
         "id": "12",
-        "poster": ".photos/posters/ogtloltsol.jpg",
+        "poster": "./photos/posters/ogtloltsol.jpg",
         "ner": "Огтлолцол",
         "genre": "Түгшүүрт",
         "release_date": "2019-09-13",
@@ -158,7 +158,7 @@
       },
       {
         "id": "13",
-        "poster": ".photos/posters/single4.jpg",
+        "poster": "./photos/posters/single4.jpg",
         "ner": "Single Ladies 4",
         "genre": "Инээдэм",
         "release_date": "2020-10-01",
@@ -171,7 +171,7 @@
       },
       {
         "id": "14",
-        "poster": ".photos/posters/suit.jpg",
+        "poster": "./photos/posters/suit.jpg",
         "ner": "Сүйт бүсгүй",
         "genre": "Инээдэм",
         "release_date": "2010-07-16",
@@ -184,7 +184,7 @@
       },
       {
         "id": "15",
-        "poster": ".photos/posters/sureg.jpg",
+        "poster": "./photos/posters/sureg.jpg",
         "ner": "Сүрэг",
         "genre": "Адал явдалт",
         "release_date": "2010-07-16",
@@ -197,7 +197,7 @@
       },
       {
         "id": "16",
-        "poster": ".photos/posters/zura-2.jpg",
+        "poster": "./photos/posters/zura-2.jpg",
         "ner": "Зура 2",
         "genre": "Адал явдалт",
         "release_date": "2010-07-16",
