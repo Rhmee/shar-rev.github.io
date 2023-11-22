@@ -1,13 +1,14 @@
 /*Section хэсгийг нийтэд нь тохируулж өгч байна*/
 section{
+    padding:8rem;
     text-align: center;
     color: white;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 section h2{
     position: absolute;
+    padding-top: 1rem;
 }
 section article{
     padding-top: 3rem;
