@@ -1,8 +1,8 @@
 let slideIndex = 0;
 showSlides();
 
-function plusSlides() {
-    showSlides(slideIndex += n);
+function plusSlides(n) {
+    showSlides();
 }
 
 document.querySelector('.prev').addEventListener('click', function () {
