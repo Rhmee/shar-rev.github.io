@@ -1,23 +1,38 @@
-
- #Poster_zurag{
+#Poster_zurag{
   height: 625px;
-  width: 450px;
+  width: 100%;
   border-radius: 15px;
   padding: 0;
-  object-fit: cover;
  }
-/*.Bugd{
+.bugd{
   display: grid;
   grid-template-columns: 2fr 2fr 1fr ;
-  grid-gap: 1rem;
-}*/
+  grid-gap: 0;
+}
 *{
   box-sizing: border-box;
 }
 
- section {
-    padding: 20px;
-  }
+.heseg{
+  position: relative;
+  padding: 0.5rem;
+}
+.heseg h2{
+  margin-top: 0;
+}
+.heseg .unelgee{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.heseg p{
+  text-align: justify;
+}
+
   
   section h2 {
     font-size: 30px;
@@ -26,7 +41,7 @@
   /*
   section article {
     float: left;
-    width: 40%;
+    width: 37%;
     margin-bottom: 20px;
   }
   */
@@ -39,11 +54,18 @@
     margin-top: 10px;
   }
 
-.zaa{
-  display: flex;
-}
 
-.review {
+  /*
+  section aside {
+    float: right;
+    width: 23%;
+    padding: 1rem;
+  }
+*/
+
+  /* Footer */
+  /*
+  footer {
   display: flex;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -62,7 +84,7 @@
   display: grid;
   width: 600px;
   grid-template-columns: auto auto;
-}
+}*/
 
 .rate {
   height: 46px;
@@ -73,7 +95,7 @@
   top:-9999px;
 }
 .rate:not(:checked) > label {
-  float:right;
+  float: right;
   width:1em;
   overflow:hidden;
   white-space:nowrap;
@@ -100,6 +122,81 @@
   color: #c59b08;
 }
 
-.reviewing {
-  display: inline-block;  
+.review {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 16px; 
+}
+
+.review > article {
+  display: flex;
+  gap: 16px;
+}
+
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+  display: flex;
+}
+
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TT{
+    text-align: start;
+}
+
+.zaa {
+  display: flex;
+  gap: 16px;
+}
+
+.zaa > div {
+  margin-top: -24px;
+}
+
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.RRR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+
+.TTT{
+    text-align: start;
+}
+
+.proff{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  align-items: start;
+}
+
+.search{
+  align-items: start;
+  padding: 8px;   
+}
+
+.hesegbish > section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.hesegbish {
+  margin-left: 128px;
 }
