@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="movie_n.css">
     <link rel="stylesheet" type="text/css" href="bet.css">
-    <script src="script.js"></script>
 
 </head>
 <body>
@@ -32,44 +31,41 @@
         </nav>
     </header>
 
-    <section>
+    <section class="filter">
         <ul>
             <li>
-                <select name="genre" id="">
-                    <option value="Жанраар">Comedy</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="genre" id="genre">
+                    <option value="Жанраар">Жанраар</option>
+                    <option value="">Инээдэм</option>
+                    <option value="">Адал явдал</option>
+                    <option value="">Романтик</option>
+                    <option value="">Уран зөгнөлт</option>
                 </select>
             </li>
             <li>
                 <select name="rating" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Үнэлгээгээр</option>
+                    <option value="">9</option>
+                    <option value="">8</option>
+                    <option value="">7</option>
+                    <option value="">6</option>
+                    <option value="">5-c доош</option>
                 </select>
             </li>
-            <li>Алдартайгаар</li>
+            <li><button>Алдартайгаар</button></li>
             <li>
                 <select name="year" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Оноор</option>
+                    <option value="">2020</option>
+                    <option value="">2010</option>
+                    <option value="">2000</option>
+                    <option value="">1990</option>
+                    <option value="">1980</option>
                 </select>
             </li>
-            <li>А-Я</li>
+            <li><button id="A_Z">А-Я</button></li>
         </ul>
-    </section> 
+    </section>
 
     <section class="movies-content" id="movies">
         <article class="one_movies">
@@ -99,7 +95,7 @@
             </a>
         </article>
         <article class="one_movies">
-            <a href="info.html">
+            <a href="info.html?id=3">
                 <div class="imagee">
                     <img src="./photos/posters/durlahad_2_second.jpg" alt="Дурлахад 2 секунд">
                     <p class="unelgee">
