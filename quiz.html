@@ -16,10 +16,10 @@
     <title>Quiz</title>
 </head>
 <body>
-    <header>
+    <header class="active">
         <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
         <nav>
-            <ul>
+            <ul class="main-menu">
                 <li><a href="home.html">Нүүр</a></li>
                 <li><a href="movie.html">Кино</a></li>
             </ul>
@@ -28,8 +28,19 @@
                 <li><a href="quiz.html">Таавар</a></li>
                 <li><a href="user.html">Нэвтрэх</a></li>
             </ul>
-        </nav>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
     </header>
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
     <section class="quizz">
         <h2>Таавар таахад бэлэн үү?</h2>
         <article>

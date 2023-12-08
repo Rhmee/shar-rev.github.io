@@ -16,20 +16,31 @@
     
 </head>
 <body>
-    <header>
-        <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="home.html">Нүүр</a></li>
-                <li><a href="movie.html">Кино</a></li>
-            </ul>
-            <ul id="rightnav">
-                <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
-                <li><a href="quiz.html">Таавар</a></li>
-                <li><a href="user.html">Нэвтрэх</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="active">
+    <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="home.html">Нүүр</a></li>
+            <li><a href="movie.html">Кино</a></li>
+        </ul>
+        <ul class="right">
+            <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
+            <li><a href="quiz.html">Таавар</a></li>
+            <li><a href="user.html">Нэвтрэх</a></li>
+        </ul>
+        <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+    </nav>   
+</header>
+<script>
+    let menu = document.querySelector('.menu');
+    let mainMenu = document.querySelector('.main-menu');
+    let rightMenu = document.querySelector('.right');
+
+    menu.onclick = function () {
+        mainMenu.classList.toggle('active');
+        rightMenu.classList.toggle('active');
+    };
+</script>
     <section>
         <div class="round-frame">
             <img class="image-frame" src="./photos/posters/narrrr.png" alt="Profile">

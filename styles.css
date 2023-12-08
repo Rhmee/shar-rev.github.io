@@ -1,8 +1,9 @@
 .slide {
-    width: 100%;
+    max-width: 100%;
     position: relative;
     margin: auto;
     overflow: hidden;
+    padding: 0 !important;
 }
 
 .slidepic {
@@ -39,30 +40,64 @@ section.slide a.prev, .slide a.next {
     right: 10px;
 }
 
-article img {
-    height: 275px;
-    width: 175px;
-    object-fit: cover;
-    border-radius: 10px;
+/*Зурагт хэмжээг нь өгч тохируулж байна*/
+.one_movies a div img{
+    border-radius: 15px;
 }
-
-article h4 {
-    text-decoration: none; 
+/*Hover хийх зурагт хэмжээг нь өгч тохируулж байна*/
+div article a div{
+    overflow: hidden; 
+}
+/* Зургийн hover хийх үед шар хүрээ үүсгэх */
+div article a div:hover {
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ffd474;
+}
+/*Зургийн hover хийх үед томруулна */
+div article a div:hover img {
+    transform: scale(1.1); /* Зургийг 1.1 удаа томруулах */
+}
+div article a div:hover .unelgee {
+    opacity: 1;
+  }
+/*h4 доторх тохиргоог өгч байна*/
+div .one_movies a{
     color: white;
-    margin: 10px 0;
-    text-align: center;
-}
-
-article a {
     text-decoration: none;
+    text-align: center;
+}   
+div .one_movies a{
+    position: relative;
 }
-
-h2 {
+.imagee {
+    position: relative;
+    overflow: hidden;
+}
+.unelgee{
+    position: absolute; 
+    bottom: 0px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #f1f1f1; 
+    width: 100%;
+    opacity:0;
     color: white;
-    text-transform: uppercase;
-    font-size: 24px;
+    font-size: 1rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+/**/
+section{
+    margin: 0 auto;
+    padding: 2rem;
 }
-
+.one_movies{
+    width: 175px; 
+}
 .new-movies {
     display: flex; 
     grid-template-columns: repeat(3, 1fr) ; 
@@ -92,12 +127,13 @@ article {
     align-items: center;
 }
 
-.section-top{
+.section-top {
+    margin-right: 120px;
     margin-top: 30px;
 }
 
-.section-top h2 {
-    display: inline;
+.section-top h2, p {
+    display: inline-block;
 }
 
 .section-top p {
@@ -106,13 +142,8 @@ article {
     margin-top: 30px;
 }
 
-.section-top h2, p {
-    display: inline-block;
-}
-
 .top-movies {
     display: flex; 
-    justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(6, 1fr) ; 
     gap: 30px;
@@ -138,7 +169,7 @@ article {
 .news article {
     display: grid;
     grid-template-columns: auto auto;
-    width: 500px;
+    width: 480px;
     justify-content: flex-start;
     background-color:  #555555;
     border-radius: 10px;
@@ -149,7 +180,15 @@ article {
     display: inline-flex;
     flex-direction: column;
 }
-
+.news div h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+} 
+.news div p{
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+} 
 .news div {
     margin-left: 10px;
     display: flex;
@@ -161,4 +200,80 @@ article {
     color: lightgray;
     font: italic;
     margin-left: auto;
+}
+.one_movies a div img{
+    border-radius: 15px;
+    max-width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+@media(max-width: 500px){
+    .slide{
+        margin-top: 6rem;
+        text-align: center;
+        justify-content: center;
+    } 
+    .slide img {
+        max-width: 100%;
+         height: 200px;
+        aspect-ratio: 3/1;
+        object-fit: cover;
+    }
+    section.slide a.prev, section.slide a.next {
+        top: 35%;
+        width: auto;
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 1rem;
+
+    }
+    .section-new p{
+        margin-top: 10px;
+    }
+    .section-new{
+        margin: 0;
+        padding: 5%;
+    }
+    article h4 {
+        margin: 5px 0;
+    }
+    /**/
+    .one_movies {
+        width: 30% !important;
+    }
+    .unelgee {
+        display: none;
+    }
+    .section-new{
+        max-width: 100%;
+    }
+    
+    div article a div{
+        overflow: hidden; 
+    }
+    .new-movies {
+        display: flex; 
+        grid-template-columns: repeat(3, 1fr) ; 
+        gap: 10px;
+        flex-wrap: wrap;
+        width: auto;
+    }
+    aside{
+        max-width: 100%;
+    }
+    .section-review{
+        margin: 0;
+        padding: 5%;
+    }
+    .section-top{
+        width: 100%;
+    }
+    .top-movies {
+        display: flex; 
+        grid-template-columns: repeat(3, 1fr) ; 
+        gap: 10px;
+        flex-wrap: wrap;
+        width: auto;
+    }
 }

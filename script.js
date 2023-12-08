@@ -34,27 +34,31 @@ fetch('movies.json')  // Adjust the path based on your file structure
             <p>Продюсер <span>${movie.producer}</span></p>
             <p>Гол дүр: <span>${movie.jujigchid.join(', ')}</span></p>
         </article>
-        <aside style="background-color: rgb(236, 214, 71)" class="heseg">
-            <input type="text" class="search" placeholder="Хайх">
-            <article>
-                <img src="./photos/posters/tushig.jpg" alt="">
+        <aside class="hesegbish">
+        <input type="text" class="search" placeholder="Хайх">
+        <section>
+            <article class="zaa">
+                <img class="proff" src="./photos/posters/tushig.jpg" alt="">
                 <div>
-                    <h2>Гарчиг 1</h2>
-                    <p>Товч тайлбар</p>
-                    <p>2020/10/20</p>
+                    <h2 class="TTT">Гарчиг 1</h2>
+                    <p class="TTT">Товч тайлбар</p>
+                    <p class="RRR">2020/10/20</p>
                 </div>
             </article>
-            <article>
-                <img src="./photos/posters/narrrrr.png" alt="">
-                <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
-                <p>2020/10/20</p>
+            <article class="zaa">
+                <img class="proff" src="./photos/posters/narrrrr.png" alt="">
+                <div>
+                    <h2 class="TTT">Гарчиг 1</h2>
+                    <p class="TTT">Товч тайлбар</p>
+                    <p class="TTT">2020/10/20</p>
+                </div>
             </article>
-            <article>
-                <h4>Трейлер</h4>
-                <video src="youtube.com"></video>
-            </article>
-        </aside>    
+        </section>
+        <article>
+            <h4>Трейлер</h4>
+            <video src="youtube.com"></video>
+        </article>
+    </aside>
         `;
     })
     .catch(error => console.error('Error fetching data:', error));

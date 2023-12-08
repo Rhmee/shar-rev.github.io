@@ -11,15 +11,16 @@
     <meta name="theme-color" content="#000000">
     <meta name="google" content="notranslate">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="bet.css">
     <link rel="stylesheet" type="text/css" href="review.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="active">
         <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
         <nav>
-            <ul>
+            <ul class="main-menu">
                 <li><a href="home.html">Нүүр</a></li>
                 <li><a href="movie.html">Кино</a></li>
             </ul>
@@ -28,8 +29,19 @@
                 <li><a href="quiz.html">Таавар</a></li>
                 <li><a href="user.html">Нэвтрэх</a></li>
             </ul>
-        </nav>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
     </header>
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
 
     <section class="slide">
         <div class="slidepic">
@@ -50,25 +62,51 @@
             <p>Цааш үзэх</p>
         </div>
         <div class="new-movies">
-            <article>
-                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Movie 1">
-                <h4>37-р точка 1-р бүлэг</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=3">
+                    <div class="imagee">
+                        <img src="./photos/posters/37_r_tochka_season_1.jpg" alt="Movie 1">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>37-р точка 1-р бүлэг</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Movie 2">
-                <h4>37-р точка 2-р бүлэг</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=3">
+                    <div class="imagee">
+                        <img src="./photos/posters/37_r_tochka_season_2.jpg" alt="Movie 1">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>37-р точка 2-р бүлэг</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 3">
-                <h4>37-р точка 2020</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=3">
+                    <div class="imagee">
+                        <img src="/photos/posters/37_r_tochka_season_3.jpg" alt="Movie 1">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>37-р точка 3-р бүлэг</h4>
+                </a>
             </article>
         </div>
     </section>
     
     <aside class="section-review">
   <div class="next">
-    <h2>Шинээр гарах</h2>
-    <p>Цааш үзэх</p>
+    <h2>Reviews</h2>
   </div>
   <div class="review">
     <article>
@@ -99,33 +137,89 @@
 </aside>
 
 
-    <section class="section-top">
-        <h2>Онцлох кино</h2>
-        <p class="next">Цааш үзэх</p>
+    <section class="section-new">
+        <div class="next">
+            <h2>Онцлох кино</h2>
+            <p>Цааш үзэх</p>
+        </div>
         <div class="top-movies">
-            <article>
-                <a href="info.html"><img src="./photos/posters/Mash_nuuts_2.jpg" alt="Movie 4">
-                <h4>Маш нууц 2 Байтаг Богд</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=8">
+                    <div class="imagee">
+                        <img src="./photos/posters/Mash_nuuts_2.jpg" alt="Movie 7">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>Маш нууц-2: Байтаг богд</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/minii_ah_ataman_poster_0.jpg" alt="Movie 5">
-                <h4>Миний ах атаман</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=9">
+                    <div class="imagee">
+                        <img src="./photos/posters/minii_ah_ataman_poster_0.jpg" alt="Movie 3">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>Миний ах атаман</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/negen_zunii_tsetseg_emotsi.jpg" alt="Movie 6">
-                <h4>Нэгэн зуны цэцэг</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=9">
+                    <div class="imagee">
+                        <img src="./photos/posters/negen_zunii_tsetseg_emotsi.jpg" alt="Movie 6">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>Нэгэн зуны цэцэг</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/single4.jpg" alt="Movie 7">
-                <h4>Single Ladies 4</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=13">
+                    <div class="imagee">
+                        <img src="./photos/posters/single4.jpg" alt="Movie 3">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>Single Ladies-4</h4>
+                </a>
             </article>
-            <article>
-                <a href="info.html"><img src="./photos/posters/suit.jpg" alt="Movie 8">
-                <h4>Сүйт бүсгүй</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=14">
+                    <div class="imagee">
+                        <img src="./photos/posters/suit.jpg" alt="Movie 3">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>Сүйт бүсгүй</h4>
+                </a>
             </article>
-            <article class="">
-                <a href="info.html"><img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 9">
-                <h4>37-р точка 2020</h4></a>
+            <article class="one_movies">
+                <a href="info.html?id=14">
+                    <div class="imagee">
+                        <img src="./photos/posters/37_r_tochka_season_3.jpg" alt="Movie 9">
+                        <p class="unelgee">
+                            <span>80 <i class="fa fa-eye" aria-hidden="true"></i></span>
+                            <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                            <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                        </p>
+                    </div>
+                    <h4>37-р точка 2020</h4>
+                </a>
             </article>
         </div>
     </section>
@@ -136,7 +230,7 @@
             <img src="./photos/posters/medee.jpg" alt="News 1">
             <div>
                 <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
+                <p>Монголын найруулагч П.Золжаргал "Баавгай болохсон" киногоороо нэр дэвшлээ.  </p>
                 <time>2020/10/20</time>
             </div>
         </article>
@@ -144,7 +238,7 @@
             <img src="./photos/posters/medee.jpg" alt="News 1">
             <div>
                 <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
+                <p>Монголын найруулагч П.Золжаргал "Баавгай болохсон" киногоороо нэр дэвшлээ.  </p>
                 <time>2020/10/20</time>
             </div>
         </article>
@@ -152,7 +246,7 @@
             <img src="./photos/posters/medee.jpg" alt="News 1">
             <div>
                 <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
+                <p>Монголын найруулагч П.Золжаргал "Баавгай болохсон" киногоороо нэр дэвшлээ.  </p>
                 <time>2020/10/20</time>
             </div>
         </article>
@@ -160,7 +254,7 @@
             <img src="./photos/posters/medee.jpg" alt="News 1">
             <div>
                 <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
+                <p>Монголын найруулагч П.Золжаргал "Баавгай болохсон" киногоороо нэр дэвшлээ.  </p>
                 <time>2020/10/20</time>
             </div>
         </article>
@@ -170,7 +264,7 @@
     <a href="facebook.com"><img src="photos/fb.png" alt=""></a>
     <a href="instagram.com"><img src="./photos/igg.jpg" alt=""></a>
     <a href="gmail.com"><img src="./photos/gma.jpg" alt=""></a>
-    <img src="./photos/pho.jpeg" alt="">
+    <a href="tel:+976 99999999"><i class="fas fa-phone-alt"></i></a>
 </footer>
 </html>
 

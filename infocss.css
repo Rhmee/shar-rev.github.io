@@ -3,6 +3,7 @@
   width: 100%;
   border-radius: 15px;
   padding: 0;
+  object-fit: cover;
  }
 .bugd{
   display: grid;
@@ -20,7 +21,10 @@
 .heseg h2{
   margin-top: 0;
 }
-.heseg .unelgee{
+.hesegbish article video{
+  max-width: 100%;
+}
+/* .heseg .unelgee{
   position: absolute;
   top: 0;
   right: 0;
@@ -28,99 +32,28 @@
   margin: 0;
   padding: 0.5rem;
 }
-
+*/
 .heseg p{
   text-align: justify;
 }
+section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+section article img {
+  width: 100%;
+  height: 245px;
+}
+section article h4 {
+  margin-top: 10px;
+}
 
-  
-  section h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  /*
-  section article {
-    float: left;
-    width: 37%;
-    margin-bottom: 20px;
-  }
-  */
-  section article img {
-    width: 100%;
-    height: 245px;
-  }
-  
-  section article h4 {
-    margin-top: 10px;
-  }
-
-
-  /*
-  section aside {
-    float: right;
-    width: 23%;
-    padding: 1rem;
-  }
-*/
-
-  /* Footer */
-  /*
-  footer {
+.shuumjner {
   display: flex;
-  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 10px;
 }
 
-.review div {
-  display: block;
-}
-
-.review img {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-}
-
-.review article {
-  display: grid;
-  width: 600px;
-  grid-template-columns: auto auto;
-}*/
-
-.rate {
-  height: 46px;
-  padding: 0 10px;
-}
-.rate:not(:checked) > input {
-  position:absolute;
-  top:-9999px;
-}
-.rate:not(:checked) > label {
-  float: right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:30px;
-  color:#ccc;
-  display: inline-block;
-}
-.rate:not(:checked) > label:before {
-  content: '★ ';
-}
-.rate > input:checked ~ label {
-  color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
-}
 
 .review {
   display: grid;
@@ -128,6 +61,7 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 16px; 
+
 }
 
 .review > article {
@@ -154,6 +88,7 @@
 
 .zaa {
   display: flex;
+  flex-flow:row wrap;
   gap: 16px;
 }
 
@@ -197,7 +132,24 @@
   margin-bottom: 16px;
 }
 
-.hesegbish {
-  margin-left: 128px;
+@media(max-width: 500px){
+  .bugd{
+    display: block;
+  }
+  .review {
+    display: block;
+  }
+  #Poster_zurag{
+    border-radius: 15px;
+    max-width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  .hesegbish{
+    margin: 0;
+    padding: 8px;
+  }
+  .review article{
+    padding: 1px;
+  }
 }
-
