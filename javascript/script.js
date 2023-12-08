@@ -1,9 +1,7 @@
-// Get the movie ID from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 
-// Fetch the specific movie details from JSON
-fetch('movies.json')  // Adjust the path based on your file structure
+fetch('/javascript/movies.json')
 .then(response => {
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -11,7 +9,7 @@ fetch('movies.json')  // Adjust the path based on your file structure
     return response.json();
 })    
 .then(data => {
-        const movie = data.movies.find((i) => i.id == movieId); // Adjusting for array index
+        const movie = data.movies.find((i) => i.id == movieId);
         const movieDetailsElement = document.getElementById('movie-details');
         movieDetailsElement.innerHTML = `
         <article class="heseg">
@@ -28,6 +26,7 @@ fetch('movies.json')  // Adjust the path based on your file structure
             </p>
             <p>Tөрөл: <span>${movie.genre}</span></p>
             <p>Үргэжлэх хугацаа: <span>${movie.urgeljleh_hugatsaa}</span></p>
+            <p>Гарсан огноо: <span>${movie.release_date}</span></p>
             <p>Насны ангилал: <span>${movie.nasnii_angilal}</span></p>
             <p>${movie.tovch_aguulga}</p>
             <p>Найруулагч: <span class="medeelel">${movie.nairuulagch}</span></p>
