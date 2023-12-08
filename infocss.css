@@ -48,7 +48,18 @@ section article h4 {
   margin-top: 10px;
 }
 
-.shuumjner {
+
+  /*
+  section aside {
+    float: right;
+    width: 23%;
+    padding: 1rem;
+  }
+*/
+
+  /* Footer */
+  /*
+  footer {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -61,7 +72,6 @@ section article h4 {
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 16px; 
-
 }
 
 .review > article {
@@ -88,7 +98,6 @@ section article h4 {
 
 .zaa {
   display: flex;
-  flex-flow:row wrap;
   gap: 16px;
 }
 
@@ -132,24 +141,6 @@ section article h4 {
   margin-bottom: 16px;
 }
 
-@media(max-width: 500px){
-  .bugd{
-    display: block;
-  }
-  .review {
-    display: block;
-  }
-  #Poster_zurag{
-    border-radius: 15px;
-    max-width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: cover;
-  }
-  .hesegbish{
-    margin: 0;
-    padding: 8px;
-  }
-  .review article{
-    padding: 1px;
-  }
+.hesegbish {
+  margin-left: 128px;
 }
