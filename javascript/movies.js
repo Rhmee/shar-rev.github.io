@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const moviesSection = document.getElementById("movies");
-    fetch("movies.json")
+    fetch("/javascript/movies.json")
         .then(response => response.json())
         .then(data => {
             console.log(data);s
