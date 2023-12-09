@@ -11,15 +11,16 @@
     <meta name="google" content="notranslate">
     <title>Movie</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/csses/movie_n.css">
     <link rel="stylesheet" type="text/css" href="/csses/bet.css">
 
 </head>
 <body>
-    <header>
+    <header class="active">     
         <a href="/htmls/home.html"><img src="/photos/Logo.png" alt="Logo"></a>
         <nav>
-            <ul>
+            <ul class="main-menu">
                 <li><a href="/htmls/home.html">Нүүр</a></li>
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
@@ -28,8 +29,19 @@
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
                 <li><a href="/htmls/user.html">Нэвтрэх</a></li>
             </ul>
-        </nav>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
     </header>
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
 
     <section class="filter">
         <ul>
@@ -78,7 +90,7 @@
         <a href="facebook.com"><img src="/photos/fb.png" alt=""></a>
         <a href="instagram.com"><img src="/photos/igg.jpg" alt=""></a>
         <a href="gmail.com"><img src="/photos/gma.jpg" alt=""></a>
-        <img src="/photos/pho.jpeg" alt="">
+        <a href="tel:+976 99999999"><i class="fas fa-phone-alt"></i></a>
     </footer>
 </body>
 </html> 
