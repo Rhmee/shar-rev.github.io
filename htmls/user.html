@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <meta name="description" content="Movie Review site's User Profile page.">
+    <meta name="keywords" content="My List, Profile, Review, Movie">
+    <meta name="author" content="BET">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#000000">
+    <meta name="google" content="notranslate">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/csses/usercss.css">
+    <link rel="stylesheet" type="text/css" href="/csses/bet.css">
+
+</head>
+<body>
+    <header class="active">     
+        <a href="/htmls/home.html"><img src="/photos/Logo.png" alt="Logo"></a>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="/htmls/home.html">Нүүр</a></li>
+                <li><a href="/htmls/movie.html">Кино</a></li>
+            </ul>
+            <ul class="right">
+                <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
+                <li><a href="/htmls/quiz.html">Таавар</a></li>
+                <li><a href="/htmls/user.html">Нэвтрэх</a></li>
+            </ul>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
+    </header>
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
+    <section>
+        <div class="round-frame">
+            <img class="image-frame" src="/photos/posters/narrrr.png" alt="Profile">
+        </div>
+        <div>
+            <div><p>Narrrr</p></div>
+            <div><p>Про хэрэглэгч болох</p></div>
+        </div>
+    </section>
+
+    <section class="my-list">
+        <h2>My List</h2>
+        <ul>
+          <li>
+            <article class="one_movies">
+              <img src="/photos/posters/37_r_tochka_season_1.jpg" alt="Movie 1">
+              <h4>37-р точка I-р бүлэг</h4>
+            </article>
+            <article class="one_movies">
+              <img src="/photos/posters/37_r_tochka_season_2.jpg" alt="Movie 2">
+              <h4>37-р точка II-р бүлэг</h4>
+            </article>
+            <article class="one_movies">
+              <img src="/photos/posters/37_r_tochka_season_3.jpg" alt="Movie 3">
+              <h4>37-р точка III-р бүлэг</h4>
+            </article>
+            <article class="one_movies">
+                <img src="/photos/posters/Zura.jpg" alt="Movie 3">
+                <h4>Зура-1</h4>
+              </article>
+              <article class="one_movies">
+                <img src="/photos/posters/zura-2.jpg" alt="Movie 3">
+                <h4>Зура-2</h4>
+              </article>
+          </li>
+        </ul>
+      </section>
+
+      <section class="last-reviews">
+        <h2>Сүүлд өгсөн сэтгэгдэл</h2>
+        <article class="one_movies">
+          <img src="/photos/posters/mongol.jpg" alt="Movie 1">
+          <div>
+            <p>Монгол</p>
+            <p>8 ⭐</p>
+            <p>Хөөрхөн кино</p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <a href="facebook.com"><img src="/photos/fb.png" alt=""></a>
+        <a href="instagram.com"><img src="/photos/igg.jpg" alt=""></a>
+        <a href="gmail.com"><img src="/photos/gma.jpg" alt=""></a>
+        <img src="/photos/pho.jpeg" alt="">
+    </footer>
+</body>
+</html>

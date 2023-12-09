@@ -13,14 +13,13 @@
     <link rel="stylesheet" type="text/css" href="/csses/bet.css">
     <link rel="stylesheet" type="text/css" href="/csses/infocss.css">
     <link rel="stylesheet" href="/csses/rating.css">
-
     <title>Info</title>
 </head>
 <body>
-    <header>
+    <header class="active">     
         <a href="/htmls/home.html"><img src="/photos/Logo.png" alt="Logo"></a>
         <nav>
-            <ul>
+            <ul class="main-menu">
                 <li><a href="/htmls/home.html">Нүүр</a></li>
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
@@ -29,9 +28,20 @@
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
                 <li><a href="/htmls/user.html">Нэвтрэх</a></li>
             </ul>
-        </nav>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
     </header>
-    
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
+
     <section class="bugd" id="movie-details"> 
         <article class="heseg">
             <img id="Poster_zurag" src="${poster}" alt="${ner} Poster">
@@ -47,29 +57,33 @@
             </p>
             <p>Tөрөл: <span>${genre}</span></p>
             <p>Үргэжлэх хугацаа: <span>${urgeljleh_hugatsaa}</span></p>
-            <p>Гарсан огноо: <span>${release_date}</span></p>
+            <p>Гарсан огноо: <span>${movie.release_date}</span></p>
             <p>Насны ангилал: <span>${nasnii_angilal}</span></p>
             <p>${tovch_aguulga}</p>
             <p>Найруулагч: <span class="medeelel">${nairuulagch}</span></p>
             <p>Продюсер <span>${producer}</span></p>
             <p>Гол дүр: <span>${jujigchid.join(', ')}</span></p>
         </article>
-        <aside style="background-color: rgb(236, 214, 71)" class="heseg">
+        <aside class="hesegbish">
             <input type="text" class="search" placeholder="Хайх">
-            <article class="zaa">
-                <img src="/photos/posters/tushig.jpg" alt="">
-                <div>
-                    <h2>Гарчиг 1</h2>
-                    <p>Товч тайлбар</p>
-                    <p>2020/10/20</p>
-                </div>
-            </article>
-            <article class="zaa">
-                <img src="/photos/posters/narrrrr.png" alt="">
-                <h2>Гарчиг 1</h2>
-                <p>Товч тайлбар</p>
-                <p>2020/10/20</p>
-            </article>
+            <section>
+                <article class="zaa">
+                    <img class="proff" src="/photos/posters/tushig.jpg" alt="">
+                    <div>
+                        <h2 class="TTT">Гарчиг 1</h2>
+                        <p class="TTT">Товч тайлбар</p>
+                        <p class="RRR">2020/10/20</p>
+                    </div>
+                </article>
+                <article class="zaa">
+                    <img class="proff" src="/photos/posters/narrrrr.png" alt="">
+                    <div>
+                        <h2 class="TTT">Гарчиг 1</h2>
+                        <p class="TTT">Товч тайлбар</p>
+                        <p class="TTT">2020/10/20</p>
+                    </div>
+                </article>
+            </section>
             <article>
                 <h4>Трейлер</h4>
                 <video src="youtube.com"></video>
@@ -124,52 +138,76 @@
         </fieldset>
         <input type="text">
     </section>
-
     <h2>Шүүмжүүд</h2>
     <section class="review">
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
         <article>
             <img class="prof" src="/photos/posters/tushig.jpg" alt="">
-            <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
-            <p class="RR">reviewssssss</p>
+            <div>
+                <div class="shuumjner">
+                    <h3>ZADLAN</h3>
+                    <h3>10⭐</h3>
+                </div>
+                <p class="RR">reviewssssss</p>
+            </div>
         </article>
     </section>
     <footer>
-        <a href="facebook.com"><img src="photos/fb.png" alt=""></a>
-        <a href="instagram.com"><img src="./photos/igg.jpg" alt=""></a>
-        <a href="gmail.com"><img src="./photos/gma.jpg" alt=""></a>
-        <img src="./photos/pho.jpeg" alt="">
+        <a href="facebook.com"><img src="/photos/fb.png" alt=""></a>
+        <a href="instagram.com"><img src="/photos/igg.jpg" alt=""></a>
+        <a href="gmail.com"><img src="/photos/gma.jpg" alt=""></a>
+        <img src="/photos/pho.jpeg" alt="">
     </footer>
-    <script src="/javascript/script.js"/>
+    <script src="/javascript/script.js"></script>
+
 </body>
 </html>

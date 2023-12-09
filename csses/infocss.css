@@ -13,7 +13,6 @@
 *{
   box-sizing: border-box;
 }
-
 .heseg{
   position: relative;
   padding: 0.5rem;
@@ -21,7 +20,10 @@
 .heseg h2{
   margin-top: 0;
 }
-.heseg .unelgee{
+.hesegbish article video{
+  max-width: 100%;
+}
+/* .heseg .unelgee{
   position: absolute;
   top: 0;
   right: 0;
@@ -29,88 +31,115 @@
   margin: 0;
   padding: 0.5rem;
 }
-
+*/
 .heseg p{
   text-align: justify;
 }
-
-  
-  section h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  /*
-  section article {
-    float: left;
-    width: 37%;
-    margin-bottom: 20px;
-  }
-  */
-  section article img {
-    width: 100%;
-    height: 245px;
-  }
-  
-  section article h4 {
-    margin-top: 10px;
-  }
-
-.zaa{
-  display: flex;
+section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
-  /*
-  section aside {
-    float: right;
-    width: 23%;
-    padding: 1rem;
-  }
-*/
+section article img {
+  width: 100%;
+  height: 245px;
+}
+section article h4 {
+  margin-top: 10px;
+}
 
-  /* Footer */
-  /*
-  footer {
-=======
-   */
-  /* Footer */
-  /* footer {
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  footer a {
-    margin: 0 10px;
-  }
-  
-  footer img {
-    width: 20px;
-    height: 20px;
+.shuumjner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  }*/
-  
-   */
 
 .review {
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.review div {
-  display: block;
-}
-
-.review img {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-}
-
-.review article {
   display: grid;
-  width: 600px;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 16px; 
+
 }
 
-.reviewing {
-  display: inline-block;  
+.review > article {
+  display: flex;
+  gap: 16px;
+}
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+  display: flex;
+}
+.RR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+.TT{
+    text-align: start;
+}
+
+.zaa {
+  display: flex;
+  flex-flow:row wrap;
+  gap: 16px;
+}
+
+.zaa > div {
+  margin-top: -24px;
+}
+.prof{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-items: start;
+}
+.RRR{
+    color: rgb(123, 119, 119);
+    text-align: start;
+}
+.TTT{
+    text-align: start;
+}
+.proff{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  align-items: start;
+}
+.search{
+  align-items: start;
+  padding: 8px;   
+}
+.hesegbish > section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+@media(max-width: 500px){
+  .bugd{
+    display: block;
+  }
+  .review {
+    display: block;
+  }
+  #Poster_zurag{
+    border-radius: 15px;
+    max-width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  .hesegbish{
+    margin: 0;
+    padding: 8px;
+  }
+  .review article{
+    padding: 1px;
+  }
 }

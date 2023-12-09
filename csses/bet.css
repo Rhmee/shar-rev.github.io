@@ -5,23 +5,19 @@ body {
     margin-right: 10%;
     color: white;
 }
-
 .no-margin {
     margin-left: 0;
     margin-right: 0;
 }
-
 * {
     font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Inter', sans-serif;
     font-family: 'Oswald', sans-serif;
 }
-
 header img {
     height: 50px;
     margin-left: 40px;
 }
-
 header {
     background-color: #ffd747;
     position: fixed;
@@ -33,44 +29,36 @@ header {
     align-items: center;
     z-index: 2;
 }
-
 header * {
     display: inline-flex;
 }
-
 nav{
    justify-content: space-between; 
    width: 100%;
 }
-
 header li {
     margin: 20px;
     color: #333;
     font-weight: bold;
 }
-
 header li a {
     padding: 10px;
     border-radius: 15px;
     color: black;
     text-decoration: none;
 }
-
 header li a:hover {
     background-color: black;
     color: white;
 }
-
 section {
     margin-bottom: 70px;
 }
-
 .search {
     border: none;
     border-radius: 15px;
     height: 30px;
 }
-
 header li a:active {
     background-color: rgb(84, 75, 75);
     color: white; 
