@@ -93,7 +93,49 @@ footer img {
   height: auto;
   margin-right: 5px;
 }
-@media(max-width: 500px){
+@media(max-width: 430px){
+    header nav ul{
+        position: fixed;
+        top: 2.7rem;
+        background-color: #ffd747;
+        height: calc(100vh-100px);
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    header nav ul.right{
+        position: fixed;
+        top: 12rem;
+    }
+    header nav label{
+        display: block;
+        width: 100px;
+        /* text-align: center; */
+        /* margin: auto; */
+        padding-left: 80%;
+    } 
+    header nav ul {
+        display: none; 
+    }
+
+    header nav ul.active {
+        display: flex; 
+    }
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    footer a {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+@media(max-height: 430px){
     header nav ul{
         position: fixed;
         top: 2.7rem;
