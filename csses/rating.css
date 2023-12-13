@@ -63,8 +63,8 @@
 		display: none;
 	}
 	label {
-		height: 50px;
-		width: 50px;
+		height: 30px;
+		width: 30px;
 		transform-origin: "center center";
 		svg {
 			transition: transform 0.4s ease-in-out;
@@ -233,3 +233,33 @@ label[for="rate10"]:hover ~ .rating-value:before {
 .cls-2 { fill: #f3cc30; }
 .cls-3 { fill: #edbd31; }
 svg { width: 30px; height: 30px; }
+
+@media (max-width: 430px)
+{
+	.rating-container {
+		margin-left: 0px;
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	label {
+		width: 20px;
+		height: 20px;
+	}
+
+	.rating-container {
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+		margin: auto;
+		/* height: 50px; */
+		padding-left: 22px;
+		padding-right: 5px;
+	}
+	.rating-container label{
+		width: 20px;
+		height: 20px;
+	}
+}

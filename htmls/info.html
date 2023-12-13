@@ -66,6 +66,7 @@
             <p>Найруулагч: <span class="medeelel">${nairuulagch}</span></p>
             <p>Продюсер <span>${producer}</span></p>
             <p>Гол дүр: <span>${jujigchid.join(', ')}</span></p>
+            <h3>Шүүмж бичих</h3>
         </article>
         <script type="text/javascript">
             let btn = document.getElementById("icon");
@@ -109,8 +110,7 @@
         </aside>    
     </section>
         
-    <section class="reviewing">
-        <h2>Шүүмж бичих</h2>
+    <section class="reviewing" id="review">
         <fieldset class="rating-container">	
             <input type="radio" name="rating" id="rate10">
             <label for="rate10">
@@ -154,7 +154,7 @@
             </label>
             <div class="rating-value"></div>
         </fieldset>
-        <input type="text">
+        <input type="text" id="inputRev">
     </section>
     
     <section class="review">
