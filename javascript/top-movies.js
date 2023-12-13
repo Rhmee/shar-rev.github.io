@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     return b.rate - a.rate; 
                 });
-
-                // Select the top 6 rated movies
                 const topMovies = sortedMovies.slice(0, 6);
 
                 displayTopRatedMovies(topMoviesSection, topMovies);
