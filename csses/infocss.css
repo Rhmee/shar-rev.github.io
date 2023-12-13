@@ -1,5 +1,5 @@
 #Poster_zurag{
-  height: 625px;
+  height: 100%;
   width: 100%;
   border-radius: 15px;
   padding: 0;
@@ -23,17 +23,18 @@
 .hesegbish article video{
   max-width: 100%;
 }
-/* .heseg .unelgee{
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 30px;
-  margin: 0;
-  padding: 0.5rem;
-}
-*/
 .heseg p{
   text-align: justify;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+#icon{
+  position: absolute;
+  top: 0;
+  right: 0; 
+  padding-top: 0.7rem;
+  padding-right: 0.5rem;
+  font-size: 30px;
 }
 section h2 {
   font-size: 30px;
@@ -55,6 +56,7 @@ section article h4 {
 
 
 .review {
+  margin-top: 20%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -74,6 +76,9 @@ section article h4 {
   align-items: start;
   display: flex;
 }
+.review div h3, p{
+  margin: 0;
+}
 .RR{
     color: rgb(123, 119, 119);
     text-align: start;
@@ -82,14 +87,13 @@ section article h4 {
     text-align: start;
 }
 
-.zaa {
+.jijigReview {
   display: flex;
   flex-flow:row wrap;
   gap: 16px;
 }
-
-.zaa > div {
-  margin-top: -24px;
+.jijigReview div{
+  display: block;
 }
 .prof{
   width: 120px;
@@ -97,13 +101,18 @@ section article h4 {
   border-radius: 50%;
   align-items: start;
 }
-.RRR{
+.yDay{
+    font-size: 15px;
     color: rgb(123, 119, 119);
     text-align: start;
+    right: 0;
 }
-.TTT{
+.rewInfo{
     text-align: start;
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
 .proff{
   width: 45px;
   height: 45px;
@@ -121,8 +130,19 @@ section article h4 {
   margin-top: 16px;
   margin-bottom: 16px;
 }
+section{
+  margin: 0;
+}
+.reviewing{
+  display: inline-block;
+  position: absolute;
+  right: 10%;
+}
 
-@media(max-width: 500px){
+@media(max-width: 430px){
+  #Poster_zurag{
+    margin-top: 15%;
+  }
   .bugd{
     display: block;
   }
@@ -134,6 +154,26 @@ section article h4 {
     max-width: 100%;
     aspect-ratio: 2/3;
     object-fit: cover;
+  }
+  .hesegbish{
+    margin: 0;
+    padding: 8px;
+  }
+  .review article{
+    padding: 1px;
+  }
+}
+@media(max-height: 430px){
+  #Poster_zurag{
+    margin-top: 7.5%;
+  }
+  .bugd{
+    display: block;
+  }
+  .review {
+    display: block;
+    margin-top:30%;
+    padding: 1%;
   }
   .hesegbish{
     margin: 0;

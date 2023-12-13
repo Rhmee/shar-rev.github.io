@@ -24,6 +24,7 @@ fetch('/javascript/movies.json')
                 <span style="color: #ffd747;">&#124;</span>
                 <span>10 <i class="fa fa-heart" style="color:red"></i></span>
             </p>
+            <p><i id="icon" onclick="likebtn()" class="far fa-heart"></i></p>
             <p>Tөрөл: <span>${movie.genre}</span></p>
             <p>Үргэжлэх хугацаа: <span>${movie.urgeljleh_hugatsaa}</span></p>
             <p>Гарсан огноо: <span>${movie.release_date}</span></p>
@@ -33,23 +34,38 @@ fetch('/javascript/movies.json')
             <p>Продюсер <span>${movie.producer}</span></p>
             <p>Гол дүр: <span>${movie.jujigchid.join(', ')}</span></p>
         </article>
+        <script type="text/javascript">
+            let btn = document.getElementById("icon");
+            function likebtn(){
+                if(btn.classList.contains("far")){
+                    btn.classList.remove("far");
+                    btn.classList.add("fas");
+                    btn.style.color = "red";
+                }
+                else{
+                    btn.classList.remove("fas");
+                    btn.classList.add("far");
+                    btn.style.color = ""; 
+                }
+            }        
+        </script>
         <aside class="hesegbish">
         <input type="text" class="search" placeholder="Хайх">
         <section>
-            <article class="zaa">
-                <img class="proff" src="./photos/posters/tushig.jpg" alt="">
+            <article class="jijigReview">
+                <img class="proff" src="/photos/posters/tushig.jpg" alt="">
                 <div>
-                    <h2 class="TTT">Гарчиг 1</h2>
-                    <p class="TTT">Товч тайлбар</p>
-                    <p class="RRR">2020/10/20</p>
+                    <h4 class="rewInfo">Гарчиг 1</h2>
+                    <p class="rewInfo">Товч тайлбар</p>
+                    <p class="yDay">2020/10/20</p>
                 </div>
             </article>
-            <article class="zaa">
-                <img class="proff" src="./photos/posters/narrrrr.png" alt="">
+            <article class="jijigReview">
+                <img class="proff" src="/photos/posters/narrrrr.png" alt="">
                 <div>
-                    <h2 class="TTT">Гарчиг 1</h2>
-                    <p class="TTT">Товч тайлбар</p>
-                    <p class="TTT">2020/10/20</p>
+                    <h4 class="rewInfo">Гарчиг 1</h2>
+                    <p class="rewInfo">Товч тайлбар</p>
+                    <p class="yDay">2020/10/20</p>
                 </div>
             </article>
         </section>
@@ -60,4 +76,4 @@ fetch('/javascript/movies.json')
     </aside>
         `;
     })
-    .catch(error => console.error('Error fetching data:', error));
+    .catch(error => console.error('Error fetching data:', error));        
