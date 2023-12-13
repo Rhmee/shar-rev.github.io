@@ -36,4 +36,4 @@ function displayMovies(movies) {
 
         moviesSection.appendChild(movieArticle);
     });
-}
+};
