@@ -105,7 +105,6 @@ div .one_movies a{
     margin: 0;
 }
 .section-new p {
-    color: #ffd474;
     float: right;
     margin-top: 30px;
 }
@@ -128,7 +127,7 @@ article {
     display: inline-block;
 }
 
-.section-top p {
+.next p {
     color: #ffd474;
     float: right;
     margin-top: 30px;
