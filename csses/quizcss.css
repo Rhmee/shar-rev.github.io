@@ -1,6 +1,6 @@
 /*Section хэсгийг нийтэд нь тохируулж өгч байна*/
 section{
-    padding:8rem;
+
     text-align: center;
     color: white;
     display: flex;
@@ -41,10 +41,13 @@ section article a{
 }
 .tailbar{
     margin: 5%;
-    color: whitesmoke;
-    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
     position: absolute;
     text-align: center;
+    top: 45%;
+    transform: translate(0, -50%);
 }
 section article a:hover .medeelel{
     opacity: 1;

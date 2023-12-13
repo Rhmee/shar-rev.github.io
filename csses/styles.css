@@ -97,9 +97,6 @@ div .one_movies a{
     flex-wrap: wrap;
     width: auto;
 }
-.section-new {
-    margin-right: 120px;
-}
 .section-new .next p{
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -175,6 +172,9 @@ h2{
 .section-new, .section-review {
     display: inline-flex;
     flex-direction: column;
+}
+.section-review{
+    margin-left: 20%;
 }
 .news div h2{
     margin-top: 0;
