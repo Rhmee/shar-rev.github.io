@@ -4,7 +4,7 @@
         "id": "1",
         "poster": "/photos/posters/bayn_bool.jpg",
         "ner": "Баян боол",
-        "genre": ["Инээдэм"],
+        "genre": "Инээдэм",
         "release_date": "2023-03-03",
         "urgeljleh_hugatsaa": "124 мин",
         "nasnii_angilal": "PG",
