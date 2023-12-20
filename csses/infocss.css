@@ -13,7 +13,6 @@
 *{
   box-sizing: border-box;
 }
-
 .heseg{
   position: relative;
   padding: 0.5rem;
@@ -48,18 +47,7 @@ section article h4 {
   margin-top: 10px;
 }
 
-
-  /*
-  section aside {
-    float: right;
-    width: 23%;
-    padding: 1rem;
-  }
-*/
-
-  /* Footer */
-  /*
-  footer {
+.shuumjner {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -72,13 +60,13 @@ section article h4 {
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 16px; 
+
 }
 
 .review > article {
   display: flex;
   gap: 16px;
 }
-
 .prof{
   width: 120px;
   height: 120px;
@@ -86,53 +74,46 @@ section article h4 {
   align-items: start;
   display: flex;
 }
-
 .RR{
     color: rgb(123, 119, 119);
     text-align: start;
 }
-
 .TT{
     text-align: start;
 }
 
 .zaa {
   display: flex;
+  flex-flow:row wrap;
   gap: 16px;
 }
 
 .zaa > div {
   margin-top: -24px;
 }
-
 .prof{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   align-items: start;
 }
-
 .RRR{
     color: rgb(123, 119, 119);
     text-align: start;
 }
-
 .TTT{
     text-align: start;
 }
-
 .proff{
   width: 45px;
   height: 45px;
   border-radius: 50%;
   align-items: start;
 }
-
 .search{
   align-items: start;
   padding: 8px;   
 }
-
 .hesegbish > section {
   display: flex;
   flex-direction: column;
@@ -141,6 +122,24 @@ section article h4 {
   margin-bottom: 16px;
 }
 
-.reviewing {
-  display: inline-block;  
+@media(max-width: 500px){
+  .bugd{
+    display: block;
+  }
+  .review {
+    display: block;
+  }
+  #Poster_zurag{
+    border-radius: 15px;
+    max-width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  .hesegbish{
+    margin: 0;
+    padding: 8px;
+  }
+  .review article{
+    padding: 1px;
+  }
 }

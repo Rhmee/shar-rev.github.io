@@ -17,10 +17,10 @@
     <title>Info</title>
 </head>
 <body>
-    <header>
+    <header class="active">
         <a href="home.html"><img src="./photos/Logo.png" alt="Logo"></a>
         <nav>
-            <ul>
+            <ul class="main-menu">
                 <li><a href="home.html">Нүүр</a></li>
                 <li><a href="movie.html">Кино</a></li>
             </ul>
@@ -29,10 +29,20 @@
                 <li><a href="quiz.html">Таавар</a></li>
                 <li><a href="user.html">Нэвтрэх</a></li>
             </ul>
-        </nav>
+            <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
+        </nav>   
     </header>
-    <!-- buynaa shine jild yavbal yavlaa shuud gsh
-     -->
+    <script>
+        let menu = document.querySelector('.menu');
+        let mainMenu = document.querySelector('.main-menu');
+        let rightMenu = document.querySelector('.right');
+
+        menu.onclick = function () {
+            mainMenu.classList.toggle('active');
+            rightMenu.classList.toggle('active');
+        };
+    </script>
+
     <section class="bugd" id="movie-details"> 
         <article class="heseg">
             <img id="Poster_zurag" src="${poster}" alt="${ner} Poster">
@@ -133,53 +143,8 @@
     <section class="review">
         <article>
             <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
-        </article>
-        <article>
-            <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
-        </article>
-        <article>
-            <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
-        </article>
-        <article>
-            <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
-        </article>
-        <article>
-            <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
-        </article>
-        <article>
-            <img class="prof" src="./photos/posters/tushig.jpg" alt="">
-            <div>
-                <h3 class="TT">ZADLAN AH</h3>
-                <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
-                <p class="RR">reviewssssss</p>
-            </div>
             <h3 class="TT">ZADLAN AH</h3>
-            <h3 class="TT">10⭐</h3>
+            <h3 class="TT">10<i class="fa fa-star" style="color: #ffd747;"></i></h3>
             <p class="RR">reviewssssss</p>
         </article>
         <article>
@@ -219,5 +184,6 @@
         <a href="gmail.com"><img src="./photos/gma.jpg" alt=""></a>
         <img src="./photos/pho.jpeg" alt="">
     </footer>
+    <script src="script.js"/>
 </body>
 </html>
