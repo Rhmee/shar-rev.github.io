@@ -1,8 +1,7 @@
 /*Section хэсгийг нийтэд нь тохируулж өгч байна*/
 section{
-
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
 }
@@ -11,7 +10,7 @@ section h2{
     padding-top: 1rem;
 }
 section article{
-    padding-top: 3rem;
+    padding-top: 5rem;
 }
 /*Section article хэсгийг тохируулж өгч байна. Карт үүсгэж түүнийхээ хэмжээг тохируулж байна*/
 section article a{
@@ -52,4 +51,28 @@ section article a{
 section article a:hover .medeelel{
     opacity: 1;
 }
-
+footer{
+    margin-top: 160px;
+}
+@media(max-width: 430px){
+    h2{
+        margin: 0;
+        padding: 0;
+    }
+    section{
+        flex-wrap: wrap;
+        align-content: flex-start;
+        margin-top: 100px !important;
+    }
+    section article a{
+        width: 135px;
+        height: 235px;
+        margin: 2rem;
+    }
+    section article{
+        padding-top: 1.5rem;
+    }
+    footer{
+        margin-top: 110px;
+    }
+}

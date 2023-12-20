@@ -34,21 +34,6 @@ fetch('/javascript/movies.json')
             <p>Продюсер <span>${movie.producer}</span></p>
             <p>Гол дүр: <span>${movie.jujigchid.join(', ')}</span></p>
         </article>
-        <script type="text/javascript">
-            let btn = document.getElementById("icon");
-            function likebtn(){
-                if(btn.classList.contains("far")){
-                    btn.classList.remove("far");
-                    btn.classList.add("fas");
-                    btn.style.color = "red";
-                }
-                else{
-                    btn.classList.remove("fas");
-                    btn.classList.add("far");
-                    btn.style.color = ""; 
-                }
-            }        
-        </script>
         <aside class="hesegbish">
         <input type="text" class="search" placeholder="Хайх">
         <section>

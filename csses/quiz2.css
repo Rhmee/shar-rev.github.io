@@ -16,11 +16,14 @@ section{
     width: 490px;
 }
 button{
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
     padding: 1rem;
     border-radius: 15px;
     background-color: #ffd747;
     width: 70px;
+}
+footer{
+    margin-top: 60px;
 }
 @media(max-width:500px){
     section{
@@ -41,9 +44,12 @@ button{
         width: 180px;
     }
     button{
-        margin-left: 0.5rem;
+        margin-left: 0.2rem;
         padding: 0.7rem;
         width: 60px;
+    }
+    footer{
+        margin-top: 49s0px;
     }
 }
 @media(max-height:500px){
