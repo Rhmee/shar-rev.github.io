@@ -1,0 +1,59 @@
+/* 
+
+body {
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+}
+
+body.dark-mode {
+    color: var(--text-color-dark);
+    background-color: var(--background-color-dark);
+}
+quiz
+section {   
+    color: inherit;
+}
+
+body.dark-mode article a {
+    background-color: #FFD747;
+}
+
+.medeelel {
+    background-color: #FFD747;
+}
+/* 
+body.dark-mode .medeelel {
+    background-color: #ffffff;
+}
+ */ 
+ :root {
+    --background-color-light: #333333;
+    --text-color-light: #ffffff;
+    --background-color-dark: #fafafa;
+    --text-color-dark: #000000;
+    --title-text-light:  #ffffff;
+    --title-text-dark: #000000;
+}
+
+body {
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+}
+div .one_movies a{
+    color: var(--title-text-light);
+} 
+.movies-content .one_movies a{
+    color: var(--title-text-light);
+} 
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--text-color-dark);
+        background-color: var(--background-color-dark);
+    }
+    div .one_movies a{
+        color: var(--title-text-dark)
+    }  
+    .movies-content .one_movies a{
+        color: var(--title-text-dark);
+    } 
+}
