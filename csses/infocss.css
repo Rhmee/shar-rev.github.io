@@ -136,8 +136,6 @@ section{
 .reviewing{
   display: inline-block;
   position: absolute;
-  top: 680px;
-  left: 43%;
 } 
 #inputRev{
   display: inline-block;

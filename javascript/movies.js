@@ -1,13 +1,27 @@
+const URL = "https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114";
+const API_KEY = "$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW";
+
 document.addEventListener("DOMContentLoaded", function () {
     const moviesSection = document.getElementById("movies");
-    fetch("/javascript/movies.json")
-        .then(response => response.json())
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'X-API-Key': API_KEY,
+    };
+
+    fetch(URL, { headers })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
-            console.log(data);s
-            if (Array.isArray(data.movies)) {
-                displayMovies(data.movies);
+            console.log(data);
+            if (data && data.record && Array.isArray(data.record.movies)) {
+                displayMovies(data.record.movies, moviesSection);
             } else {
-                console.error("Data.movies is not an array.");
+                console.error("Data.record.movies is not an array or is not present.");
             }
         })
         .catch(error => console.error("Error fetching JSON:", error));
@@ -36,4 +50,4 @@ function displayMovies(movies) {
 
         moviesSection.appendChild(movieArticle);
     });
-};
+}
