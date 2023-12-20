@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error fetching JSON:", error));
 });
 
+function formatViews(views) {
+    if (views >= 1000000000) {
+        return (views / 1000000000).toFixed(1) + 'B';
+    } else if (views >= 1000000) {
+        return (views / 1000000).toFixed(1) + 'M';
+    } else if (views >= 1000) {
+        return (views / 1000).toFixed(1) + 'K';
+    } else {
+        return views.toString();
+    }
+}
+
 function displayMovies(movies) {
     const moviesSection = document.getElementById("movies");
     moviesSection.innerHTML = "";
@@ -39,7 +51,7 @@ function displayMovies(movies) {
                 <div class="imagee">
                     <img src="${movie.poster}" alt="${movie.ner}">
                     <p class="unelgee">
-                        <span>${movie.views} <i class="fa fa-eye" aria-hidden="true"></i></span>
+                        <span>${formatViews(movie.views)} <i class="fa fa-eye" aria-hidden="true"></i></span>
                         <span>${movie.rate} <i class="fa fa-star" style="color: #ffd747;"></i></span>
                         <span>${movie.rate} <i class="fa fa-heart" style="color:red"></i></span>
                     </p>
