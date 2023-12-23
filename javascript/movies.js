@@ -40,7 +40,7 @@ function formatViews(views) {
 }
 
 function formatRate(rate) {
-    return rate.toFixed(2);
+    return rate.toFixed(1);
 }
 
 function displayMovies(movies) {

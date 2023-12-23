@@ -40,6 +40,14 @@ class App {
         this.displayMovies(container, movies, container.classList.contains('top-movies') ? 6 : movies.length);
     }
 
+    formatNumberWithCommas(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+    }
+    
+    formatRate(rate) {
+        return rate.toFixed(1);
+    }
+
     displayMovies(container, movies, numberOfMovies) {
         container.innerHTML = "";
 
@@ -54,8 +62,8 @@ class App {
                 <div class="imagee">
                     <img src="${movie.poster}" alt="${movie.ner}">
                     <p class="unelgee">
-                        <span>${movie.views} <i class="fa fa-eye" aria-hidden="true"></i></span>
-                        <span>${movie.rate} <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                        <span>${this.formatNumberWithCommas(movie.views)} <i class="fa fa-eye" aria-hidden="true"></i></span>
+                        <span>${this.formatRate(movie.rate)} <i class="fa fa-star" style="color: #ffd747;"></i></span>
                         <span>${movie.rate} <i class="fa fa-heart" style="color:red"></i></span>
                     </p>
                 </div>
