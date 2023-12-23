@@ -39,6 +39,10 @@ function formatViews(views) {
     }
 }
 
+function formatRate(rate) {
+    return rate.toFixed(2);
+}
+
 function displayMovies(movies) {
     const moviesSection = document.getElementById("movies");
     moviesSection.innerHTML = "";
@@ -52,7 +56,7 @@ function displayMovies(movies) {
                     <img src="${movie.poster}" alt="${movie.ner}">
                     <p class="unelgee">
                         <span>${formatViews(movie.views)} <i class="fa fa-eye" aria-hidden="true"></i></span>
-                        <span>${movie.rate} <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                        <span>${formatRate(movie.rate)} <i class="fa fa-star" style="color: #ffd747;"></i></span>
                         <span>${movie.rate} <i class="fa fa-heart" style="color:red"></i></span>
                     </p>
                 </div>
