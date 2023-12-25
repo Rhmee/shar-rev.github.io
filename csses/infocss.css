@@ -28,6 +28,13 @@
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
+.bugd .heseg .unelgee{
+  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Kanit', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
 #icon{
   position: absolute;
   top: 0;
