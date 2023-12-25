@@ -35,8 +35,12 @@
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
 }
+.spacer {
+  display: inline-block;
+  width: 2px; 
+}
 .unelgee span:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 #icon{

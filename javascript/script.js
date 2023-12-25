@@ -40,11 +40,11 @@ function generateMovieDetailsHTML(movie) {
         <article class="heseg">
             <h2>${movie.ner}</h2>
             <p class="unelgee">
-                <span>${formatNumberWithCommas(movie.views)}<i class="fa fa-eye" aria-hidden="true"></i></span>
-                <span style="color: #ffd747;">&#124;</span>
-                <span>${formatRate(movie.rate)}<i class="fa fa-star" style="color: #ffd747;"></i></span>
-                <span style="color: #ffd747;">&#124;</span>
-                <span>${movie.rate}<i class="fa fa-heart" style="color:red"></i></span>
+                <span>127K <i class="fa fa-eye" aria-hidden="true"></i></span>
+                <span class="spacer"></span>
+                <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                <span class="spacer"></span>    
+                <span>10 <i class="fa fa-heart" style="color:red"></i></span>
             </p>
             <p><i id="icon" onclick="likebtn()" class="far fa-heart"></i></p>
             <p>Tөрөл: <span>${movie.genre}</span></p>
