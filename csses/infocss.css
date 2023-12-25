@@ -35,6 +35,10 @@
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
 }
+.unelgee span:not(:last-child) {
+  margin-right: 50px;
+}
+
 #icon{
   position: absolute;
   top: 0;
