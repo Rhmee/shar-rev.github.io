@@ -149,14 +149,24 @@ section{
 #inputRev{
   display: inline-block;
   position: absolute;
-  right: 0;
-  width: 98%;
+  right: 15%;
+  width: 80%;
   height: 60px;
   border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  /* border-bottom-right-radius: 25px; */
   font-size: 18px;
   word-wrap: break-word;
   white-space: pre-line;
+}
+#ilgeeh{
+  display: inline-block;
+  position: absolute;
+  background-color: #ffd747;
+  border-bottom-right-radius: 25px;
+  height: 60px;
+  width: 15%;
+  right: 0;
+  border-color: #ffd747;
 }
 .rating-value{
   z-index: 1;

@@ -62,6 +62,7 @@ function generateMovieDetailsHTML(movie) {
                     <div class="rating-value"></div>
                 </fieldset>
                 <input type="text" id="inputRev">
+                <button id="ilgeeh"><i class="fas fa-send"></i></button>
             </div>
         </article>`;
 }
