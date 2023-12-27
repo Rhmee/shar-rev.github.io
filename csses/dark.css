@@ -6,7 +6,6 @@
     --title-text-light:  #ffffff;
     --title-text-dark: #000000;
 }
-
 body {
     color: var(--text-color-light);
     background-color: var(--background-color-light);

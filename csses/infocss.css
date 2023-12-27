@@ -28,6 +28,21 @@
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
+.bugd .heseg .unelgee{
+  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Kanit', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+.spacer {
+  display: inline-block;
+  width: 2px; 
+}
+.unelgee span:not(:last-child) {
+  margin-right: 20px;
+}
+
 #icon{
   position: absolute;
   top: 0;
@@ -134,14 +149,24 @@ section{
 #inputRev{
   display: inline-block;
   position: absolute;
-  right: 0;
-  width: 98%;
+  right: 15%;
+  width: 80%;
   height: 60px;
   border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  /* border-bottom-right-radius: 25px; */
   font-size: 18px;
   word-wrap: break-word;
   white-space: pre-line;
+}
+#ilgeeh{
+  display: inline-block;
+  position: absolute;
+  background-color: #ffd747;
+  border-bottom-right-radius: 25px;
+  height: 60px;
+  width: 15%;
+  right: 0;
+  border-color: #ffd747;
 }
 .rating-value{
   z-index: 1;
