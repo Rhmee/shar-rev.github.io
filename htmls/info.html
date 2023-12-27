@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#000000">
     <meta name="google" content="notranslate">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="/csses/bet.css">
     <link rel="stylesheet" type="text/css" href="/csses/infocss.css">
-    <link rel="stylesheet" href="/csses/rating.css">
+    <!-- <link rel="stylesheet" href="/csses/rating.css"> -->
     <link rel="stylesheet" href="fontawesome/css/all/.min.css">
     <link rel="stylesheet" href="/csses/dark.css">
     <title>Info</title>
@@ -67,9 +67,7 @@
             <p>Найруулагч: <span class="medeelel">${nairuulagch}</span></p>
             <p>Продюсер <span>${producer}</span></p>
             <p>Гол дүр: <span>${jujigchid.join(', ')}</span></p>
-            <h3>Шүүмж бичих</h3>
-            <div class="reviewing" id="review"></div>
-            </article>
+            <rating-component></rating-component>
         <script type="text/javascript">
             let btn = document.getElementById("icon");
             function likebtn(){
@@ -85,6 +83,7 @@
                 }
             }        
         </script>
+        <script src="/javascript/rating-component.js"></script>
         <aside class="hesegbish">
             <input type="text" class="search" placeholder="Хайх">
             <section>

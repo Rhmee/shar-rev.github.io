@@ -40,8 +40,16 @@ class App {
         this.displayMovies(container, movies, container.classList.contains('top-movies') ? 6 : movies.length);
     }
 
-    formatNumberWithCommas(number) {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+    formatViews(views) {
+        if (views >= 1000000000) {
+            return (views / 1000000000).toFixed(1) + 'B';
+        } else if (views >= 1000000) {
+            return (views / 1000000).toFixed(1) + 'M';
+        } else if (views >= 1000) {
+            return (views / 1000).toFixed(1) + 'K';
+        } else {
+            return views.toString();
+        }
     }
     
     formatRate(rate) {
@@ -62,9 +70,9 @@ class App {
                 <div class="imagee">
                     <img src="${movie.poster}" alt="${movie.ner}">
                     <p class="unelgee">
-                        <span>${this.formatNumberWithCommas(movie.views)} <i class="fa fa-eye" aria-hidden="true"></i></span>
-                        <span>${this.formatRate(movie.rate)} <i class="fa fa-star" style="color: #ffd747;"></i></span>
-                        <span>${movie.rate} <i class="fa fa-heart" style="color:red"></i></span>
+                        <span>${this.formatViews(movie.views)} <i class="fa fa-eye" aria-hidden="true"> </i></span>
+                        <span>${this.formatRate(movie.rate)} <i class="fa fa-star" style="color: #ffd747;"> </i></span>
+                        <span>${movie.rate} <i class="fa fa-heart" style="color:red"></i> </span>
                     </p>
                 </div>
                 <h4>${movie.ner}</h4>
