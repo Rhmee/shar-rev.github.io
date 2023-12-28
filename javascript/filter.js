@@ -145,6 +145,11 @@ class MovieList extends HTMLElement {
     showSkeletonLoading() {
       const skeletonLoadingHTML = `
         <style>
+          .movies-content {
+            margin-top: 10%;
+            margin-left: 5%;
+            margin-right: 5%;
+          }
           .skeleton {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 6rem));
@@ -159,12 +164,16 @@ class MovieList extends HTMLElement {
           .text.loading {
             width: 175px; 
             height: 275px;
-            background-color: #e0e0e0; 
+            background-color: #555; 
             margin-bottom: 10px; 
           }
           .text.loading {
-            border-radius: none;
+            width: 155px;
+            border-radius: 5px;
             height: 20px; 
+            left: 10px;
+            display: inline-block;
+            position: relative;
           }
         </style>
         <section class="movies-content" id="movies">
@@ -241,6 +250,7 @@ class MovieList extends HTMLElement {
         })
         .catch((error) => console.error("Error fetching JSON:", error));
     }
+
     hideSkeletonLoading() {
         const skeletonLoading = this.shadowRoot.querySelector('.skeleton');
         if (skeletonLoading) {

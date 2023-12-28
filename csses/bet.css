@@ -4,6 +4,8 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     color: rgb(255, 255, 255);
+
+    position: relative;
 }
 .no-margin {
     margin-left: 0;
