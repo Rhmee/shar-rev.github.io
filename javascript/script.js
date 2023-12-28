@@ -56,14 +56,7 @@ function generateMovieDetailsHTML(movie) {
             <p>Продюсер: <span>${movie.producer}</span></p>
             <p>Гол дүр: <span>${movie.jujigchid.join(', ')}</span></p>
             <h3>Шүүмж бичих</h3>
-            <div class="reviewing" id="review">
-                <fieldset class="rating-container">
-                    ${generateStarRatingHTML()}
-                    <div class="rating-value"></div>
-                </fieldset>
-                <input type="text" id="inputRev">
-                <button id="ilgeeh"><i class="fas fa-send"></i></button>
-            </div>
+            <rating-component count="0"></rating-component>
         </article>`;
 }
 
