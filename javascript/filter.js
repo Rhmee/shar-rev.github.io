@@ -103,9 +103,10 @@ class MovieList extends HTMLElement {
       const container = document.createElement("div");
       container.id = "movies";
       this.shadowRoot.appendChild(container);
+      this.showSkeletonLoading();
       this.fetchMovies();
     }
-
+  
     formatRate(rate) {
       return rate.toFixed(1);
     }
@@ -141,6 +142,86 @@ class MovieList extends HTMLElement {
         .addEventListener("click", () => this.sortAlphabetically());
     }
 
+    showSkeletonLoading() {
+      const skeletonLoadingHTML = `
+        <style>
+          .skeleton {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 6rem));
+            gap: 3rem;
+            text-align: center;
+            justify-content: center;
+          }
+          .image.loading {
+            border-radius: 15px;
+          }
+          .image.loading,
+          .text.loading {
+            width: 175px; 
+            height: 275px;
+            background-color: #e0e0e0; 
+            margin-bottom: 10px; 
+          }
+          .text.loading {
+            border-radius: none;
+            height: 20px; 
+          }
+        </style>
+        <section class="movies-content" id="movies">
+          <div class="skeleton"> 
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div>
+            <div class="article">
+              <div class="image loading"></div>
+              <div class="text loading"></div>
+            </div><div class="article">
+            <div class="image loading"></div>
+            <div class="text loading"></div>
+          </div>
+          </div>
+        </section>
+      `;
+      this.shadowRoot.innerHTML = skeletonLoadingHTML;
+    }
+  
     fetchMovies() {
       const headers = {
         "Content-Type": "application/json",
@@ -153,11 +234,18 @@ class MovieList extends HTMLElement {
           if (Array.isArray(data.record.movies)) {
             this.moviesData = data.record.movies;
             this.displayMovies(data.record.movies);
+            this.hideSkeletonLoading();
           } else {
             console.error("Data.record.movies is not an array.");
           }
         })
         .catch((error) => console.error("Error fetching JSON:", error));
+    }
+    hideSkeletonLoading() {
+        const skeletonLoading = this.shadowRoot.querySelector('.skeleton');
+        if (skeletonLoading) {
+            skeletonLoading.style.display = 'none';
+        }
     }
 
     sortByPopularity() {
