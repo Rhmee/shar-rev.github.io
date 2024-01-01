@@ -126,6 +126,28 @@ a{
         height: 50px;
     }
 }
+@media (min-width: 430px) and (max-width: 999px){
+    body{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #byPopularity{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    #byYear{
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px; 
+    }
+    .filter{
+        margin-top: 7rem;
+    }
+    .filter ul li {
+        width: 30%;
+        height: 50px;
+    }
+
+}
 @media(max-height: 430px){
     .filter{
         margin-top: 10%;

@@ -1,25 +1,166 @@
 /*profile section */
-.user-name-frame {
-  border-radius: 1px solid #ccc;
-  padding: 10px;
+.user_frame{
+  position: relative;
 }
-
 .round-frame {
   border-radius: 50%;
   border: 4px solid white;
   background: #FFC701;
+  width: 185px;
+  height: 100%;
 }
-
 .image-frame {
   border-radius: 30px solid #ccc;
   padding: 10px;
-  /* max-width: 10%; */
-  /* max-height: 10%; */
   width: 160px;
   height: 160px;
 }
+.medeelel{
+  position: absolute;
+  top: 20px;
+  left: 250px;
+}
+.user_name{
+  width: 200px;
+  background-color: none;
+  padding: 5px;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #ccc;
+  text-align: center;
+}
+.pro_user{
+  border: 4px solid;
+  width: 200px;
+  padding: 5px;
+  border-color: #FFD747;
+  background-color: #FFD747;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+/*uzuulelt*/
+.ehnii{
+  /* position: absolute; */
+  /* top:0;
+  right: 40%; */
+  background-color: #000;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+}
+.hoyrdoh{
+  /* position: absolute; */
+  /* top:0;
+  right: 20%; */
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+}
+.guravdah{
+  /* position: absolute; */
+  /* top:0;
+  right: 0; */
+  background-color: #FFD747;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+}
+.uzuulelt{
+  position: absolute;
+  display: flex;
+  /* grid-template-columns: 150px 150px 150px; */
+  /* grid-template-columns: repeat(auto-fit, minmax(220px, 3rem)); */
+  gap: 2rem;
+  width: 50%;
+  top: 0;
+  right: 0;
+  /* left:40%; */
+}
+/*Kino heseg*/
+.one_movies a div img{
+  border-radius: 15px;
+  max-width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+.imagee {
+  width: 175px; 
+  height: 275px;
+  overflow: hidden; 
+}
+.imagee:hover {
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ffd474;
+}
+.imagee:hover img {
+  transform: scale(1.1);
+}
+.imagee:hover .unelgee {
+  opacity: 1;
+}
+.one_movies a{
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.my-list ul{
+  margin: 0;
+  padding: 0;
+}
+.one_movies{
+  width: 175px; 
+  max-width: 100%;
+}
+/*Zurh*/
+a{
+  position: relative;
+}
+.unelgee{
+  position: absolute; 
+  top: 225px;
+  background: rgba(0, 0, 0, 0.5); 
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: #f1f1f1; 
+  width: 175px;
+  opacity:0;
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.setgegdel{
+  position: absolute;
+  top: 0;
+  left: 190px;
+  width: 100%;
+  text-align: left;
+}
+.setgegdel h3{
+  margin-top: 0;
+}
+.setgegdel p:last-child{
+  color: rgb(123, 119, 119);
+}
 
-.user-name-frame span {
+
+
+/* 
+.user-name-frame {
+  border-radius: 1px solid #ccc;
+  padding: 10px;
+} */
+
+
+
+
+
+/* .user-name-frame span {
   font-size: 20px;
   font-weight: bold;
 }
@@ -31,7 +172,7 @@
 
 .user-name-frame p strong {
   color: #000;
-}
+} */
 
   
   /* Profile section */
@@ -56,10 +197,10 @@
     
   } */
   
-  section img {
+  /* section img {
     width: 100%;
     max-width: 300px;
-  }
+  } */
   
   /* My list section */
   .my-list .one_movies {
@@ -77,11 +218,16 @@
     text-align: center;
     margin-top: 12px;
   }
-
   .my-list li {
     list-style: none;
-  }
-
+    display: flex; 
+    grid-template-columns: repeat(3, 1fr) ; 
+    gap: 10px;
+    flex-wrap: wrap;
+    width: auto;
+    margin-bottom: auto;
+    align-items: start;
+}
   section.my-list article img:hover {
     opacity: 0.7;
     transform: scale(1.1);
@@ -99,6 +245,7 @@
   gap: 3rem;
   text-align: center;
   justify-content: center;
+  align-items: start;
 }
   
 /* Last Reviews */
@@ -162,4 +309,140 @@ body > section:nth-child(2) > div > div:nth-child(2) {
 body > section:nth-child(2) > div > div:nth-child(2) > p {
   color: #000;
   font-size: 24px;
+}
+@media (max-width: 430px){
+  .user_frame{
+    margin-top: 80px;
+  }
+  section{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .round-frame {
+    width: 90px;
+    height: 100%;
+  }
+  .image-frame {
+    width: 70px;
+    height: 70px;
+  }
+  .medeelel{
+    top: 0;
+    left: 110px;
+  }
+  .medeelel .user_name{
+    margin-top: 0;
+  }
+  .medeelel .pro_user{
+    margin-bottom: 0;
+  }
+  .user_name{
+    width: 150px;
+  }
+  .pro_user{
+    width: 150px;
+  }
+  .my-list{
+    margin-top: 100px;
+  }
+  .uzuulelt{
+    top: 90px;
+    left: 0;
+    width: 90%;
+    gap: 1rem;
+  }
+  .imagee {
+    width: 100%;
+    height: 100%; 
+    overflow: hidden; 
+  }
+  .one_movies{
+    width: 125px; 
+  }
+  .unelgee{
+    display: none;
+  }
+  /*Zurh*/
+  .setgegdel{
+    position: absolute;
+    top: 0;
+    left: 120px;
+    width: 100%;
+    text-align: left;
+  }
+  .imagee {
+    width: 100px; 
+    height: 180px;
+    object-fit: cover;
+    overflow: hidden; 
+  }
+  .my-list .one_movies img {
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100px;
+    height: 180px;
+  }
+  .one_movies {
+    height: 100%;  
+    width: 28% !important;
+  }
+  .my-list li {
+      display: flex; 
+      grid-template-columns: repeat(3, 1fr) ; 
+      gap: 10px;
+      flex-wrap: wrap;
+      width: auto;
+  }
+  .last-reviews .one_movies img {
+    border-radius: 15px;
+    width: 100px;
+    height: 180px;
+}
+}
+@media (min-width: 430px) and (max-width: 999px){
+  .round-frame {
+    margin-top: 90px;
+    width: 150px;
+    height: 150px;
+  }
+  .image-frame {
+    width: 130px;
+    height: 130px;
+  }
+  .medeelel{
+    top: 0;
+    left: 180px;
+  }
+  .medeelel .user_name{
+    margin-top: 0;
+  }
+  .uzuulelt{
+    top: 80px;
+    left: 180px;
+    width: 60%;
+    gap: 1rem;
+  }
+}
+@media (min-width: 430px) and (max-width: 800px){
+  .uzuulelt{
+    top: 150px;
+    left: 0;
+    width: 100%;
+    gap: 1rem;
+  }
+  .my-list{
+    margin-top: 120px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1500px){
+  .medeelel{
+    top: 0;
+  }
+  .medeelel .user_name{
+    margin-top: 0;
+  }
+  .uzuulelt{
+    top: 80px;
+    left: 250px;
+  }
 }
