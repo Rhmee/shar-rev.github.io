@@ -43,10 +43,13 @@ function generateMovieDetailsHTML(movie) {
                 <span>127K <i class="fa fa-eye" aria-hidden="true"></i></span>
                 <span class="spacer"></span>
                 <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
-                <span class="spacer"></span>    
-                <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                <span class="spacer"></span>
+                <span class="like-count" id="likeCount">0</span>    
+                <span><i class="fa fa-heart" style="color:red"></i></span>
             </p>
-            <p><i id="icon" onclick="likebtn()" class="far fa-heart"></i></p>
+            <p class="like-button" id="likeButton" >
+                <i id="icon" class="fas fa-heart like-icon" onclick="toggleLike()"></i>
+            </p>
             <p>Tөрөл: <span>${movie.genre}</span></p>
             <p>Үргэжлэх хугацаа: <span>${movie.urgeljleh_hugatsaa}</span></p>
             <p>Гарсан огноо: <span>${movie.release_date}</span></p>
@@ -57,6 +60,23 @@ function generateMovieDetailsHTML(movie) {
             <p>Гол дүр: <span>${movie.jujigchid.join(', ')}</span></p>
             <h3>Шүүмж бичих</h3>
             <rating-component count="0"></rating-component>
+            <script>
+                let likeCount = 0;
+                let isLiked = false;
+        
+                function toggleLike() {
+                    isLiked = !isLiked;
+                    likeCount += isLiked ? 1 : -1;
+                    updateLike();
+                }
+        
+                function updateLike() {
+                    const likeIcon = document.querySelector('.like-icon');
+                    const likeCountElement = document.querySelector('#likeCount');
+                    likeIcon.classList.toggle('liked', isLiked);
+                    likeCountElement.textContent = likeCount;
+                }
+            </script>
         </article>`;
 }
 

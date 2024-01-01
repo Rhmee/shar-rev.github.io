@@ -55,10 +55,13 @@
                 <span>127K <i class="fa fa-eye" aria-hidden="true"></i></span>
                 <span class="spacer"></span>
                 <span>8 <i class="fa fa-star" style="color: #ffd747;"></i></span>
-                <span class="spacer"></span>    
-                <span>10 <i class="fa fa-heart" style="color:red"></i></span>
+                <span class="spacer"></span>
+                <span class="like-count" id="likeCount">0</span>    
+                <span><i class="fa fa-heart" style="color:red"></i></span>
             </p>
-            <p><i id="icon" onclick="likebtn()" class="far fa-heart"></i></p>
+            <p class="like-button" id="likeButton" >
+                <i id="icon" class="fas fa-heart like-icon" onclick="toggleLike()"></i>
+            </p>
             <p>Tөрөл: <span>${genre}</span></p>
             <p>Үргэжлэх хугацаа: <span>${urgeljleh_hugatsaa}</span></p>
             <p>Гарсан огноо: <span>${movie.release_date}</span></p>
@@ -68,21 +71,24 @@
             <p>Продюсер <span>${producer}</span></p>
             <p>Гол дүр: <span>${jujigchid.join(', ')}</span></p>
             <rating-component></rating-component>
-        <script type="text/javascript">
-            let btn = document.getElementById("icon");
-            function likebtn(){
-                if(btn.classList.contains("far")){
-                    btn.classList.remove("far");
-                    btn.classList.add("fas");
-                    btn.style.color = "red";
+            <script>
+                let likeCount = 0;
+                let isLiked = false;
+        
+                function toggleLike() {
+                    isLiked = !isLiked;
+                    likeCount += isLiked ? 1 : -1;
+                    updateLike();
                 }
-                else{
-                    btn.classList.remove("fas");
-                    btn.classList.add("far");
-                    btn.style.color = ""; 
+        
+                function updateLike() {
+                    const likeIcon = document.querySelector('.like-icon');
+                    const likeCountElement = document.querySelector('#likeCount');
+                    likeIcon.classList.toggle('liked', isLiked);
+                    likeCountElement.textContent = likeCount;
                 }
-            }        
-        </script>
+            </script>
+            
         <script src="/javascript/rating-component.js"></script>
         <aside class="hesegbish">
             <input type="text" class="search" placeholder="Хайх">

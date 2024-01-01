@@ -39,18 +39,10 @@
   display: inline-block;
   width: 2px; 
 }
-.unelgee span:not(:last-child) {
+.unelgee span:not(:nth-last-child(-n+2)) {
   margin-right: 20px;
 }
 
-#icon{
-  position: absolute;
-  top: 0;
-  right: 0; 
-  padding-top: 0.7rem;
-  padding-right: 0.5rem;
-  font-size: 30px;
-}
 section h2 {
   font-size: 30px;
   margin-bottom: 20px;
@@ -171,6 +163,35 @@ section{
 }
 .rating-value{
   z-index: 1;
+}
+/*Like button*/
+#icon{
+  position: absolute;
+  top: 0;
+  right: 0; 
+  padding-top: 0.7rem;
+  padding-right: 0.5rem;
+  font-size: 30px;
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.like-icon {
+  color: #8e8e8e;
+  transition: color 0.3s ease-in-out;
+  margin-right: 0 !important;
+}
+
+.like-count {
+  margin-left: 5px;
+}
+
+.liked {
+  color: #e74c3c; 
 }
 @media(max-width: 430px){
   #Poster_zurag{
