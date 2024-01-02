@@ -42,13 +42,16 @@
             rightMenu.classList.toggle('active');
         };
     </script>
-    <section>
+    <section class="Quiz_info">
         <h2>Таавар таацгаая</h2>
-        <img class="img" src="/photos/posters/quiz_poster.jpg" alt="Кино Постер">   
-        <button>Hint</button>  
+        <!-- <img class="img" id="poster" src="" alt="Кино Постер"> -->
+        <div id="contentContainer"></div>
+        <p id="hint"></p> 
+        <button id="hintButton" onclick="showHint()">Hint</button>
         <input class="input" type="text" placeholder="Кино нэр бичнэ үү">
         <button>Илгээх</button>
     </section>
+    <script src="/javascript/quiz_script.js"></script>
     <footer>
         <a href="facebook.com"><img src="/photos/fb.png" alt=""></a>
         <a href="instagram.com"><img src="/photos/igg.jpg" alt=""></a>
