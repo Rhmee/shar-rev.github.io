@@ -93,7 +93,7 @@ div .one_movies a{
 .new-movies {
     display: flex; 
     grid-template-columns: repeat(3, 1fr) ; 
-    gap: 30px;
+    gap: 67.9px;
     flex-wrap: wrap;
     width: auto;
 }
@@ -141,7 +141,7 @@ h2{
     display: flex; 
     align-items: center;
     grid-template-columns: repeat(6, 1fr) ; 
-    gap: 30px;
+    gap: 67.9px;
     flex-wrap: wrap;
 }
 .news article img {
@@ -173,7 +173,7 @@ h2{
     flex-direction: column;
 }
 .section-review{
-    margin-left: 20%;
+    margin-left: 5%;
 }
 .news div h2{
     margin-top: 0;

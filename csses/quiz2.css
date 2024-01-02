@@ -2,12 +2,31 @@ section{
     margin: auto;
     text-align: center;
 }
+#contentContainer{
+    display: block;
+    position: relative;
+    width: 630px;
+    height: 385px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 40px #ffd747;
+}
+#contentContainer p{
+    position: absolute;
+    font-size: 20px;
+    z-index: 2;
+    color: black;
+    top: 40%;
+    left: 40%;
+    font-weight: bold;
+    text-align: center;
+}
 .img{
     display: block;
     width: 630px;
     height: 385px;
     margin: auto;
-    box-shadow: 0 0 40px #ffd747;
 }
 .input{
     margin-top: 2rem;
