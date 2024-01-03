@@ -125,10 +125,7 @@
             margin-top: 15px;
              
         }
-        /* .form_cont {
-            display: none;
-        } */
-        .form_signup{
+        .form_cont {
             display: none;
         }
         .form_signup h2{
@@ -141,10 +138,10 @@
 </head>
 <body>
     <header class="active">
-        <a href="/htmls/home.html"><img src="/photos/Logo.png" alt="Logo" /></a>
+        <a href="/htmls/index.html"><img src="/photos/Logo.png" alt="Logo" /></a>
         <nav>
             <ul class="main-menu">
-                <li><a href="/htmls/home.html">Нүүр</a></li>
+                <li><a href="/htmls/index.html">Нүүр</a></li>
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
             <ul class="right">
@@ -152,7 +149,7 @@
                     <input type="text" class="search" placeholder="Хайх" />
                 </li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
-                <li><a href="#" id="loginLink">Нэвтрэх</a></li>
+                <li><a href="/htmls/login.html" id="loginLink">Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>
@@ -165,8 +162,8 @@
                 <form action="#">
                     <h2>Нэвтрэх</h2>
                     <div class="input_box">
-                        <input type="text" placeholder="Нэвтрэх нэрээ оруулна уу">
-                    <i class="fas fa-user nevtreh"></i>
+                        <input type="text" placeholder="Утасны дугаар оруулна уу">
+                        <i class="far fa-phone"></i>
                     </div>
                     <div class="input_box">
                         <input type="password" placeholder="Нууц үгээ оруулна уу">
@@ -182,7 +179,6 @@
                     </div>
                     <button type="button" class="button" id="loginButton">Login</button>   
                     <div class="login_signup">Бүртгүүлэх <a href="#" id="signupLink">Signup</a></div>
-                    </div>                
                 </form>
             </article>
             <!-- sign form -->
@@ -191,7 +187,11 @@
                     <h2>Бүртгүүлэх</h2>
                     <div class="input_box">
                         <input type="text" placeholder="Нэвтрэх нэрээ оруулна уу">
-                    <i class="fas fa-user nevtreh"></i>
+                        <i class="fas fa-user nevtreh"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Утасны дугаар оруулна уу">
+                        <i class="fa-regular fa-phone"></i>
                     </div>
                     <div class="input_box">
                         <input type="password" placeholder="Нууц үгээ оруулна уу">
@@ -203,9 +203,8 @@
                         <i class="fas fa-lock password"></i>
                         <i class="fas fa-eye-slash pw_hide"></i>
                     </div>
-                    <button type="button" class="button" id="loginButton">Signup</button>   
+                    <button type="button" class="button" id="signupButton">Signup</button>   
                     <div class="login_signup">Байгаа юу?<a href="#" id="loginLinkk">Login</a></div>
-                    </div>                
                 </form>
             </article>
         </section>
@@ -219,7 +218,7 @@
             var formLogin = document.querySelector(".form_login");
             var formContainer = document.querySelector(".form_cont");
             var formClose = document.querySelector(".form_close");
-
+    
             loginLink.addEventListener("click", function (e) {
                 e.preventDefault();
                 formSignup.style.display = "none";
@@ -235,17 +234,17 @@
                 formLogin.scrollIntoView({ behavior: 'smooth' });
             });
 
-            loginLinkk.addEventListener("click", function (e) {
-                e.preventDefault();
-                formSignup.style.display = "none";
-                formLogin.style.display = "block";
-                formContainer.style.display = "block";
+                loginLinkk.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    formSignup.style.display = "none";
+                    formLogin.style.display = "block";
+                    formContainer.style.display = "block";
+                });
+        
+                formClose.addEventListener("click", function () {
+                    formContainer.style.display = "none";
+                });
             });
-    
-            formClose.addEventListener("click", function () {
-                formContainer.style.display = "none";
-            });
-        });
     </script>
 </body>
 </html>

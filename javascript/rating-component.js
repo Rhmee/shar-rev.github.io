@@ -1,27 +1,6 @@
-class RatingComponent extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-      this._count = 0;
-    }
-  
-    static get observedAttributes() {
-      return ['count'];
-    }
-  
-    attributeChangedCallback(name, oldValue, newValue) {
-      if (name === 'count') {
-        this._count = parseInt(newValue, 10) || 0;
-      }
-    }
-  
-    connectedCallback() {
-      this.render();
-    }
-  
-    render() {
-      const template = `
-        <style>
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
         .rating-container input {
             display: none;
         }
@@ -276,7 +255,6 @@ class RatingComponent extends HTMLElement {
             .rating-container {
                 border-top-right-radius: 20px;
                 margin: auto;
-                /* height: 50px; */
                 padding-left: 22px;
                 padding-right: 5px;
             }
@@ -285,28 +263,167 @@ class RatingComponent extends HTMLElement {
                 height: 20px;
             }
         }
+
+        #inputRev {
+            display: inline-block;
+            position: absolute;
+            right: 25%;
+            width: 70%;
+            height: 75px;
+            border-bottom-left-radius: 25px;
+            font-size: 18px;
+            word-wrap: break-word;
+            white-space: pre-line;
+            padding: 10px; 
+            box-sizing: border-box;
+            resize: none;
+        }
+        
+        #ilgeeh {
+            display: inline-block;
+            position: absolute;
+            background-color: #ffd747;
+            border-bottom-right-radius: 25px;
+            height: 75px;
+            width: 75px;
+            right: 10%;
+            border: 2px solid #ffd747;
+            box-sizing: border-box; 
+        }
+        
+        #ilgeeh:hover {
+            background-color: #ffcc00;
+        }
+        
+        .rating-value {
+            z-index: 1;
+        }
         </style>
         <div class="reviewing" id="review">
-          <fieldset class="rating-container">
-            ${generateStarRatingHTML(0)}
-            <div class="rating-value">0</div>
-          </fieldset>
-          <input type="text" id="inputRev">
+            <fieldset class="rating-container">
+                ${generateStarRatingHTML()}
+                <div class="rating-value"></div>
+            </fieldset>
+            <textarea id="inputRev" placeholder="Шүүмж/Сэтгэгдэл бичнэ үү..."></textarea>
+            <button id="ilgeeh"><i class="fas fa-send"></i></button>
         </div>
-      `;
-      this.shadowRoot.innerHTML = template;
+`;
+
+class RatingComponent extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
+  
+      this._ratingValue = 0;
+      this._reviewComment = '';
+  
+      this.ratingValueElement = this.shadowRoot.querySelector('.rating-value');
+      this.textareaElement = this.shadowRoot.getElementById('inputRev');
+      this.sendButton = this.shadowRoot.getElementById('ilgeeh');
+  
+      this.handleRatingChange = this.handleRatingChange.bind(this);
+      this.handleCommentChange = this.handleCommentChange.bind(this);
+      this.handleSendButtonClick = this.handleSendButtonClick.bind(this);
+  
+      this.attachEventListeners();
+  
+      this.loadState();
+    }
+  
+    static get observedAttributes() {
+      return ['rating', 'review'];
+    }
+  
+    connectedCallback() {
+      this._ratingValue = parseInt(this.getAttribute('rating')) || 0;
+      this._reviewComment = this.getAttribute('review') || '';
+      this.render();
+    }
+  
+    attributeChangedCallback(attributeName, oldValue, newValue) {
+      if (oldValue !== newValue) {
+        if (attributeName === 'rating') {
+          this._ratingValue = parseInt(newValue) || 0;
+          this.render();
+        } else if (attributeName === 'review') {
+          this._reviewComment = newValue || '';
+        }
+      }
+    }
+  
+    attachEventListeners() {
+      const ratingInputs = this.shadowRoot.querySelectorAll('input[name="rating"]');
+      ratingInputs.forEach((input) => {
+        input.addEventListener('change', this.handleRatingChange);
+      });
+  
+      this.textareaElement.addEventListener('input', this.handleCommentChange);
+  
+      this.sendButton.addEventListener('click', this.handleSendButtonClick);
+  
+      this.textareaElement.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          this.handleSendButtonClick();
+        }
+      });
+  
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        this.shadowRoot.host.classList.toggle('dark-mode', e.matches);
+      });
+    }
+  
+    handleRatingChange(event) {
+      this._ratingValue = parseInt(event.target.id.replace('rate', '')) || 0;
+      this.render();
+    }
+  
+    handleCommentChange() {
+      this._reviewComment = this.textareaElement.value;
+    }
+  
+    handleSendButtonClick() {
+      this.dispatchEvent(
+        new CustomEvent('submit', {
+          detail: {
+            rating: this._ratingValue,
+            review: this._reviewComment,
+          },
+        })
+      );
+      this.saveState();
+    }
+  
+    render() {
+      // Update the UI based on the current state
+      // ...
+      // For example, update the rating stars' appearance
+  
+      // Save state
+      this.saveState();
+    }
+  
+    saveState() {
+      localStorage.setItem('ratingComponentState', JSON.stringify({ rating: this._ratingValue, review: this._reviewComment }));
+    }
+  
+    loadState() {
+      const savedState = JSON.parse(localStorage.getItem('ratingComponentState')) || {};
+      this._ratingValue = savedState.rating || 0;
+      this._reviewComment = savedState.review || '';
+      this.render();
     }
   }
   
   customElements.define('rating-component', RatingComponent);
   
-  function generateStarRatingHTML(count) {
+  function generateStarRatingHTML() {
     let starsHTML = '';
     for (let i = 10; i >= 1; i--) {
       starsHTML += `
         <input type="radio" name="rating" id="rate${i}">
         <label for="rate${i}">
-          <!-- Replace the SVG code for each star here -->
           <svg id="Object" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 1122">
             <path class="cls-2" d="m570.497,252.536l93.771,190c1.543,3.126,4.525,5.292,7.974,5.794l209.678,30.468c8.687,1.262,12.156,11.938,5.87,18.065l-151.724,147.895c-2.496,2.428-3.564,6.124-2.798,9.704l35.69,209.543c1.62,9.523-8.466,16.69-16.498,11.846l-186.883-98.43c-3.441-1.816-7.536-1.816-10.977,0l-186.883,98.43c-8.032,4.844-17.118-2.323-16.498-11.846l35.69-209.543c0.766-3.581-0.302-7.276-2.798-9.704l-151.724-147.895c-6.287-6.127-2.818-16.803,5.87-18.065l209.678-30.468c3.449-0.502,6.431-2.668,7.974-5.794l93.771-190c4.139-8.381,14.392-8.381,18.531,0z" fill="#010002"/>
           </svg>
@@ -314,4 +431,3 @@ class RatingComponent extends HTMLElement {
     }
     return starsHTML;
   }
-  
