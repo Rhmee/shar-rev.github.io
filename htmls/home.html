@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/csses/review.css">
     <link rel="stylesheet" type="text/css" href="/csses/styles.css">
     <link rel="stylesheet" type="text/css" href="/csses/dark.css">
-    <script type="module" src="/javascript/homen.js"></script>
+    <script type="module" src="/javascript/darkcomp.js"></script>
 </head>
 <body>
     <header class="active">
@@ -27,13 +27,126 @@
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
             <ul class="right">
-                <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
+                <li class="search"><input type="text" class="search" id="searchInput" placeholder="Хайх" onkeyup="searchFunction()"></li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
                 <li><a href="/htmls/user.html" id="login">Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>   
     </header>
+
+    <div class="modal" id="searchModal">
+        <div class="modal-content" id="searchResults">
+            <!-- Search results will be displayed here -->
+            <span class="close-button" onclick="closeModal()">X</span>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114";
+        const API_KEY1 = "$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW";
+
+        async function fetchData() {
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: {
+                        'X-Master-Key': API_KEY1,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok. Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Check if the expected structure exists
+                if (data.record && Array.isArray(data.record.movies)) {
+                    return data.record.movies;
+                } else {
+                    throw new Error('Invalid data structure in the API response');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return null;
+            }
+        }
+
+        // Display the modal
+        function openModal() {
+            document.getElementById('searchModal').style.display = 'flex';
+        }
+
+        // Hide the modal
+        function closeModal() {
+            document.getElementById('searchModal').style.display = 'none';
+        }
+
+        async function searchFunction() {
+            // Get the input value
+            const input = document.getElementById("searchInput").value.trim().toLowerCase();
+
+            // Fetch data from the API
+            const movies = await fetchData();
+
+            // Check if the search input is empty
+            if (input === '') {
+                // Clear the search results and close the modal
+                clearResults();
+                closeModal();
+                return;
+            }
+
+            if (movies) {
+                // Filter the items based on the input value
+                const results = movies.filter(movie => movie.ner.toLowerCase().includes(input));
+
+                // Display the results in the modal
+                displayResults(results);
+
+                // Open the modal
+                openModal();
+            }
+        }
+
+        function clearResults() {
+            const searchResults = document.getElementById("searchResults");
+            searchResults.innerHTML = ""; // Clear previous results
+        }
+
+        function displayResults(results) {
+            const searchResults = document.getElementById("searchResults");
+            searchResults.innerHTML = ""; // Clear previous results
+
+            results.forEach(result => {
+                const resultContainer = document.createElement("article");
+                resultContainer.className = "result_container";
+
+                const link = document.createElement("a");
+                link.href = "info.html?id=" + result.id;
+                link.className = "result_link";
+
+                const imageContainer = document.createElement("div");
+                imageContainer.className = "result_img";
+
+                const img = document.createElement("img");
+                img.src = result.poster;
+                img.alt = result.ner;
+                imageContainer.appendChild(img);
+
+                const title = document.createElement("h4");
+                title.textContent = result.ner;
+
+                link.appendChild(imageContainer);
+                link.appendChild(title);
+                resultContainer.appendChild(link);
+
+                searchResults.appendChild(resultContainer);
+            });
+        }
+    </script>
     <script>
         let menu = document.querySelector('.menu');
         let mainMenu = document.querySelector('.main-menu');
@@ -54,7 +167,6 @@
         <a class="prev">&#10094;</a>
         <a class="next">&#10095;</a>
     </section>
-    <!-- <script src="/javascript/slide.js"></script> -->
 
     <section class="section-new">
         <div class="next">
@@ -64,7 +176,6 @@
         <div class="new-movies">
         </div>
     </section>
-    <!-- <script src="/javascript/new-movies.js"></script> -->
 
     <aside class="section-review">
         <h2>Reviews</h2>
@@ -106,7 +217,6 @@
 
         </div>
     </section>
-    <!-- <script src="/javascript/top-movies.js"></script> -->
     <script type="module" src="/javascript/app.js"></script>
     <h2>Мэдээ мэдээлэл</h2>
     <section class="news">
@@ -144,10 +254,5 @@
         </article>
     </section>
 </body>
-<footer>
-    <a href="facebook.com"><img src="/photos/fb.png" alt=""></a>
-    <a href="instagram.com"><img src="/photos/igg.jpg" alt=""></a>
-    <a href="gmail.com"><img src="/photos/gma.jpg" alt=""></a>
-    <a href="tel:+976 99999999"><i class="fas fa-phone-alt"></i></a>
-</footer>
+
 </html>

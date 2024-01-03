@@ -225,9 +225,10 @@ class FilterFunctions extends HTMLElement {
           <div class="article">
             <div class="image loading"></div>
             <div class="text loading"></div>
-          </div><div class="article">
-          <div class="image loading"></div>
-          <div class="text loading"></div>
+          </div>
+          <div class="article">
+            <div class="image loading"></div>
+            <div class="text loading"></div>
         </div>
         </div>
       </section>

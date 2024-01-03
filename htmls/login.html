@@ -125,7 +125,10 @@
             margin-top: 15px;
              
         }
-        .form_cont {
+        /* .form_cont {
+            display: none;
+        } */
+        .form_signup{
             display: none;
         }
         .form_signup h2{
@@ -216,7 +219,7 @@
             var formLogin = document.querySelector(".form_login");
             var formContainer = document.querySelector(".form_cont");
             var formClose = document.querySelector(".form_close");
-    
+
             loginLink.addEventListener("click", function (e) {
                 e.preventDefault();
                 formSignup.style.display = "none";

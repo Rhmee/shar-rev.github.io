@@ -4,8 +4,9 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     color: rgb(255, 255, 255);
-
+    min-height: 1048px;
     position: relative;
+
 }
 .no-margin {
     margin-left: 0;
@@ -81,6 +82,8 @@ footer {
     align-items: center;
     width: 100% !important;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 
 footer a {

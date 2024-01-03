@@ -201,6 +201,64 @@ h2{
     aspect-ratio: 2/3;
     object-fit: cover;
 }
+
+/*hailt*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 150px;
+    right: 180px;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: blue;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.result_img img {
+    border-radius: 15px;
+    width: 80px; /* Set the width */
+    height: 120px; /* Set the height */
+    object-fit: cover;
+    display: block;
+}
+
+.result_img {
+    width: 80px; /* Set the width */
+    height: 120px; /* Set the height */
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.result_link {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.result_container {
+    width: 80px; /* Set the width */
+    max-width: 100%;
+    margin-bottom: 10px;
+}
 @media(max-width: 430px){
     .slide{
         margin-top: 3.7rem;

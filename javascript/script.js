@@ -77,7 +77,32 @@ function generateMovieDetailsHTML(movie) {
                     likeCountElement.textContent = likeCount;
                 }
             </script>
-        </article>`;
+        </article>
+        <aside class="hesegbish">
+            <input type="text" class="search" placeholder="Хайх">
+            <section>
+                <article class="jijigReview">
+                    <img class="proff" src="/photos/posters/tushig.jpg" alt="">
+                    <div>
+                        <h4 class="rewInfo">Гарчиг 1</h2>
+                        <p class="rewInfo">Товч тайлбар</p>
+                        <p class="yDay">2020/10/20</p>
+                    </div>
+                </article>
+                <article class="jijigReview">
+                    <img class="proff" src="/photos/posters/narrrrr.png" alt="">
+                    <div>
+                        <h4 class="rewInfo">Гарчиг 1</h2>
+                        <p class="rewInfo">Товч тайлбар</p>
+                        <p class="yDay">2020/10/20</p>
+                    </div>
+                </article>
+            </section>
+            <article>
+                <h4>Трейлер</h4>
+                <video src="youtube.com"></video>
+            </article>
+        </aside>  `;
 }
 
 function generateStarRatingHTML() {

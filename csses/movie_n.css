@@ -65,7 +65,7 @@ button {
 }
 section{
     margin: 0 auto;
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 .one_movies{
     width: 175px; 
