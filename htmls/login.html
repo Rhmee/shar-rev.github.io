@@ -17,131 +17,16 @@
     <link rel="stylesheet" href="fontawesome/css/all/.min.css">
     <link rel="stylesheet" href="/csses/dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .login{
-            padding: 6x 24px;
-            border: none;
-            background-color: #ffd747;
-        }
-        .form_cont{
-            position: absolute;
-            max-width: 320px;
-            width: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.2);
-            z-index: 2;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            transition: all 0.4s ease-out;
-        }
-        .form_close{
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: black;
-            font-size: 22px;
-        }
-        .form_login h2{
-            color: black;
-            font-size: 22px;
-            margin: 0;
-            text-align: center;
-        }
-        .input_box{
-            position: relative;
-            margin-top: 30px;
-            width: 100%;
-            height: 40px;
-        }
-        .input_box input{
-            height: 100%;
-            width: 100%;
-            border: none;
-            outline: none;
-            padding: 0 30px;
-            color: #333;
-            border-bottom: 1.5px solid #aaaa;
-        }
-        .input_box i{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-        }
-        .input_box i.nevtreh, .input_box i.password {
-            left: 0;
-            color: #787070;
-        }
-        .input_box i.pw_hide{
-            right: 0;
-            font-size: 18px;
-        }
-        .form_cont .button{
-            background: #ffd747;
-            margin-top: 30px;
-            width: 100%;
-            padding: 10px 0;
-            border-radius: 10px;
-            border-color: #ffd747;
-        }
-        .option-field{
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between ;
-        }
-        .form_cont a {
-            color: #ffd747;
-            font-size: 12px;
-        }
-        .checkbox{
-            display: flex;
-            column-gap: 8px;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-        .checkbox input {
-            margin: 0;
-            accent-color: #ffd747;
-        }
-        .checkbox label{
-            color: black;
-            font-size: 12px;
-            cursor: pointer;
-            user-select: none;
-        }
-        .forget {
-            display: inline-block;
-            position: absolute;
-            right: 25px;
-        }
-        /**/
-        .login_signup{
-            color: black;
-            font-size: 12px;
-            text-align: center;
-            margin-top: 15px;
-             
-        }
-        .form_cont {
-            display: none;
-        }
-        .form_signup h2{
-            color: black;
-            font-size: 22px;
-            margin: 0;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/csses/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ezYfDlC6de6FQX9F2dZTwN5F/yZQbavbRK2Uu2FZmYUAaomsqU8lMz2w91DWEnD1" crossorigin="anonymous">
+
 </head>
 <body>
     <header class="active">
-        <a href="/htmls/home.html"><img src="/photos/Logo.png" alt="Logo" /></a>
+        <a href="/htmls/index.html"><img src="/photos/Logo.png" alt="Logo" /></a>
         <nav>
             <ul class="main-menu">
-                <li><a href="/htmls/home.html">Нүүр</a></li>
+                <li><a href="/htmls/index.html">Нүүр</a></li>
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
             <ul class="right">
@@ -149,7 +34,7 @@
                     <input type="text" class="search" placeholder="Хайх" />
                 </li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
-                <li><a href="#" id="loginLink">Нэвтрэх</a></li>
+                <li><a href="/htmls/login.html" id="loginLink">Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>
@@ -162,8 +47,8 @@
                 <form action="#">
                     <h2>Нэвтрэх</h2>
                     <div class="input_box">
-                        <input type="text" placeholder="Нэвтрэх нэрээ оруулна уу">
-                    <i class="fas fa-user nevtreh"></i>
+                        <input type="text" placeholder="Утасны дугаар оруулна уу">
+                        <i class="far fa-phone"></i>
                     </div>
                     <div class="input_box">
                         <input type="password" placeholder="Нууц үгээ оруулна уу">
@@ -179,7 +64,6 @@
                     </div>
                     <button type="button" class="button" id="loginButton">Login</button>   
                     <div class="login_signup">Бүртгүүлэх <a href="#" id="signupLink">Signup</a></div>
-                    </div>                
                 </form>
             </article>
             <!-- sign form -->
@@ -188,7 +72,11 @@
                     <h2>Бүртгүүлэх</h2>
                     <div class="input_box">
                         <input type="text" placeholder="Нэвтрэх нэрээ оруулна уу">
-                    <i class="fas fa-user nevtreh"></i>
+                        <i class="fas fa-user nevtreh"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Утасны дугаар оруулна уу">
+                        <i class="fa-regular fa-phone"></i>
                     </div>
                     <div class="input_box">
                         <input type="password" placeholder="Нууц үгээ оруулна уу">
@@ -200,49 +88,48 @@
                         <i class="fas fa-lock password"></i>
                         <i class="fas fa-eye-slash pw_hide"></i>
                     </div>
-                    <button type="button" class="button" id="loginButton">Signup</button>   
+                    <button type="button" class="button" id="signupButton">Signup</button>   
                     <div class="login_signup">Байгаа юу?<a href="#" id="loginLinkk">Login</a></div>
-                    </div>                
                 </form>
             </article>
         </section>
     </section>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var loginLink = document.getElementById("loginLink");
-            var loginLinkk = document.getElementById("loginLinkk");
-            var signupLink = document.getElementById("signupLink");
-            var formSignup = document.querySelector(".form_signup");
-            var formLogin = document.querySelector(".form_login");
-            var formContainer = document.querySelector(".form_cont");
-            var formClose = document.querySelector(".form_close");
-    
-            loginLink.addEventListener("click", function (e) {
-                e.preventDefault();
-                formSignup.style.display = "none";
-                formLogin.style.display = "block";
-                formContainer.style.display = "block";
-            });
-    
-            signupLink.addEventListener("click", function (e) {
-                e.preventDefault();
-                formLogin.style.display = "none";
-                formSignup.style.display = "block";
-                formContainer.style.display = "block";
-                formLogin.scrollIntoView({ behavior: 'smooth' });
-            });
+            document.addEventListener("DOMContentLoaded", function () {
+                var loginLink = document.getElementById("loginLink");
+                var loginLinkk = document.getElementById("loginLinkk");
+                var signupLink = document.getElementById("signupLink");
+                var formSignup = document.querySelector(".form_signup");
+                var formLogin = document.querySelector(".form_login");
+                var formContainer = document.querySelector(".form_cont");
+                var formClose = document.querySelector(".form_close");
+        
+                loginLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    formSignup.style.display = "none";
+                    formLogin.style.display = "block";
+                    formContainer.style.display = "block";
+                });
+        
+                signupLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    formLogin.style.display = "none";
+                    formSignup.style.display = "block";
+                    formContainer.style.display = "block";  
+                    formLogin.scrollIntoView({ behavior: 'smooth' });
+                });
 
-            loginLinkk.addEventListener("click", function (e) {
-                e.preventDefault();
-                formSignup.style.display = "none";
-                formLogin.style.display = "block";
-                formContainer.style.display = "block";
+                loginLinkk.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    formSignup.style.display = "none";
+                    formLogin.style.display = "block";
+                    formContainer.style.display = "block";
+                });
+        
+                formClose.addEventListener("click", function () {
+                    formContainer.style.display = "none";
+                });
             });
-    
-            formClose.addEventListener("click", function () {
-                formContainer.style.display = "none";
-            });
-        });
     </script>
 </body>
 </html>
