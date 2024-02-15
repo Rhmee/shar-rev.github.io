@@ -3,6 +3,9 @@ const controller = require('./controller');
 
 const router = Router();
 
+router.post("/signup", controller.signup);
+router.post("/login", controller.login);
+
 router.get("/", controller.getUser);
 router.get("/kino", controller.getMovies);
 // router.get("/", controller.getReview);

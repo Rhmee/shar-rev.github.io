@@ -106,7 +106,7 @@ fetchMoviesData(movieId)
     .then(movieArray => {
         // Check if movieArray is an array and not empty
         if (Array.isArray(movieArray) && movieArray.length > 0) {
-            const movie = movieArray[0]; // Get the first element of the array
+            const movie = movieArray[0];
             console.log("Fetched movie data:", movie); // Log the fetched movie data
             
             // Generate HTML for movie details

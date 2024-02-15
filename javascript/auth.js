@@ -50,7 +50,7 @@ class FormHandler {
             const phoneNumber = document.getElementById("loginPhoneNumber").value;
             const password = document.getElementById("loginPassword").value;
     
-            const response = await fetch('http://localhost:3000/api/v1/login', {
+            const response = await fetch('http://localhost:3000/api/v1/movies/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ class FormHandler {
                 const result = await response.json();
                 console.log(result);
                 // Redirect to index.html upon successful login
-                // window.location.href = "index.html";
+                window.location.href = "index.html";
             } else {
                 console.log('Login failed');
                 // Optionally, display an error message to the user
@@ -79,7 +79,7 @@ class FormHandler {
             const phoneNumber = document.getElementById("signupPhoneNumber").value;
             const password = document.getElementById("signupPassword").value;
     
-            const response = await fetch('http://localhost:3000/api/v1/signup', {
+            const response = await fetch('http://localhost:3000/api/v1/movies/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ class FormHandler {
                 const result = await response.json();
                 console.log(result);
                 // Redirect to index.html upon successful signup
-                // window.location.href = "index.html";
+                window.location.href = "index.html";
             } else {
                 console.log('Signup failed');
                 // Optionally, display an error message to the user
