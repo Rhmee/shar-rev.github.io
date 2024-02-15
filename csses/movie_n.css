@@ -4,9 +4,11 @@
     margin-bottom: 0;
     text-align: center;
 }
+
 .filter ul {
     list-style-type: none;
 }
+
 .filter ul li {
     display: inline-flex;
     width: 8rem;
@@ -14,75 +16,89 @@
     margin: 0;
     padding: 0;
 }
+
 select {
     background-color: #E6E6E6;
     width: 100%;
     text-align: center;
 }
-#byGenre{
+
+#byGenre {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
-#A_Z{
+
+#A_Z {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 button {
     background-color: #E6E6E6;
     width: 100%;
 }
+
 /*Кино хэсэг*/
 /*Зурагт хэмжээг нь өгч тохируулж байна*/
-.one_movies a div img{
+.one_movies a div img {
     border-radius: 15px;
     max-width: 100%;
     aspect-ratio: 2/3;
     object-fit: cover;
 }
+
 /*Hover хийх зурагт хэмжээг нь өгч тохируулж байна*/
 .imagee {
     width: 175px; 
     height: 275px;
     overflow: hidden; 
 }
+
 /* Зургийн hover хийх үед шар хүрээ үүсгэх */
 .imagee:hover {
     border-radius: 15px;
     box-shadow: 0 0 20px #ffd474;
 }
+
 /*Зургийн hover хийх үед томруулна */
 .imagee:hover img {
     transform: scale(1.1); /* Зургийг 1.1 удаа томруулах */
 }
+
 .imagee:hover .unelgee {
     opacity: 1;
-  }
+}
+
 /*h4 доторх тохиргоог өгч байна*/
-.movies-content .one_movies a{
+.movies-content .one_movies a {
     color: white;
     text-decoration: none;
     text-align: center;
 }
-section{
+
+section {
     margin: 0 auto;
-    /* padding: 2rem; */
 }
-.one_movies{
+
+.one_movies {
     width: 175px; 
 }
+
 /*Нийт кинонуудыг мөр үүсгэж байна*/
-.movies-content{
+.movies-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 6rem));
     gap: 3rem;
     text-align: center;
     justify-content: center;
 }
+
 /*Zurh*/
-a{
+a {
     position: relative;
 }
-.unelgee{
+
+.unelgee {
     position: absolute; 
     top: 225px;
     background: rgba(0, 0, 0, 0.5); 
@@ -90,14 +106,14 @@ a{
     border-bottom-right-radius: 15px;
     color: #f1f1f1; 
     width: 175px;
-    opacity:0;
+    opacity: 0;
     color: white;
     font-size: 1rem;
     margin: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: center;
-  }
+}
 
 @media(max-width: 500px){
     .unelgee{
@@ -126,6 +142,7 @@ a{
         height: 50px;
     }
 }
+
 @media (min-width: 430px) and (max-width: 999px){
     body{
         margin-left: 0 !important;
@@ -148,6 +165,7 @@ a{
     }
 
 }
+
 @media(max-height: 430px){
     .filter{
         margin-top: 10%;

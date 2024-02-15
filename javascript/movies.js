@@ -1,24 +1,36 @@
-const API_URL = "http://localhost:3000/api/movies";
+const API_URL = "http://localhost:3000/api/v1/movies";
 
 document.addEventListener("DOMContentLoaded", function () {
   const moviesSection = document.getElementById("movies");
 
-  fetch(API_URL)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      if (Array.isArray(data)) {
-        displayMovies(data, moviesSection);
-      } else {
-        console.error("Data is not an array or is not present.");
-      }
-    })
-    .catch((error) => console.error("Error fetching movies:", error));
+  fetchMoviesData(API_URL, moviesSection);
 });
+
+async function fetchMoviesData(apiUrl, moviesSection) {
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (Array.isArray(data)) {
+      displayMovies(data, moviesSection);
+    } else {
+      console.error("Data is not an array or is not present.");
+    }
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+  }
+}
+
+function displayMovies(movies, moviesSection) {
+  // Implement your logic to display movies
+  console.log("Movies:", movies);
+}
+
 
 function formatViews(views) {
   if (views >= 1000000000) {

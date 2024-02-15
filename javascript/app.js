@@ -2,35 +2,41 @@ import { Network } from './network.js';
 
 class App {
     constructor() {
-        this.newMoviesSection = document.querySelector('.section-new .new-movies');
-        this.topMoviesSection = document.querySelector('.section-new .top-movies');
-        this.network = new Network(
-            'https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114',
-            '$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW'
-        );
-        this.slideIndex = 0;
-
-        this.init();
+      this.newMoviesSection = document.querySelector('.section-new .new-movies');
+      this.topMoviesSection = document.querySelector('.section-new .top-movies');
+      this.network = new Network(
+        'https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114',
+        '$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW'
+    );
+      this.slideIndex = 0;
+  
+      this.init();
     }
-
+  
     async init() {
-        this.showSkeletonLoading();
-        const newMovies = await this.network.fetchMovies();
-        const topMovies = await this.network.fetchMovies();
-        this.hideSkeletonLoading();
-        if (newMovies) {
-            const sortedNewMovies = this.sortMoviesByReleaseDate(newMovies);
-            this.displayMoviesNew(this.newMoviesSection, sortedNewMovies);
+      this.showSkeletonLoading();
+  
+      try {
+        const response = await fetch('http://localhost:3000/api/v1/movies/kino', {
+          method: 'GET',  // Change the method to GET
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+    
+        if (response.ok) {
+          const moviesData = await response.json();
+          console.log('Movies Data:', moviesData);
+    
+          // Do something with the movies data, e.g., display them on your page
+          // Assuming you have a displayMovies function:
+          this.displayMovies(moviesData, document.getElementById("moviesSection"));
+        } else {
+          console.log('Fetching movies failed');
         }
-
-        if (topMovies) {
-            const sortedTopMovies = this.sortMoviesByRateAndPopularity(topMovies);
-            this.displayMoviesTop(this.topMoviesSection, sortedTopMovies);
-        }
-
-        this.showSlides();
-        this.setupSlideEvents();
-        this.startAutoSlide(); 
+      } catch (error) {
+        console.error('Error during signup:', error);
+      }
     }
 
 
