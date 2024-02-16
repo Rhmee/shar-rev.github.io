@@ -61,6 +61,7 @@ section {
     border: none;
     border-radius: 15px;
     height: 30px;
+    width: 400px;
 }
 header li a:active {
     background-color: rgb(84, 75, 75);

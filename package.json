@@ -4,7 +4,8 @@
   "description": "Монгол дахь кино, контентэд хэрэглэгчид шүүмж хийн, сайжруулалт хийх зорилготой веб юм.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

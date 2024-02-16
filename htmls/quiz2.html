@@ -27,7 +27,7 @@
             <ul class="right">
                 <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
-                <li><a href="/htmls/login.html">Нэвтрэх</a></li>
+                <li id="loginLink"><a href="/htmls/login.html" >Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>   
@@ -41,6 +41,13 @@
             mainMenu.classList.toggle('active');
             rightMenu.classList.toggle('active');
         };
+        let login = document.getElementById('loginLink');
+            let user = localStorage.getItem("user");
+            if(user) {
+                login.innerHTML = `<a href="/htmls/user.html" id="loginLink">${user}</a>`;
+            } else {
+                login.innerHTML = `<a href="/htmls/login.html" id="loginLink">Нэвтрэх</a>`;
+            }
     </script>
     <section class="Quiz_info">
         <h2>Таавар таацгаая</h2>

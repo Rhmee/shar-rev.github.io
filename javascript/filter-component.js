@@ -38,13 +38,7 @@ class FilterFunctions extends HTMLElement {
       }
     }
 
-    connectedCallback() {
-        document.getElementById("byPopularity").addEventListener("click", () => this.sortByPopularity());
-        document.getElementById("byGenre").addEventListener("change", () => this.applyFilters());
-        document.getElementById("byRating").addEventListener("change", () => this.applyFilters());
-        document.getElementById("byYear").addEventListener("change", () => this.applyFilters());
-        document.getElementById("A_Z").addEventListener("click", () => this.sortAlphabetically());
-    }
+    
 
     showSkeletonLoading() {
       const skeletonLoadingHTML = `
@@ -84,6 +78,11 @@ class FilterFunctions extends HTMLElement {
           const filter = document.getElementsByClassName("filter");
           filter.style.display = "none";
           console.log("filter duudagdav");
+            document.getElementById("byPopularity").addEventListener("click", () => this.sortByPopularity());
+            document.getElementById("byGenre").addEventListener("change", () => this.applyFilters());
+            document.getElementById("byRating").addEventListener("change", () => this.applyFilters());
+            document.getElementById("byYear").addEventListener("change", () => this.applyFilters());
+            document.getElementById("A_Z").addEventListener("click", () => this.sortAlphabetically());
         </script>
         <section class="movies-content" id="movies">
           <div class="skeleton"> 
