@@ -46,8 +46,8 @@ function generateMovieDetailsHTML(movie) {
             <h2>${movie.name || 'Unknown'}</h2>
             <p class="unelgee">
                 <span>${formatViews(views)} <i class="fa fa-eye" aria-hidden="true"></i></span>
-                <span>${movie.rate || 'Rating not available'} <i class="fa fa-star" style="color: #ffd747;"></i></span>
-                <span>${movie.likes || 'Likes not available'} <i class="fa fa-heart" style="color:red"></i></span>
+                <span>${movie.rate} <i class="fa fa-star" style="color: #ffd747;"></i></span>
+                <span>${movie.likes} <i class="fa fa-heart" style="color:red"></i></span>
             </p>
             <p>Tөрөл: <span>${movie.genre || 'Genre not available'}</span></p>
             <p>Үргэжлэх хугацаа: <span>${movie.duration || 'Duration not available'}</span></p>

@@ -25,16 +25,4 @@ app.get("/", (req, res) => {
 
 app.use('/api/v1/movies', userRoutes);
 
-// Define route for signup
-// app.post('/api/v1/signup', (req, res) => {
-//     // Implement signup logic here
-//     // Example:
-//     res.json({ message: 'Signup successful' });
-// });
-
-// app.post('/api/v1/login', (req, res) => {
-  
-// });
-
-// Start server
 app.listen(port, () => console.log(`App is running on port ${port}`));
