@@ -207,17 +207,47 @@ const updateUser = (req, res) => {
 };
 
 const updateMovie = (req, res) => {
-    const id = parseInt(req.params.id);
-    const { name } = req.body;
+    const movieId = req.params?.id;
+    const newRate = req.body?.newRate;
 
-    pool.query(queries.updateMovie, [name, id], (error, result) => {
-        if (error) {
-            console.error('Error updating movie:', error);
+    if(movieId && newRate) {
+    const getViews = 'SELECT views FROM "Movies" WHERE id = $1';
+    const getRate = 'SELECT rate FROM "Movies" WHERE id = $1';
+
+    pool.query(getViews, [movieId], (errorViews, resultViews) => {
+        if (errorViews) {
+            console.error('Error fetching views:', errorViews);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
-        res.status(200).send("Movie updated successfully");
+
+        const views = resultViews?.rows[0]?.views;
+
+        pool.query(getRate, [movieId], (errorRate, resultRate) => {
+            if (errorRate) {
+                console.error('Error fetching rate:', errorRate);
+                return res.status(500).json({ error: 'Internal Server Error' });
+            }
+
+            const currentRate = resultRate.rows[0].rate;
+            console.log(currentRate);
+
+            const updatedViews = views + 1;
+            const updatedRate = Math.floor(((views * parseFloat(currentRate)) + parseFloat(newRate)) / updatedViews);
+
+            pool.query(queries.updateMovie, [updatedViews, updatedRate, movieId], (updateError, updateResult) => {
+                if (updateError) {
+                    console.error('Error updating movie:', updateError);
+                    return res.status(500).json({ error: 'Internal Server Error' });
+                }
+                res.status(200).send("Movie updated successfully");
+            });
+        });
     });
+} else {
+    res?.status(200).send("Failed successfully");
+}
 };
+
 
 const updateReview = (req, res) => {
     const id = parseInt(req.params.id);

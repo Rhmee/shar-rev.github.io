@@ -467,7 +467,7 @@ async function handleFormSubmission() {
         const currentDate = getCurrentDate();
 
         try {
-            const response = await fetch('http://localhost:3000/api/v1/movies/review', {
+            const reviewResponse = await fetch('http://localhost:3000/api/v1/movies/review', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -480,20 +480,34 @@ async function handleFormSubmission() {
                     movie_id: localStorage.getItem("movieId")
                 }),
             });
-            if (!response.ok) {
+
+            if (!reviewResponse.ok) {
                 throw new Error('Failed to submit review');
             }
-            const data = await response.json();
-            console.log('Response from server:', data);
-            // Optionally provide feedback to the user about successful submission
+
+            console.log(localStorage.getItem("movieId"));
+
+            const updateResponse = await fetch(`http://localhost:3000/api/v1/movies/kino/${localStorage.getItem("movieId")}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    newRate: rate
+                }),
+            });
+
+            if (!updateResponse.ok) {
+                throw new Error('Failed to update movie data');
+            }
+
             alert('Review submitted successfully!');
+            location.reload();
         } catch (error) {
             console.error('Error:', error);
-            // Optionally provide feedback to the user about the error
             alert('Failed to submit review. Please try again later.');
         }
     } else {
         console.error("Review input element not found!");
     }
 }
-

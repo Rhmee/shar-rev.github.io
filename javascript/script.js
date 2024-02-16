@@ -1,4 +1,4 @@
-// Fetch movie data based on movieId and display it
+
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 console.log("Movie ID:", movieId);
@@ -10,28 +10,24 @@ const fetchMoviesData = async (movieId) => {
             method: 'GET'
         });
         if (!response.ok) {
-            // Handle server errors
             const errorData = await response.json();
             throw new Error(`Failed to fetch movies: ${errorData.message}`);
         }
         const data = await response.json();
-        return data; // Assuming the API response is in correct format
+        return data;
     } catch (error) {
         console.error("Error fetching movies:", error);
         return null;
     }
 }
 
-// Function to generate HTML for movie details
 function generateMovieDetailsHTML(movie) {
     if (!movie) {
         return "<p>Movie details not available</p>";
     }
 
-    // Check if actors is defined and is an array
     const jujigchidList = Array.isArray(movie.actors) ? movie.actors : [];
 
-    // Convert array to string using join method
     const jujigchidString = jujigchidList.join(', ');
 
     const views = movie.views !== undefined ? movie.views : "Views not available";
@@ -92,7 +88,6 @@ function generateMovieDetailsHTML(movie) {
     return movieDetailsHTML;
 }
 
-// Function to format views
 function formatViews(views) {
     if (views >= 1000000000) {
         return (views / 1000000000).toFixed(1) + "B";
@@ -105,7 +100,6 @@ function formatViews(views) {
     }
 }
 
-// Function to generate HTML for star rating
 function generateStarRatingHTML() {
     let starsHTML = '';
     for (let i = 10; i >= 1; i--) {
@@ -123,14 +117,11 @@ function generateStarRatingHTML() {
 
 fetchMoviesData(movieId)
     .then(movieArray => {
-        // Check if movieArray is an array and not empty
         if (Array.isArray(movieArray) && movieArray.length > 0) {
             const movie = movieArray[0];
-            console.log("Fetched movie data:", movie); // Log the fetched movie data
+            console.log("Fetched movie data:", movie); 
             
-            // Generate HTML for movie details
             const movieDetailsHTML = generateMovieDetailsHTML(movie);
-            // Display movie details in the DOM
             document.getElementById("movie-details").innerHTML = movieDetailsHTML;
         } else {
             console.error("Empty or invalid movie data received.");
