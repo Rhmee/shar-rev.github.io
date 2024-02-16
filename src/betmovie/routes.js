@@ -8,6 +8,7 @@ router.post("/login", controller.login);
 
 router.get("/", controller.getUser);
 router.get("/kino", controller.getMovies);
+router.get("/quiz", controller.getQuiz);
 router.get("/review", controller.getReviews);
 
 router.post("/", controller.addUser);
@@ -26,6 +27,6 @@ router.put("/:id", controller.updateUser);
 router.put("/kino/:id", controller.updateMovie);
 router.put("/review/:id", controller.updateReview);
 
-router.get("/kino/:movie_id/review", controller.getReviewByMovieID);
+// router.get("/kino/:movie_id/review", controller.getReviewByMovieID);
 
 module.exports = router; 

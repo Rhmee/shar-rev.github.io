@@ -49,14 +49,16 @@
                 login.innerHTML = `<a href="/htmls/login.html" id="loginLink">Нэвтрэх</a>`;
             }
     </script>
-    <section class="Quiz_info">
+    <section  class="Quiz_info">
         <h2>Таавар таацгаая</h2>
         <!-- <img class="img" id="poster" src="" alt="Кино Постер"> -->
-        <div id="contentContainer"></div>
+        <div id="contentContainer" style="display: flex; justify-content: center; align-items: center;"></div>
         <p id="hint"></p> 
         <button id="hintButton" onclick="showHint()">Hint</button>
-        <input class="input" type="text" placeholder="Кино нэр бичнэ үү">
-        <button>Илгээх</button>
+        <input id="inputHere" class="input" type="text" placeholder="Кино нэр бичнэ үү">
+        <span id="answer">
+        <button onclick="answer()">Илгээх</button>
+        </span>
     </section>
     <script src="/javascript/quiz_script.js"></script>
     <footer>

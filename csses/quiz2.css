@@ -18,7 +18,7 @@ section{
     z-index: 2;
     color: black;
     top: 40%;
-    left: 40%;
+    /* left: 40%; */
     font-weight: bold;
     text-align: center;
 }

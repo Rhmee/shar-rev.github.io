@@ -103,6 +103,16 @@ const getMovieByID = (req, res) => {
     });
 };
 
+const getQuiz = (req, res) => {
+    pool.query(queries.getQuizs, (error, result) => {
+        if (error) {
+            console.error('Error fetching quiz:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+        res.status(200).json(result.rows);
+    });
+};
+
 const getReviewByID = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.getReviewByID, [id], (error, result) => {
@@ -255,6 +265,7 @@ module.exports = {
     getReviews,
     getUserByID,
     getMovieByID,
+    getQuiz,
     getReviewByID,
     addUser,
     addMovie,
