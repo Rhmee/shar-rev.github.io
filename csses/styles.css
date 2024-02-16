@@ -216,10 +216,12 @@ h2{
 }
 
 .modal-content {
-    background-color: blue;
+    background-color: #ffd747;
     padding: 20px;
     border-radius: 10px;
     position: relative;
+    left: -85px;
+    top: -103px;
     z-index: 2;
 }
 

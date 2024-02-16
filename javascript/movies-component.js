@@ -9,6 +9,7 @@ export default class MovieList extends HTMLElement {
   }
 
 sortByPopularity() {
+  console.log(this.moviesData)
     const sortedMovies = [...this.movies].sort((a, b) => b.views - a.views);
     this.moviesData = (sortedMovies);
     this.render();

@@ -6,6 +6,7 @@ const getUserByPhoneNumber = 'SELECT * FROM "Users" WHERE phone_number = $1';
 
 const getMovies = 'SELECT * FROM "Movies"';
 const getMovieByID = 'SELECT * FROM "Movies" WHERE id = $1';
+const getQuizs = 'SELECT * FROM "Quiz"';
 const addMovie = 'INSERT INTO "Movies" (name, rate, likes, genre, PG, summary, duration, date, director, producer, actors, views, poster) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING id';
 const deleteMovie = 'DELETE FROM "Movies" WHERE id = $1';
 const updateMovie = 'UPDATE "Movies" SET views = $1, rate = $2 WHERE id = $3';
@@ -25,7 +26,7 @@ const signup = 'INSERT INTO "Users" (username, phone_number, password) VALUES ($
 
 module.exports = {
   getUsers, getUserByID, deleteUser, updateUser, getUserByPhoneNumber,
-  getMovies, getMovieByID, addMovie, deleteMovie, updateMovie,
+  getMovies, getMovieByID, getQuizs, addMovie, deleteMovie, updateMovie,
   getReviews, getReviewByID, addReview, deleteReview, updateReview,
   login, signup, getReviewsByMovieID
 };

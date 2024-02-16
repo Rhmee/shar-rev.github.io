@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/csses/bet.css">
     <link rel="stylesheet" type="text/css" href="/csses/review.css">
     <link rel="stylesheet" type="text/css" href="/csses/styles.css">
-    <link rel="stylesheet" href="fontawesome/css/all/.min.css">
+    <!-- <link rel="stylesheet" href="fontawesome/css/all/.min.css"> -->
     <link rel="stylesheet" type="text/css" href="/csses/dark.css">
     <script type="module" src="/javascript/darkcomp.js"></script>
 </head>
@@ -28,7 +28,7 @@
                 <li><a href="/htmls/movie.html">Кино</a></li>
             </ul>
             <ul class="right">
-                <li class="search"><input type="text" class="search" id="searchInput" placeholder="Хайх" onkeyup="searchFunction()"></li>
+                <li class="search"><input type="text" class="search" id="searchInput" placeholder="Хайх"></li>  
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
                 <li id="loginLink"><a href="/htmls/login.html">Нэвтрэх</a></li>
             </ul>
@@ -37,117 +37,83 @@
     </header>
 
     <div class="modal" id="searchModal">
-        <div class="modal-content" id="searchResults">
-            <!-- Search results will be displayed here -->
-            <span class="close-button" onclick="closeModal()">X</span>
-        </div>
+        <div class="modal-content" id="searchResults"></div>
     </div>
 
     <script>
-        const API_URL = "https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114";
-        const API_KEY1 = "$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW";
-
-        async function fetchData() {
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'GET',
-                    headers: {
-                        'X-Master-Key': API_KEY1,
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Network response was not ok. Status: ${response.status}`);
-                }
-
-                const data = await response.json();
-
-                // Check if the expected structure exists
-                if (data.record && Array.isArray(data.record.movies)) {
-                    return data.record.movies;
-                } else {
-                    throw new Error('Invalid data structure in the API response');
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                return null;
-            }
-        }
-
-        // Display the modal
+        let response = [];
+        fetch('../javascript/movies.json')
+            .then(response => response.json())
+            .then(data => {
+                response = data.movies;
+                console.log(data.movies);
+            })
+            .catch(error => {
+                console.error('Error fetching JSON data:', error);
+            });
+    
+        document.getElementById("searchInput").addEventListener("input", searchFunction);
+    
         function openModal() {
             document.getElementById('searchModal').style.display = 'flex';
         }
-
-        // Hide the modal
+    
         function closeModal() {
             document.getElementById('searchModal').style.display = 'none';
         }
-
-        async function searchFunction() {
-            // Get the input value
+    
+        function searchFunction() {
             const input = document.getElementById("searchInput").value.trim().toLowerCase();
-
-            // Fetch data from the API
-            const movies = await fetchData();
-
-            // Check if the search input is empty
+    
+            const movies = response;
+    
             if (input === '') {
-                // Clear the search results and close the modal
                 clearResults();
                 closeModal();
                 return;
             }
-
+    
             if (movies) {
-                // Filter the items based on the input value
                 const results = movies.filter(movie => movie.ner.toLowerCase().includes(input));
-
-                // Display the results in the modal
                 displayResults(results);
-
-                // Open the modal
                 openModal();
             }
         }
-
+    
         function clearResults() {
             const searchResults = document.getElementById("searchResults");
-            searchResults.innerHTML = ""; // Clear previous results
+            searchResults.innerHTML = "";
         }
-
+    
         function displayResults(results) {
             const searchResults = document.getElementById("searchResults");
-            searchResults.innerHTML = ""; // Clear previous results
-
+            searchResults.innerHTML = "";
+    
             results.forEach(result => {
                 const resultContainer = document.createElement("article");
                 resultContainer.className = "result_container";
-
+    
                 const link = document.createElement("a");
                 link.href = "info.html?id=" + result.id;
                 link.className = "result_link";
-
-                const imageContainer = document.createElement("div");
-                imageContainer.className = "result_img";
-
+    
                 const img = document.createElement("img");
                 img.src = result.poster;
-                img.alt = result.ner;
-                imageContainer.appendChild(img);
-
+                img.alt = result.title;
+    
                 const title = document.createElement("h4");
                 title.textContent = result.ner;
-
-                link.appendChild(imageContainer);
+    
+                link.appendChild(img);
                 link.appendChild(title);
+    
                 resultContainer.appendChild(link);
-
                 searchResults.appendChild(resultContainer);
             });
         }
     </script>
+    
+    
     <script>
         let menu = document.querySelector('.menu');
         let mainMenu = document.querySelector('.main-menu');
