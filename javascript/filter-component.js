@@ -1,18 +1,14 @@
-import { displayMovies } from "./movies-component.js";
-
-class FilterFunctions extends HTMLElement {
-    constructor() {
+export default class FilterFunctions extends HTMLElement {
+    constructor(movieList) {
         super();
-        this.moviesData = null;
-        this.movies = null;
+        this.moviesData = movieList;
+        console.log(this.moviesData)
         this.API_URL = "https://api.jsonbin.io/v3/b/65815955266cfc3fde6ab114";
         this.API_KEY1 = "$2a$10$xgjEuMB695YYdVlN5PlH3O71Mntu9XSGLsO3KwS0wv6NxzenB.fCW";
         this.attachShadow({ mode: "open" });
         const container = document.createElement("div");
         container.id = "movies";
         this.shadowRoot.appendChild(container);
-        this.showSkeletonLoading();
-        this.fetchMovies();
     }
 
     filterMovies(filteredMovies) {
@@ -38,148 +34,27 @@ class FilterFunctions extends HTMLElement {
       }
     }
 
-    
-
-    showSkeletonLoading() {
-      const skeletonLoadingHTML = `
-        <style>
-          .movies-content {
-            margin-top: 10%;
-            margin-left: 5%;
-            margin-right: 5%;
-          }
-          .skeleton {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 6rem));
-            gap: 3rem;
-            text-align: center;
-            justify-content: center;
-          }
-          .image.loading {
-            border-radius: 15px;
-          }
-          .image.loading,
-          .text.loading {
-            width: 175px; 
-            height: 275px;
-            background-color: #555; 
-            margin-bottom: 10px; 
-          }
-          .text.loading {
-            width: 155px;
-            border-radius: 5px;
-            height: 20px; 
-            left: 10px;
-            display: inline-block;
-            position: relative;
-          }
-        </style>
-        <script>
-          const filter = document.getElementsByClassName("filter");
-          filter.style.display = "none";
-          console.log("filter duudagdav");
-            document.getElementById("byPopularity").addEventListener("click", () => this.sortByPopularity());
-            document.getElementById("byGenre").addEventListener("change", () => this.applyFilters());
-            document.getElementById("byRating").addEventListener("change", () => this.applyFilters());
-            document.getElementById("byYear").addEventListener("change", () => this.applyFilters());
-            document.getElementById("A_Z").addEventListener("click", () => this.sortAlphabetically());
-        </script>
-        <section class="movies-content" id="movies">
-          <div class="skeleton"> 
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div>
-            <div class="article">
-              <div class="image loading"></div>
-              <div class="text loading"></div>
-            </div><div class="article">
-            <div class="image loading"></div>
-            <div class="text loading"></div>
-          </div>
-          </div>
-        </section>
-      `;
-      this.shadowRoot.innerHTML = skeletonLoadingHTML;
-    }
-
-    fetchMovies() {
-        const headers = {
-            "Content-Type": "application/json",
-            "X-Master-Key": this.API_KEY1,
-        };
-
-        fetch(this.API_URL, { headers })
-            .then((response) => response.json())
-            .then((data) => {
-                if (Array.isArray(data.record.movies)) {
-                    this.moviesData = data.record.movies;
-                    this.movies = data.record.movies;
-                    displayMovies(data.record.movies);
-                    this.hideSkeletonLoading();
-                } else {
-                    console.error("Data.record.movies is not an array.");
-                }
-            })
-            .catch((error) => console.error("Error fetching JSON:", error));
-    }
-
-    hideSkeletonLoading() {
-        const skeletonLoading = this.shadowRoot.querySelector('.skeleton');
-        if (skeletonLoading) {
-            skeletonLoading.style.display = 'none';
-        }
+    connectedCallback() {
+        document.getElementById("byPopularity").addEventListener("click", () => this.sortByPopularity());
+        document.getElementById("byGenre").addEventListener("change", () => this.applyFilters());
+        document.getElementById("byRating").addEventListener("change", () => this.applyFilters());
+        document.getElementById("byYear").addEventListener("change", () => this.applyFilters());
+        document.getElementById("A_Z").addEventListener("click", () => this.sortAlphabetically());
     }
 
     sortByPopularity() {
-        const sortedMovies = [...this.movies].sort((a, b) => b.views - a.views);
-        displayMovies(sortedMovies);
+      console.log(this.moviesData)
+        const sortedMovies = [...this.moviesData.getMovies()].sort((a, b) => b.views - a.views);
+        this.moviesData.setMovies(sortedMovies);
+        this.moviesData.render();
     }
 
     applyFilters() {
-      console.log(this.applyFilters, "asdasd");
       const selectedGenre = document.getElementById("byGenre").value;
       const selectedRating = document.getElementById("byRating").value;
       const selectedYear = document.getElementById("byYear").value;
   
-      let filteredMovies = [...movies];
-      console.log(movies, "movies");    
+      let filteredMovies = [...this.moviesData.getMovies()];
   
   
       if (selectedGenre !== "AllMovie") {
@@ -211,14 +86,16 @@ class FilterFunctions extends HTMLElement {
         filteredMovies = filteredMovies.sort((a, b) => b.rate - a.rate);
       }
   
-      this.displayMovies(filteredMovies);
+      this.moviesData.setMovies(filteredMovies);
+      this.moviesData.render();
     }
 
     sortAlphabetically() {
-        const sortedMovies = [...this.moviesData].sort((a, b) =>
+        const sortedMovies = [...this.moviesData.getMovies()].sort((a, b) =>
             a.ner.localeCompare(b.ner, "en", { sensitivity: "base" })
         );
-        displayMovies(sortedMovies);
+        this.moviesData.setMovies(sortedMovies);
+        this.moviesData.render();
     }
 }
 

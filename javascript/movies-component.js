@@ -1,14 +1,83 @@
-class MovieList extends HTMLElement {
+export default class MovieList extends HTMLElement {
   moviesData = null;
 
   constructor() {
       super();
       this.attachShadow({ mode: "open" });
       this.moviesData = null;
+      this.movies = null;
   }
+
+sortByPopularity() {
+    const sortedMovies = [...this.movies].sort((a, b) => b.views - a.views);
+    this.moviesData = (sortedMovies);
+    this.render();
+}
+
+applyFilters() {
+  const selectedGenre = document.getElementById("byGenre").value;
+  const selectedRating = document.getElementById("byRating").value;
+  const selectedYear = document.getElementById("byYear").value;
+
+  let filteredMovies = [...this.movies];
+
+
+  if (selectedGenre !== "AllMovie") {
+    filteredMovies = filteredMovies.filter(
+      (movie) => movie.genre === selectedGenre
+    );
+  }
+
+  if (selectedRating !== "AllRate") {
+    filteredMovies = filteredMovies.filter((movie) => {
+      if (selectedRating === "5") {
+        return movie.rate <= 5.99;
+      } else {
+        const lowerBound = parseInt(selectedRating);
+        const upperBound = lowerBound + 1;
+        return movie.rate >= lowerBound && movie.rate < upperBound;
+      }
+    });
+  }
+
+  if (selectedYear !== "AllYear") {
+    filteredMovies = filteredMovies.filter(
+      (movie) =>
+        new Date(movie.release_date).getFullYear() === parseInt(selectedYear)
+    );
+  }
+
+  if (selectedRating === "AllRate") {
+    filteredMovies = filteredMovies.sort((a, b) => b.rate - a.rate);
+  }
+
+  this.moviesData = (filteredMovies);
+  this.render();
+}
+
+sortAlphabetically() {
+    const sortedMovies = [...this.movies].sort((a, b) =>
+        a.name.localeCompare(b.name, "en", { sensitivity: "base" })
+    );
+    this.moviesData = (sortedMovies);
+    this.render();
+}
 
   connectedCallback() {
       this.fetchMoviesData();
+      document.getElementById("byPopularity").addEventListener("click", () => this.sortByPopularity());
+      document.getElementById("byGenre").addEventListener("change", () => this.applyFilters());
+      document.getElementById("byRating").addEventListener("change", () => this.applyFilters());
+      document.getElementById("byYear").addEventListener("change", () => this.applyFilters());
+      document.getElementById("A_Z").addEventListener("click", () => this.sortAlphabetically());
+  }
+
+  getMovies() {
+    return this.moviesData;
+  }
+
+  setMovies(movies) {
+    this.moviesData = movies;
   }
 
   async fetchMoviesData() {
@@ -21,6 +90,7 @@ class MovieList extends HTMLElement {
           }
           const data = await response.json();
           this.moviesData = data;
+          this.movies = data;
           this.render();
       } catch (error) {
           console.error("Error fetching movies:", error);
