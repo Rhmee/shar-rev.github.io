@@ -8,7 +8,7 @@ const getMovies = 'SELECT * FROM "Movies"';
 const getMovieByID = 'SELECT * FROM "Movies" WHERE id = $1';
 const addMovie = 'INSERT INTO "Movies" (name, rate, likes, genre, PG, summary, duration, date, director, producer, actors, views, poster) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING id';
 const deleteMovie = 'DELETE FROM "Movies" WHERE id = $1';
-const updateMovie = 'UPDATE "Movies" SET name = $1 WHERE id = $2';
+const updateMovie = 'UPDATE "Movies" SET views = $1, rate = $2 WHERE id = $3';
 
 const getReviews = 'SELECT * FROM "Reviews";';
 const getReviewByID = 'SELECT * FROM "Reviews" WHERE review_id = $1;';

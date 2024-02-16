@@ -2,6 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 console.log("Movie ID:", movieId);
+localStorage.setItem("movieId", movieId);
 
 const fetchMoviesData = async (movieId) => {
     try {
@@ -40,7 +41,7 @@ function generateMovieDetailsHTML(movie) {
             
         </style>
         <article class="heseg">
-            <img id="Poster_zurag" src="${movie.posterUrl || ''}" alt="${movie.name} Poster">
+            <img id="Poster_zurag" src="${movie.poster}" alt="${movie.name} Poster">
         </article>
         <article class="heseg">
             <h2>${movie.name || 'Unknown'}</h2>
@@ -156,3 +157,5 @@ fetchMoviesData(movieId)
         }
         return starsHTML;
     }
+
+    

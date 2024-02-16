@@ -28,7 +28,7 @@
             <ul class="right">
                 <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
-                <li><a href="/htmls/login.html">Нэвтрэх</a></li>
+                <li id="loginLink"><a href="/htmls/login.html">Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>   
@@ -37,11 +37,22 @@
         let menu = document.querySelector('.menu');
         let mainMenu = document.querySelector('.main-menu');
         let rightMenu = document.querySelector('.right');
-
         menu.onclick = function () {
             mainMenu.classList.toggle('active');
             rightMenu.classList.toggle('active');
         };
+
+        let login = document.getElementById('loginLink');
+        let userName = document.getElementById('userNameId');
+        let user = localStorage.getItem("user");
+        if(user) {
+            login.innerHTML = `<a href="/htmls/user.html" id="loginLink">${user}</a>`;
+            userName.innerText = user;
+        } else {
+            login.innerHTML = `<a href="/htmls/login.html" id="loginLink">Нэвтрэх</a>`;
+            userName.innerText = 'Хэрэглэгч';
+        }
+
     </script>
 
     <section class="bugd" id="movie-details"> 

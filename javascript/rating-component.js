@@ -336,9 +336,19 @@ class RatingComponent extends HTMLElement {
     }
   
     connectedCallback() {
-      this._ratingValue = parseInt(this.getAttribute('rating')) || 0;
-      this._reviewComment = this.getAttribute('review') || '';
-      this.render();
+        // Find the submit button within the shadow DOM
+        const submitButton = this.shadowRoot.querySelector('#ilgeeh');
+        if (submitButton) {
+            submitButton.addEventListener('click', handleFormSubmission.bind(this)); // Bind 'this' to access component properties
+        } else {
+            console.error("Submit button not found!");
+        }
+
+        // Find the review input element within the shadow DOM
+        const reviewInput = this.shadowRoot.querySelector('#inputRev');
+        if (!reviewInput) {
+            console.error("Review input element not found!");
+        }
     }
   
     attributeChangedCallback(attributeName, oldValue, newValue) {
@@ -442,63 +452,48 @@ function getCurrentDate() {
     return `${year}-${month}-${day}`;
 }
 
-// Function to handle form submission
-function handleFormSubmission() {
-    // Get the review text
-    const review = document.getElementById('inputRev').value;
-    
-    // Get the rating value
-    let rate;
-    const ratingInputs = document.querySelectorAll('input[name="rating"]');
-    for (const input of ratingInputs) {
-        if (input.checked) {
-            rate = input.value;
-            break;
+async function handleFormSubmission() {
+    const reviewInput = this.shadowRoot.querySelector('#inputRev');
+    if (reviewInput) {
+        const review = reviewInput.value;
+        let rate;
+        const ratingInputs = this.shadowRoot.querySelectorAll('input[name="rating"]');
+        for (const input of ratingInputs) {
+            if (input.checked) {
+                rate = input.value;
+                break;
+            }
         }
-    }
+        const currentDate = getCurrentDate();
 
-    // Get the current system date
-    const currentDate = getCurrentDate();
-
-    // You can now use 'review', 'rate', and 'currentDate' to send data to your server via AJAX or fetch
-    console.log('Review:', review);
-    console.log('Rating:', rate);
-    console.log('Date:', currentDate);
-
-    // Example of sending data using fetch
-    fetch('/reviews', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            review: review,
-            rate: rate,
-            reviewed_date: currentDate
-            // You may need to get user_id and movie_id from somewhere
-            // user_id: <user_id>,
-            // movie_id: <movie_id>
-        }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Response from server:', data);
-        // Handle response if needed
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        // Handle error if needed
-    });
-}
-
-function setupReviewForm() {
-    const submitButton = document.getElementById('ilgeeh');
-    if (submitButton) {
-        submitButton.addEventListener('click', handleFormSubmission);
+        try {
+            const response = await fetch('http://localhost:3000/api/v1/movies/review', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    review: review,
+                    rate: rate,
+                    reviewed_date: currentDate,
+                    user_id: localStorage.getItem('user_id'),
+                    movie_id: localStorage.getItem("movieId")
+                }),
+            });
+            if (!response.ok) {
+                throw new Error('Failed to submit review');
+            }
+            const data = await response.json();
+            console.log('Response from server:', data);
+            // Optionally provide feedback to the user about successful submission
+            alert('Review submitted successfully!');
+        } catch (error) {
+            console.error('Error:', error);
+            // Optionally provide feedback to the user about the error
+            alert('Failed to submit review. Please try again later.');
+        }
     } else {
-        console.error("Submit button not found!");
+        console.error("Review input element not found!");
     }
 }
 
-// Initialize the review form setup
-setupReviewForm();

@@ -141,14 +141,19 @@ const addMovie = (req, res) => {
 };
 
 const addReview = (req, res) => {
-    const { username, phone_number, password } = req.body;
+    const { user_id, movie_id, review, reviewed_date, rate } = req.body;
 
-    pool.query(queries.addReview, [username, phone_number, password], (error, results) => {
+    // Ensure that all required fields are present in the request body
+    if (!user_id || !movie_id || !review || !reviewed_date || !rate) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    pool.query(queries.addReview, [user_id, movie_id, review, reviewed_date, rate], (error, results) => {
         if (error) {
             console.error('Error adding review:', error);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
-        res.status(201).send("Review added successfully");
+        res.status(201).json({ message: "Review added successfully", review: results.rows[0] });
     });
 };
 
@@ -227,6 +232,23 @@ const updateReview = (req, res) => {
     });
 };
 
+const getReviewByMovieID = (req, res) => {
+    const movieId = parseInt(req.params.movie_id);
+
+    pool.query(queries.getReviewByMovieID, [movieId], (error, result) => {
+        if (error) {
+            console.error('Error fetching reviews:', error);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'No reviews found for the specified movie ID' });
+        }
+
+        res.status(200).json(result.rows);
+    });
+};
+
 module.exports = {
     getUser,
     getMovies,
@@ -243,5 +265,5 @@ module.exports = {
     updateUser,
     updateMovie,
     updateReview,
-    login, signup,
+    login, signup, getReviewByMovieID
 };

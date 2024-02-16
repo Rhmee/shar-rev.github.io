@@ -62,6 +62,7 @@ class FormHandler {
                 const result = await response.json();
                 console.log(result);
                 // Redirect to index.html upon successful login
+                localStorage.setItem("user_id", result.user_id);
                 localStorage.setItem("user", result.username);
                 window.location.href = "index.html";
             } else {
@@ -92,6 +93,7 @@ class FormHandler {
                 const result = await response.json();
                 console.log(result);
                 // Redirect to index.html upon successful signup
+                localStorage.setItem("user_id", result.user_id);
                 localStorage.setItem("user", result.username);
                 window.location.href = "index.html";
             } else {
