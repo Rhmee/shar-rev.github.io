@@ -414,20 +414,91 @@ class RatingComponent extends HTMLElement {
       this._reviewComment = savedState.review || '';
       this.render();
     }
-  }
-  
-  customElements.define('rating-component', RatingComponent);
-  
-  function generateStarRatingHTML() {
+}
+
+customElements.define('rating-component', RatingComponent);
+
+// Function to generate star rating HTML
+function generateStarRatingHTML() {
     let starsHTML = '';
     for (let i = 10; i >= 1; i--) {
-      starsHTML += `
-        <input type="radio" name="rating" id="rate${i}">
-        <label for="rate${i}">
-          <svg id="Object" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 1122">
-            <path class="cls-2" d="m570.497,252.536l93.771,190c1.543,3.126,4.525,5.292,7.974,5.794l209.678,30.468c8.687,1.262,12.156,11.938,5.87,18.065l-151.724,147.895c-2.496,2.428-3.564,6.124-2.798,9.704l35.69,209.543c1.62,9.523-8.466,16.69-16.498,11.846l-186.883-98.43c-3.441-1.816-7.536-1.816-10.977,0l-186.883,98.43c-8.032,4.844-17.118-2.323-16.498-11.846l35.69-209.543c0.766-3.581-0.302-7.276-2.798-9.704l-151.724-147.895c-6.287-6.127-2.818-16.803,5.87-18.065l209.678-30.468c3.449-0.502,6.431-2.668,7.974-5.794l93.771-190c4.139-8.381,14.392-8.381,18.531,0z" fill="#010002"/>
-          </svg>
-        </label>`;
+        starsHTML += `
+            <input type="radio" name="rating" id="rate${i}" value="${i}">
+            <label for="rate${i}">
+                <svg id="Object" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 1122">
+                    <path class="cls-2" d="m570.497,252.536l93.771,190c1.543,3.126,4.525,5.292,7.974,5.794l209.678,30.468c8.687,1.262,12.156,11.938,5.87,18.065l-151.724,147.895c-2.496,2.428-3.564,6.124-2.798,9.704l35.69,209.543c1.62,9.523-8.466,16.69-16.498,11.846l-186.883-98.43c-3.441-1.816-7.536-1.816-10.977,0l-186.883,98.43c-8.032,4.844-17.118-2.323-16.498-11.846l35.69-209.543c0.766-3.581-0.302-7.276-2.798-9.704l-151.724-147.895c-6.287-6.127-2.818-16.803,5.87-18.065l209.678-30.468c3.449-0.502,6.431-2.668,7.974-5.794l93.771-190c4.139-8.381,14.392-8.381,18.531,0z" fill="#010002"/>
+                </svg>
+            </label>`;
     }
     return starsHTML;
-  }
+}
+
+// Function to get the current date in "YYYY-MM-DD" format
+function getCurrentDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+// Function to handle form submission
+function handleFormSubmission() {
+    // Get the review text
+    const review = document.getElementById('inputRev').value;
+    
+    // Get the rating value
+    let rate;
+    const ratingInputs = document.querySelectorAll('input[name="rating"]');
+    for (const input of ratingInputs) {
+        if (input.checked) {
+            rate = input.value;
+            break;
+        }
+    }
+
+    // Get the current system date
+    const currentDate = getCurrentDate();
+
+    // You can now use 'review', 'rate', and 'currentDate' to send data to your server via AJAX or fetch
+    console.log('Review:', review);
+    console.log('Rating:', rate);
+    console.log('Date:', currentDate);
+
+    // Example of sending data using fetch
+    fetch('/reviews', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            review: review,
+            rate: rate,
+            reviewed_date: currentDate
+            // You may need to get user_id and movie_id from somewhere
+            // user_id: <user_id>,
+            // movie_id: <movie_id>
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Response from server:', data);
+        // Handle response if needed
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Handle error if needed
+    });
+}
+
+function setupReviewForm() {
+    const submitButton = document.getElementById('ilgeeh');
+    if (submitButton) {
+        submitButton.addEventListener('click', handleFormSubmission);
+    } else {
+        console.error("Submit button not found!");
+    }
+}
+
+// Initialize the review form setup
+setupReviewForm();

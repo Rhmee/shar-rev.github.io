@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="/csses/infocss.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/csses/dark.css">
-    <link rel="stylesheet" type="text/css" href="/csses/rating.css">
     <title>Info</title>
 </head>
 <body>
@@ -29,7 +28,7 @@
             <ul class="right">
                 <li class="search"><input type="text" class="search" placeholder="Хайх"></li>
                 <li><a href="/htmls/quiz.html">Таавар</a></li>
-                <li id="loginLink"><a href="/htmls/login.html" >Нэвтрэх</a></li>
+                <li><a href="/htmls/login.html">Нэвтрэх</a></li>
             </ul>
             <label for="menu" class="menu"><i class="fa fa-bars"></i></label>
         </nav>   
@@ -43,13 +42,6 @@
             mainMenu.classList.toggle('active');
             rightMenu.classList.toggle('active');
         };
-        let login = document.getElementById('loginLink');
-            let user = localStorage.getItem("user");
-            if(user) {
-                login.innerHTML = `<a href="/htmls/user.html" id="loginLink">${user}</a>`;
-            } else {
-                login.innerHTML = `<a href="/htmls/login.html" id="loginLink">Нэвтрэх</a>`;
-            }
     </script>
 
     <section class="bugd" id="movie-details"> 
@@ -77,6 +69,8 @@
             <p>Найруулагч: <span class="medeelel">${movie.director}</span></p>
             <p>Продюсер: <span>${movie.producer}</span></p>
             <p>Гол дүр: <span>${movie.actors.join(', ')}</span></p>
+            <rating-component></rating-component>
+            <script src="/javascript/rating-component.js"></script>
             <script>
                 let likeCount = 0;
                 let isLiked = false;
@@ -95,7 +89,6 @@
                 }
             </script>
         </article>   
-        <script src="/javascript/rating-component.js"></script>
         <aside class="hesegbish">
             <input type="text" class="search" placeholder="Хайх">
             <section>

@@ -10,6 +10,14 @@ const addMovie = 'INSERT INTO "Movies" (name, rate, likes, genre, PG, summary, d
 const deleteMovie = 'DELETE FROM "Movies" WHERE id = $1';
 const updateMovie = 'UPDATE "Movies" SET name = $1 WHERE id = $2';
 
+const getReviews = 'SELECT * FROM "Reviews";';
+const getReviewByID = 'SELECT * FROM "Reviews" WHERE review_id = $1;';
+const addReview = 'INSERT INTO "Reviews" (user_id, movie_id, review, reviewed_date, rate) VALUES ($1, $2, $3, $4, $5) RETURNING *;';
+const deleteReview = 'DELETE FROM "Reviews" WHERE review_id = $1;';
+const updateReview = 'UPDATE "Reviews" SET review = $1, reviewed_date = $2, rate = $3 WHERE review_id = $4 RETURNING *;';
+const getReviewsByMovieID = 'SELECT * FROM "Reviews" WHERE movie_id = $1;'
+
+
 const login = 'SELECT * FROM "Users" WHERE phone_number = $1 AND password = $2';
 
 const signup = 'INSERT INTO "Users" (username, phone_number, password) VALUES ($1, $2, $3) RETURNING user_id';
@@ -18,6 +26,6 @@ const signup = 'INSERT INTO "Users" (username, phone_number, password) VALUES ($
 module.exports = {
   getUsers, getUserByID, deleteUser, updateUser, getUserByPhoneNumber,
   getMovies, getMovieByID, addMovie, deleteMovie, updateMovie,
-  // getReviews, getReviewByID, addReview, deleteReview, updateReview,
-  login, signup, 
+  getReviews, getReviewByID, addReview, deleteReview, updateReview,
+  login, signup, getReviewsByMovieID
 };

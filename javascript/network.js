@@ -1,22 +1,28 @@
-// network.js
 export class Network {
-    constructor(url) {
+  constructor(url) {
       this.url = url;
-    }
-  
-    async fetchData() {
-      try {
-        const response = await fetch(this.url);
-  
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-  
-        return response.json();
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
-      }
-    }
   }
-  
+
+  async fetchMoviesData() {
+    try {
+        const response = await fetch(this.url, {
+            method: 'GET'
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch movies. Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!data) {
+            throw new Error('Empty response received');
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        throw error;
+    }
+}
+}
