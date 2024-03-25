@@ -21,6 +21,23 @@ const fetchMoviesData = async (movieId) => {
     }
 }
 
+const fetchReviewsData = async (movieId) => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/v1/movies/review/${movieId}`, {
+            method: 'GET'
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`Failed to fetch movies: ${errorData.message}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        return null;
+    }
+}
+
 function generateMovieDetailsHTML(movie) {
     if (!movie) {
         return "<p>Movie details not available</p>";
